@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wm-portlet-app version="1.0">
+	<wm-portlet>
+		<portlet-name>ImprovedManualCreditCheckView</portlet-name>
+		<portlet-preferences>
+			<preference>
+				<name>taskID</name>
+				<display-name>Task ID</display-name>
+				<description></description>
+				<scope>content</scope>
+				<hidden>true</hidden>
+				<type>String</type>
+			</preference>
+			<preference>
+				<name>cancelUrl</name>
+				<display-name>Cancel URL</display-name>
+				<description></description>
+				<scope>content</scope>
+				<hidden>true</hidden>
+				<type>String</type>
+			</preference>
+			<preference>
+				<name>finishUrl</name>
+				<display-name>Finish URL</display-name>
+				<description></description>
+				<scope>content</scope>
+				<hidden>true</hidden>
+				<type>String</type>
+			</preference></portlet-preferences></wm-portlet>
+	<wm-portlet>
+		<portlet-name>ImprovedManualCreditCheckOverview</portlet-name>
+		<portlet-preferences>
+			<preference>
+				<name>taskID</name>
+				<display-name>Task ID</display-name>
+				<description></description>
+				<scope>content</scope>
+				<hidden>true</hidden>
+				<type>String</type>
+			</preference>
+			<preference>
+				<name>cancelUrl</name>
+				<display-name>Cancel URL</display-name>
+				<description></description>
+				<scope>content</scope>
+				<hidden>true</hidden>
+				<type>String</type>
+			</preference>
+			<preference>
+				<name>finishUrl</name>
+				<display-name>Finish URL</display-name>
+				<description></description>
+				<scope>content</scope>
+				<hidden>true</hidden>
+				<type>String</type>
+			</preference>
+			<preference>
+				<name>currentTab</name>
+				<display-name>Current Tab</display-name>
+				<description></description>
+				<scope>content</scope>
+				<hidden>true</hidden>
+				<type>String</type>
+			</preference></portlet-preferences></wm-portlet>
+	<wm-portlet>
+		<portlet-name>ImprovedManualCreditCheckStart</portlet-name>
+		<portlet-preferences>
+			<preference>
+				<name>returnUrl</name>
+				<display-name>Finish URL</display-name>
+				<description></description>
+				<scope>content</scope>
+				<hidden>true</hidden>
+				<type>String</type>
+			</preference></portlet-preferences></wm-portlet>
+	<wm-portlet>
+		<portlet-name>ImprovedManualCreditCheckInboxBar</portlet-name>
+		<portlet-preferences>
+			<preference>
+				<name>initialSearchTab</name>
+				<display-name>Initial Search Tab</display-name>
+				<description></description>
+				<scope>user</scope>
+				<hidden>true</hidden>
+				<type>String</type>
+			</preference>
+			<preference>
+				<name>initialSelectedSavedSearch</name>
+				<display-name>Initial Selected Saved Search</display-name>
+				<description></description>
+				<scope>user</scope>
+				<hidden>true</hidden>
+				<type>String</type>
+			</preference>
+			<preference>
+				<name>runSearchOnDisplay</name>
+				<display-name>Run Search On Display</display-name>
+				<description></description>
+				<scope>user</scope>
+				<hidden>true</hidden>
+				<type>Boolean</type>
+			</preference>
+			<preference>
+				<name>noMaxResults</name>
+				<display-name>No Max Results</display-name>
+				<description></description>
+				<scope>user</scope>
+				<hidden>true</hidden>
+				<type>Boolean</type>
+			</preference>
+			<preference>
+				<name>maxResults</name>
+				<display-name>Max Results</display-name>
+				<description></description>
+				<scope>user</scope>
+				<hidden>true</hidden>
+				<type>Integer</type>
+			</preference>
+			<preference>
+				<name>lastSearchState</name>
+				<display-name>Last Search State</display-name>
+				<description></description>
+				<scope>session</scope>
+				<hidden>true</hidden>
+				<type>String</type>
+			</preference>
+			<preference>
+				<name>savedSearchMap</name>
+				<display-name>Saved Searches Map</display-name>
+				<description></description>
+				<scope>user</scope>
+				<hidden>true</hidden>
+				<type>String</type>
+			</preference></portlet-preferences></wm-portlet>
+	<wm-portlet>
+		<portlet-name>ImprovedManualCreditCheckInboxResults</portlet-name>
+		<portlet-preferences>
+			<preference>
+				<name>queryString</name>
+				<display-name>Search Query</display-name>
+				<description></description>
+				<scope>content</scope>
+				<hidden>false</hidden>
+				<type>String</type>
+			</preference>
+			<preference>
+				<name>initialPageSize</name>
+				<display-name>Number of Rows to Display</display-name>
+				<description></description>
+				<scope>user</scope>
+				<hidden>true</hidden>
+				<type>Integer</type>
+			</preference>
+			<preference>
+				<name>initialSortBy</name>
+				<display-name>Sort By</display-name>
+				<description></description>
+				<scope>user</scope>
+				<hidden>true</hidden>
+				<type>String</type>
+			</preference>
+			<preference>
+				<name>initialSortAscending</name>
+				<display-name>Sort Order</display-name>
+				<description></description>
+				<scope>user</scope>
+				<hidden>true</hidden>
+				<type>Boolean</type>
+			</preference>
+			<preference>
+				<name>columnDisplay</name>
+				<display-name>Column Display</display-name>
+				<description></description>
+				<scope>user</scope>
+				<hidden>true</hidden>
+				<type>String[]</type>
+			</preference>
+			<preference>
+				<name>columnWidths</name>
+				<display-name>searchresults.preference.display-name.columnWidths</display-name>
+				<description></description>
+				<scope>user</scope>
+				<hidden>true</hidden>
+				<type>String</type>
+			</preference>
+			<preference>
+				<name>taskDetailsPage</name>
+				<display-name>Task Details Page Alias</display-name>
+				<description></description>
+				<scope>content</scope>
+				<hidden>false</hidden>
+				<type>String</type>
+			</preference>
+			<preference>
+				<name>taskDetailsPortlet</name>
+				<display-name>Task Details Portlet Alias</display-name>
+				<description></description>
+				<scope>content</scope>
+				<hidden>false</hidden>
+				<type>String</type>
+			</preference>
+			<preference>
+				<name>currentTaskID</name>
+				<display-name>Current Task ID</display-name>
+				<description></description>
+				<scope>session</scope>
+				<hidden>false</hidden>
+				<type>String</type>
+			</preference></portlet-preferences></wm-portlet></wm-portlet-app>
+

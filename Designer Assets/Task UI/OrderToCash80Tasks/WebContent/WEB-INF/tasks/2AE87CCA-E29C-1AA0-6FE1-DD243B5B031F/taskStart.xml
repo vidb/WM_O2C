@@ -1,0 +1,19 @@
+<CONFIG>
+	<CONTEXT alias="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F.task.app">
+		<folder name="Improved Manual Credit Check Start" description="Improved Manual Credit Check Start" alias="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F.task.app.start.page" isTaskFolder="false">
+			<Mode type="sync">
+	            <page>
+	            	<row>
+	            		<column>
+	            			<ordertocash80tasks___improvedmanualcreditcheckstart name="Task Start" alias="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F.task.app.start.portlet">
+	                            <layout name="titlebar" value="false"/>
+	                            <layout name="border" value="false"/>            			
+	            			</ordertocash80tasks___improvedmanualcreditcheckstart>
+	                    </column>
+	                </row>
+	                <hobos/>
+	            </page>
+	        </Mode>
+        </folder>
+    </CONTEXT>
+</CONFIG>

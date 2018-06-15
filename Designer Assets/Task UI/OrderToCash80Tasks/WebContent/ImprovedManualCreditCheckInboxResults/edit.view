@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <property name="pageManagedBean" value="ImprovedManualCreditCheckInboxResultsEditviewView" />
+    <property name="preferencesBean" value="ImprovedManualCreditCheckInboxResults" />
+    <design-time-attribute name="portlet" value="ImprovedManualCreditCheckInboxResults" />
+ 
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='searchOptionsForm' />
+    <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+	    <property name='id' value='errorMessages' />
+    </control>
+    <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+      <property name='style' value='margin:5px' />
+      <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+        <property name='id' value='displayDefaultsGroup' />
+        <property name='label' value='Display Defaults' />
+        
+		<control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+		  <property name='id' value='staticRow' />
+		  <property name='width' value='100%' />
+		  <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+		    <property name='id' value='staticCell' />
+		    <property name='width' value='50%' />
+		    <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+		      <property name='id' value='propertyLine' />
+		      <property name='label' value='Number of Rows to Display' />
+		      <control component-type='javax.faces.HtmlSelectOneMenu' renderer-type='javax.faces.Menu'>
+		        <converter converter-id='javax.faces.Integer'>
+		        </converter>
+		        <property name='disabledClass' value='disabled' />
+		        <property name='enabledClass' value='enabled' />
+		        <property name='id' value='htmlSelectOneMenu' />
+		        <property name='value' value='#{activePreferencesBean.initialPageSize}' />
+		        <property name='width' value='input20' />
+		        <control component-type='javax.faces.SelectItem' renderer-type=''>
+		          <property name='id' value='selectItem' />
+		          <property name='itemLabel' value='10' />
+		          <property name='itemValue' value='10' />
+		        </control>
+		        <control component-type='javax.faces.SelectItem' renderer-type=''>
+		          <property name='id' value='selectItem1' />
+		          <property name='itemLabel' value='20' />
+		          <property name='itemValue' value='20' />
+		        </control>
+		        <control component-type='javax.faces.SelectItem' renderer-type=''>
+		          <property name='id' value='selectItem2' />
+		          <property name='itemLabel' value='50' />
+		          <property name='itemValue' value='50' />
+		        </control>
+		        <control component-type='javax.faces.SelectItem' renderer-type=''>
+		          <property name='id' value='selectItem3' />
+		          <property name='itemLabel' value='100' />
+		          <property name='itemValue' value='100' />
+		        </control>
+		        <control component-type='javax.faces.SelectItem' renderer-type=''>
+		          <property name='id' value='selectItem4' />
+		          <property name='itemLabel' value='Show All' />
+		          <property name='itemValue' value='-1' />
+		        </control>
+		      </control>
+		    </control>
+		  </control>
+		  <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+		    <property name='id' value='staticCell1' />
+		    <property name='width' value='49%' />
+		    <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+		      <property name='id' value='propertyLine1' />
+		      <property name='label' value='Sort By' />
+		      <property name='rendered' value='#{activePageBean.sortable}' />
+		      <control component-type='javax.faces.HtmlSelectOneMenu' renderer-type='javax.faces.Menu'>
+		        <property name='disabledClass' value='disabled' />
+		        <property name='enabledClass' value='enabled' />
+		        <property name='id' value='htmlSelectOneMenu1' />
+		        <property name='value' value='#{activePreferencesBean.initialSortBy}' />
+		        <property name='width' value='input20' />
+		        <control component-type='javax.faces.SelectItems' renderer-type=''>
+		          <property name='id' value='selectItems' />
+		          <property name='value' value='#{activePageBean.sortableColumnList}' />
+		        </control>
+		      </control>
+		    </control>
+		    <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+		      <property name='id' value='propertyLine2' />
+		      <property name='label' value='Sort Order' />
+		      <property name='rendered' value='#{activePageBean.sortable}' />
+		      <control component-type='javax.faces.HtmlSelectOneRadio' renderer-type='javax.faces.Radio'>
+		        <converter converter-id='javax.faces.Boolean'>
+		        </converter>
+		        <property name='disabledClass' value='disabled' />
+		        <property name='enabledClass' value='enabled' />
+		        <property name='id' value='htmlSelectOneRadio' />
+		        <property name='layout' value='pageDirection' />
+		        <property name='value' value='#{activePreferencesBean.initialSortAscending}' />
+		        <property name='width' value='input20' />
+		        <control component-type='javax.faces.SelectItem' renderer-type=''>
+		          <property name='id' value='selectItem5' />
+		          <property name='itemLabel' value='Ascending' />
+		          <property name='itemValue' value='true' />
+		        </control>
+		        <control component-type='javax.faces.SelectItem' renderer-type=''>
+		          <property name='id' value='selectItem6' />
+		          <property name='itemLabel' value='Descending' />
+		          <property name='itemValue' value='false' />
+		        </control>
+		      </control>
+		    </control>
+		  </control>
+		</control>
+      </control>  
+        
+      <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+        <property name='id' value='columnDisplayGroup' />
+        <property name='label' value='Column Display' />
+        <control component-type='com.webmethods.caf.faces.component.script.CustomClientScript' renderer-type='com.webmethods.caf.faces.render.html.script.CustomClientScriptRenderer'>
+          <property name='code' value='var selectedCols = CAF.model(&apos;#{activePageBean.clientIds[&apos;columnDisplaySwapbox&apos;]}&apos;).getValue();&#13;&#10;var emptyListWarningTextPanel= CAF.model(&apos;#{activePageBean.clientIds[&apos;emptyColumnListPanel&apos;]}&apos;);&#13;&#10;&#13;&#10;if( selectedCols.length &gt; 0 ) {&#13;&#10;  emptyListWarningTextPanel.hide();&#13;&#10;}&#13;&#10;else {&#13;&#10;  emptyListWarningTextPanel.show();&#13;&#10;}&#13;&#10;' />
+          <property name='event' value='onValueChange' />
+          <property name='for' value='columnDisplaySwapbox' />
+          <property name='id' value='customClientScript' />
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.HideablePanel' renderer-type='com.webmethods.caf.faces.panel.HideablePanel'>
+          <property name='id' value='emptyColumnListPanel' />
+          <property name='visible' value='#{empty activePreferencesBean.columnDisplay}' />
+          <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+            <property name='id' value='blockPanel' />
+            <property name='style' value='height: 24px' />
+            <property name='styleClass' value='portlet-msg-alert caf-msg-info' />
+            <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+              <property name='id' value='blockPanel1' />
+              <property name='styleClass' value='caf-error-summary' />
+              <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+                <property name='id' value='blockPanel2' />
+                <property name='style' value='width:100%;' />
+                <property name='styleClass' value='caf-title' />
+                <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+                  <property name='id' value='htmlOutputText' />
+                  <property name='value' value='When the selected columns list is empty, all available columns are displayed.' />
+                </control>
+              </control>
+            </control>
+          </control>
+        </control>
+	    <control component-type='javax.faces.SelectMany' renderer-type='com.webmethods.caf.faces.select.Swapbox'>
+          <property name='id' value='columnDisplaySwapbox' />
+	      <property name='availableLabel' value='Available Columns' />
+	      <property name='move' value='true' />
+	      <property name='selectedLabel' value='Selected Columns' />
+	      <property name='style' value='height:10em' />
+	      <property name='value' value='#{activePreferencesBean.columnDisplay}' />
+	      <property name='width' value='input20' />
+	      <control component-type='javax.faces.SelectItems' renderer-type=''>
+	        <property name='value' value='#{activePageBean.viewableColumnList}' />
+	      </control>
+	    </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertySubmit' renderer-type='com.webmethods.caf.faces.panel.PropertySubmit'>
+        <property name='id' value='propertySubmit' />
+        <facet name='submit'>
+          <control component-type='javax.faces.HtmlCommandButton' renderer-type='javax.faces.Button'>
+            <property name='action' value='#{activePageBean.persistDisplayOptions}' />
+            <property name='id' value='saveButton' />
+            <property name='value' value='Save' />
+            <property name='width' value='button6' />
+          </control>
+        </facet>
+        <facet name='cancel'>
+          <control component-type='javax.faces.HtmlCommandButton' renderer-type='javax.faces.Button'>
+            <property name='action' value='#{activePageBean.cancelDisplayOptions}' />
+            <property name='id' value='cancelButton' />
+            <property name='immediate' value='true' />
+            <property name='style' value='margin-left:5px; margin-right:5px;' />
+            <property name='value' value='Cancel' />
+            <property name='width' value='button6' />
+          </control>
+        </facet>
+      </control>
+    </control>
+  </control>
+</view>

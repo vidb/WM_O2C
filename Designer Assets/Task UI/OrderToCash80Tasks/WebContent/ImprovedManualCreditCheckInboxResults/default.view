@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <property name="pageManagedBean" value="ImprovedManualCreditCheckInboxResultsDefaultviewView" />
+    <property name="preferencesBean" value="ImprovedManualCreditCheckInboxResults" />
+    <design-time-attribute name="portlet" value="ImprovedManualCreditCheckInboxResults" />
+    <design-time-attribute name="taskTypeID" value="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F" />
+    <design-time-attribute name="taskPortletType" value="taskInboxResult" />    
+
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='searchResultsForm' />
+    <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+      <design-time-attribute name='rolledUp' value='true' /> 
+      <property name='globalOnly' value='true' />
+    </control>
+    <control component-type='com.webmethods.caf.faces.component.script.CustomClientScript' renderer-type='com.webmethods.caf.faces.render.html.script.CustomClientScriptRenderer'>
+      <design-time-attribute name='rolledUp' value='true' /> 
+      <property name='code' value='CAF.model(&apos;#{activePageBean.clientIds[&quot;searchResultsTableControl&quot;]}&apos;).addRowChangeListener(&#13;&#10;  function(id, rowId, type) {&#13;&#10;    var disabled = true;&#13;&#10;    if (  CAF.model ( id ).getRowSelectedCount () &gt; 0 ) &#13;&#10;    {&#13;&#10;      disabled = false;&#13;&#10;    }&#13;&#10;    CAF.model(&apos;#{activePageBean.clientIds[&quot;toggleDelegateDialog&quot;]}&apos;).setDisabled ( disabled );&#13;&#10;    CAF.model(&apos;#{activePageBean.clientIds[&quot;toggleUndelegateDialog&quot;]}&apos;).setDisabled ( disabled );&#13;&#10;  }&#13;&#10;);&#13;&#10;' />
+      <property name='event' value='none' />
+      <property name='id' value='buttonDisableScript' />
+    </control>
+    <control component-type='com.webmethods.caf.faces.panel.BlockEdgePanel' renderer-type='com.webmethods.caf.faces.panel.BlockEdgePanel'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <facet name='leftEdge'>
+        <control component-type='javax.faces.HtmlPanelGroup' renderer-type='javax.faces.Group'>
+          <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+            <property name='action' value='#{activePageBean.taskSearchProvider.refresh}' />
+            <property name='id' value='button1' />
+            <property name='rendered' value='#{not activePageBean.searchBarAvailable}' />
+            <property name='value' value='#{activePreferencesBean.portletResources[&quot;button.action.refresh&quot;]}' />
+          </control>
+          <control component-type='com.webmethods.caf.faces.toggle.OneWayToggleButton' renderer-type='com.webmethods.caf.faces.toggle.OneWayToggleButton'>
+            <property name='for' value='delegatePrincipalPicker' />
+            <property name='id' value='toggleDelegateDialog' />
+            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;button.action.delegate&quot;]}' />
+            <property name='way' value='show' />
+            <property name='disabled' value='true' />
+          </control>
+          <control component-type='com.webmethods.caf.faces.toggle.OneWayToggleButton' renderer-type='com.webmethods.caf.faces.toggle.OneWayToggleButton'>
+            <property name='for' value='dialogUndelegate' />
+            <property name='id' value='toggleUndelegateDialog' />
+            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;button.action.undelegate&quot;]}' />
+            <property name='way' value='show' />
+            <property name='disabled' value='true' />
+          </control>
+        </control>
+      </facet>
+      <facet name='rightEdge'>
+        <control component-type='javax.faces.HtmlPanelGroup' renderer-type='javax.faces.Group'>
+          <control component-type='com.webmethods.caf.faces.component.portleturl.PortletUrlLink' renderer-type='javax.faces.Link'>
+            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;button.action.manage.subscribe&quot;]}' />
+            <facet name='href'>
+              <control component-type='com.webmethods.caf.faces.component.portleturl.ExtendedPortletUrl' renderer-type=''>
+                <property name='baseUrl' value='webm.apps.workflow.inbox.subscription' />
+				<control component-type='com.webmethods.caf.faces.component.portleturl.ExtendedPortletUrl' renderer-type=''>
+				  <property name='portlet' value='webm.apps.workflow.inbox.subscription.portlet' />
+	                <control component-type='com.webmethods.caf.faces.component.portleturl.ExtendedParameter' renderer-type=''>
+	                  <property name='name' value='source' />
+	                  <property name='value' value='inbox' />
+	                </control>
+				</control>
+              </control>
+            </facet>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+              <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;button.action.manage.subscribe&quot;]}' />
+            </control>
+          </control>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='escape' value='false' />
+            <property name='value' value='&amp;nbsp;&amp;nbsp;' />
+          </control>
+          <control component-type='com.webmethods.caf.faces.component.portleturl.PortletUrlLink' renderer-type='javax.faces.Link'>
+            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;button.action.manage.delegate&quot;]}' />
+            <facet name='href'>
+              <control component-type='com.webmethods.caf.faces.component.portleturl.ExtendedPortletUrl' renderer-type=''>
+                <property name='baseUrl' value='webm.apps.workflow.inbox.sched.delegation' />
+				<control component-type='com.webmethods.caf.faces.component.portleturl.ExtendedPortletUrl' renderer-type=''>
+				  <property name='portlet' value='webm.apps.workflow.inbox.sched.delegation.portlet' />
+	                <control component-type='com.webmethods.caf.faces.component.portleturl.ExtendedParameter' renderer-type=''>
+	                  <property name='name' value='source' />
+	                  <property name='value' value='inbox' />
+	                </control>
+				</control>
+              </control>
+            </facet>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+              <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;button.action.manage.delegate&quot;]}' />
+            </control>
+          </control>
+        </control>
+      </facet>
+    </control>
+    <control component-type='com.webmethods.caf.faces.search.SearchResultTable' renderer-type='javax.faces.Table'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='footerClass' value='portlet-section-footer' />
+      <property name='headerClass' value='portlet-section-subheader' />
+      <property name='id' value='searchResultsTableControl' />
+      <property name='rowClasses' value='portlet-section-body,portlet-section-alternate' />
+      <property name='rows' value='#{activePreferencesBean.initialPageSize}' />
+      <property name='value' value='#{activePageBean.taskSearchProvider}' />
+      <property name='var' value='row' />
+      <property name='width' value='100%' /> 
+      <control component-type='javax.faces.Column' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='id' value='selectColumn' />
+        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.select.header&quot;]}' />
+        <facet name='header'>
+          <control component-type='com.webmethods.caf.faces.table.SelectAllRowsCheckbox' renderer-type='com.webmethods.caf.faces.table.SelectAllRowsCheckbox'>
+          </control>
+        </facet>
+        <control component-type='com.webmethods.caf.faces.table.SelectRowIndividualCheckbox' renderer-type='com.webmethods.caf.faces.table.SelectRowIndividualCheckbox'/>
+      </control>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='id' value='taskAcceptedColumn' />
+        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.accepted.header&quot;]}' />
+        <property name='sort' value='#{row.taskInfo.currentUserAccepted}' />
+        <property name='width' value='1%' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlPanelGroup' renderer-type='javax.faces.Group'>
+            <control component-type='javax.faces.HtmlGraphicImage' renderer-type='javax.faces.Image'>
+              <property name='alt' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.accepted.tooltip&quot;]}' />
+              <property name='style' value='border:0' />
+              <property name='title' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.accepted.tooltip&quot;]}' />
+              <property name='url' value='/img/icon_yellow_check.gif' />
+            </control>
+          </control>
+        </facet>
+        <control component-type='javax.faces.HtmlGraphicImage' renderer-type='javax.faces.Image'>
+          <property name='alt' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.accepted.tooltip&quot;]}' />
+          <property name='rendered' value='#{row.taskInfo.currentUserAccepted}' />
+          <property name='title' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.accepted.tooltip&quot;]}' />
+          <property name='url' value='/img/icon_yellow_check.gif' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='ascending' value='' />
+        <property name='exportable' value='' />
+        <property name='id' value='taskDelegatedToIconColumn' />
+        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.delegated.to.icon.header&quot;]}' />
+        <property name='ordinal' value='' />
+        <property name='sort' value='#{activePageBean.taskDisplayProvider.delegatedToCurrentUser}' />
+        <property name='valign' value='' />
+        <property name='width' value='1%' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlGraphicImage' renderer-type='javax.faces.Image'>
+            <design-time-attribute name='rolledUp' value='true' />
+            <property name='alt' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.delegated.to.icon.tooltip&quot;]}' />
+            <property name='height' value='' />
+            <property name='ismap' value='' />
+            <property name='longdesc' value='' />
+            <property name='style' value='border:0' />
+            <property name='styleClass' value='' />
+            <property name='title' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.delegated.to.icon.tooltip&quot;]}' />
+            <property name='url' value='/img/icon_delegate.gif' />
+            <property name='value' value='' />
+          </control>
+        </facet>
+        <control component-type='javax.faces.HtmlGraphicImage' renderer-type='javax.faces.Image'>
+          <property name='alt' value='#{activePageBean.taskDisplayProvider.delegatedDisplayName}' />
+          <property name='rendered' value='#{activePageBean.taskDisplayProvider.delegatedToCurrentUser}' />
+          <property name='style' value='border:0' />
+          <property name='title' value='#{activePageBean.taskDisplayProvider.delegatedDisplayName}' />
+          <property name='url' value='/img/icon_delegate.gif' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='ascending' value='' />
+        <property name='exportable' value='' />
+        <property name='id' value='taskDelegatedFromIconColumn' />
+        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.delegated.from.icon.header&quot;]}' />
+        <property name='ordinal' value='' />
+        <property name='sort' value='#{activePageBean.taskDisplayProvider.delegatedFromCurrentUser}' />
+        <property name='valign' value='' />
+        <property name='width' value='1%' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlGraphicImage' renderer-type='javax.faces.Image'>
+            <property name='alt' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.delegated.from.icon.tooltip&quot;]}' />
+            <property name='height' value='' />
+            <property name='ismap' value='' />
+            <property name='longdesc' value='' />
+            <property name='style' value='border:0' />
+            <property name='styleClass' value='' />
+            <property name='title' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.delegated.from.icon.tooltip&quot;]}' />
+            <property name='url' value='/img/icon_delegate_from.gif' />
+            <property name='value' value='' />
+          </control>
+        </facet>
+        <control component-type='javax.faces.HtmlGraphicImage' renderer-type='javax.faces.Image'>
+          <property name='alt' value='#{activePageBean.taskDisplayProvider.delegatedDisplayName}' />
+          <property name='rendered' value='#{activePageBean.taskDisplayProvider.delegatedFromCurrentUser}' />
+          <property name='style' value='border:0' />
+          <property name='title' value='#{activePageBean.taskDisplayProvider.delegatedDisplayName}' />
+          <property name='url' value='/img/icon_delegate_from.gif' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='id' value='taskIdColumn' />
+        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.id.header&quot;]}' />
+        <property name='ordinal' value='' />
+        <property name='sort' value='#{activePageBean.taskDisplayProvider.taskIDNumber}' />
+        <property name='width' value='' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.id.header&quot;]}' />
+          </control>
+        </facet>
+		<control component-type='javax.faces.HtmlCommandLink' renderer-type='javax.faces.Link'>
+          <property name='id' value='openTaskCommandLink' />
+		  <property name='action' value='#{activePageBean.openTask}' />
+		  <control component-type='javax.faces.Parameter' renderer-type=''>
+		    <property name='name' value='currentTaskID' />
+		    <property name='value' value='#{row.taskInfo.taskID}' />
+		  </control>
+		  <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+		    <property name='value' value='#{row.taskInfo.taskID}' />
+		  </control>
+		</control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='id' value='taskPriorityColumn' />
+        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.priority.header&quot;]}' />
+        <property name='sort' value='#{activePageBean.taskDisplayProvider.priorityDisplayName}' />
+        <property name='width' value='' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='converter' value='' />
+            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.priority.header&quot;]}' />
+          </control>
+        </facet>
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='value' value='#{activePageBean.taskDisplayProvider.priorityDisplayName}' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='id' value='taskLastCreatedByColumn' />
+        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.createdby.header&quot;]}' />
+        <property name='sort' value='#{activePageBean.taskDisplayProvider.createdByDisplayName}' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='converter' value='' />
+            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.createdby.header&quot;]}' />
+          </control>
+        </facet>
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='value' value='#{activePageBean.taskDisplayProvider.createdByDisplayName}' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='id' value='taskLastModifiedByColumn' />
+        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.modifiedby.header&quot;]}' />
+        <property name='sort' value='#{activePageBean.taskDisplayProvider.lastModifiedDisplayName}' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='converter' value='' />
+            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.modifiedby.header&quot;]}' />
+          </control>
+        </facet>
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='' />
+          <property name='value' value='#{activePageBean.taskDisplayProvider.lastModifiedDisplayName}' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='id' value='taskCreatedDateColumn' />
+        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.created.header&quot;]}' />
+        <property name='ordinal' value='' />
+        <property name='sort' value='#{row.taskInfo.createdDate}' />
+        <property name='width' value='' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='converter' value='' />
+            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.created.header&quot;]}' />
+          </control>
+        </facet>
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <converter converter-id='com.webmethods.caf.faces.converter.FormattedDateTime'>
+            <property name='displayTime' value='true' />
+            <property name='pattern' value='#{portletUserAttributes[&quot;user.default.date.format&quot;]}' />
+            <property name='patternTime' value='#{portletUserAttributes[&quot;user.default.time.format&quot;]}' />
+            <property name='timePrecision' value='0' />
+            <property name='timeZone' value='#{portletUserAttributes[&quot;user.default.time_zone&quot;]}' />
+          </converter>
+          <property name='value' value='#{row.taskInfo.createdDate}' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='id' value='taskExpirationColumn' />
+        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.expiration.header&quot;]}' />
+        <property name='optional' value='' />
+        <property name='sort' value='#{row.taskInfo.expireDate}' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='converter' value='' />
+            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.expiration.header&quot;]}' />
+          </control>
+        </facet>
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='' />
+          <property name='value' value='#{row.taskInfo.expireDate}' />
+          <converter converter-id='com.webmethods.caf.faces.converter.FormattedDateTime'>
+            <property name='displayTime' value='true' />
+            <property name='pattern' value='#{portletUserAttributes[&quot;user.default.date.format&quot;]}' />
+            <property name='patternTime' value='#{portletUserAttributes[&quot;user.default.time.format&quot;]}' />
+            <property name='timePrecision' value='0' />
+            <property name='timeZone' value='#{portletUserAttributes[&quot;user.default.time_zone&quot;]}' />
+          </converter>
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='id' value='taskUpdatedDateColumn' />
+        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.updated.header&quot;]}' />
+        <property name='sort' value='#{row.taskInfo.lastModifiedDate}' />
+        <property name='width' value='' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='converter' value='' />
+            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.updated.header&quot;]}' />
+          </control>
+        </facet>
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <converter converter-id='com.webmethods.caf.faces.converter.FormattedDateTime'>
+            <property name='displayTime' value='true' />
+            <property name='pattern' value='#{portletUserAttributes[&quot;user.default.date.format&quot;]}' />
+            <property name='patternTime' value='#{portletUserAttributes[&quot;user.default.time.format&quot;]}' />
+            <property name='timePrecision' value='0' />
+            <property name='timeZone' value='#{portletUserAttributes[&quot;user.default.time_zone&quot;]}' />
+          </converter>
+          <property name='value' value='#{row.taskInfo.lastModifiedDate}' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='id' value='taskCustomIDColumn' />
+        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.custom.header&quot;]}' />
+        <property name='sort' value='#{row.taskInfo.customTaskID}' />
+        <property name='width' value='' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.custom.header&quot;]}' />
+          </control>
+        </facet>
+		<control component-type='javax.faces.HtmlCommandLink' renderer-type='javax.faces.Link'>
+		  <property name='action' value='#{activePageBean.openTask}' />
+		  <control component-type='javax.faces.Parameter' renderer-type=''>
+		    <property name='name' value='currentTaskID' />
+		    <property name='value' value='#{row.taskInfo.taskID}' />
+		  </control>
+		  <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+		    <property name='value' value='#{row.taskInfo.customTaskID}' />
+		  </control>
+		</control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='id' value='taskTypeColumn' />
+	    <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.type.header&quot;]}' />
+	    <property name='sort' value='#{activePageBean.taskDisplayProvider.taskTypeDisplayName}' />
+	    <property name='width' value='' />
+	    <facet name='header'>
+	      <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+	        <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.type.header&quot;]}' />
+	      </control>
+	    </facet>
+	    <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+	      <property name='value' value='#{activePageBean.taskDisplayProvider.taskTypeDisplayName}' />
+	    </control>
+	  </control>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='id' value='taskAssignedColumn' />
+        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.assignedto.header&quot;]}' />
+        <property name='sort' value='' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.assignedto.header&quot;]}' />
+          </control>
+        </facet>
+        <control component-type='com.webmethods.caf.faces.list.DataList' renderer-type='com.webmethods.caf.faces.list.Simple'>
+          <property name='rows' value='10' />
+          <property name='value' value='#{activePageBean.taskDisplayProvider.assignedPrincipalsListProvider}' />
+          <property name='var' value='assigned' />
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='#{assigned}' />
+          </control>
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+        <property name='id' value='taskAcceptedByColumn' />
+        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.acceptedby.header&quot;]}' />
+        <property name='sort' value='' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.acceptedby.header&quot;]}' />
+          </control>
+        </facet>
+        <control component-type='com.webmethods.caf.faces.list.DataList' renderer-type='com.webmethods.caf.faces.list.Simple'>
+          <property name='rows' value='10' />
+          <property name='value' value='#{activePageBean.taskDisplayProvider.acceptedPrincipalsListProvider}' />
+          <property name='var' value='accepted' />
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='#{accepted}' />
+          </control>
+        </control>
+      </control>
+	</control>
+    <control component-type='com.webmethods.caf.faces.panel.ModalDialog' renderer-type='com.webmethods.caf.faces.panel.ModalDialog'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='id' value='dialogUndelegate' />
+      <property name='lazy' value='true' />
+      <property name='progressMsg' value='' />
+      <property name='refreshOnShow' value='true' />
+      <facet name='title'>
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='converter' value='' />
+          <property name='id' value='' />
+          <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;dialog.undelegate.header.text&quot;]}' />
+        </control>
+      </facet>
+      <facet name='submit'>
+        <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+          <property name='action' value='#{activePageBean.commandUndelegate_action}' />
+          <property name='actionListener' value='' />
+          <property name='disabled' value='' />
+          <property name='id' value='commandUndelegate' />
+          <property name='onblur' value='' />
+          <property name='onclick' value='CAF.model(&apos;#{activePageBean.clientIds[&quot;dialogUndelegate&quot;]}&apos;).hide()' />
+          <property name='onfocus' value='' />
+          <property name='refresh' value='' />
+          <property name='rendered' value='' />
+          <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;button.action.undelegate&quot;]}' />
+          <property name='width' value='' />
+        </control>
+      </facet>
+      <facet name='cancel'>
+        <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+          <property name='action' value='#{activePageBean.doDelegateCancel}' />
+          <property name='id' value='commandUndelegateCancel' />
+          <property name='onclick' value='CAF.model(&apos;#{activePageBean.clientIds[&quot;dialogUndelegate&quot;]}&apos;).hide()' />
+          <property name='refresh' value='' />
+          <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;button.action.cancel&quot;]}' />
+        </control>
+      </facet>
+      <control component-type='com.webmethods.caf.faces.logic.If' renderer-type=''>
+        <property name='value' value='#{activePageBean.selectedTaskInfosProvider.rowCount &gt; 0 }' />
+        <control component-type='com.webmethods.caf.faces.list.DataList' renderer-type='com.webmethods.caf.faces.list.Simple'>
+          <property name='layout' value='ul' />
+          <property name='marker' value='' />
+          <property name='rows' value='10' />
+          <property name='selected' value='true' />
+          <property name='value' value='#{activePageBean.selectedTaskInfosProvider}' />
+          <property name='var' value='selectedTaskRow' />
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.dialog.task.list.text&quot;]} #{selectedTaskRow.taskID}' />
+          </control>
+          <control component-type='com.webmethods.caf.faces.logic.If' renderer-type=''>
+            <property name='value' value='#{not activePageBean.taskDisplayProviderForDialog.delegatedFromCurrentUser}' />
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+              <property name='value' value=' - #{activePreferencesBean.portletResourcesProvider[&quot;task.confirm.not.delegated&quot;]}' />
+            </control>
+          </control>
+          <control component-type='com.webmethods.caf.faces.logic.If' renderer-type=''>
+            <property name='rendered' value='false' />
+            <property name='value' value='#{not activePageBean.taskContentProviderExtended.canUserDelegateTask}' />
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+              <property name='value' value=' - #{activePreferencesBean.portletResourcesProvider[&quot;task.dialog.action.notallowed&quot;]}' />
+            </control>
+          </control>
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.logic.Else' renderer-type=''>
+        <property name='value' value='#{activePageBean.selectedTaskInfosProvider.rowCount &lt;= 0}' />
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.dialog.nonselected&quot;]}' />
+        </control>
+      </control>
+    </control>
+    <control component-type='com.softwareag.caf.controls.mwsx.PeoplePickerDialog' renderer-type=''>
+      <design-time-attribute name='rolledUp' value='true' />
+      <design-time-attribute name='controlGetterMethod' value='getDelegatePrincipalPicker' />
+      <property name='applyButtonAction' value='#{activePageBean.doDelegateSelectedTasks}' />
+      <property name='groupSearchAllowed' value='false' />
+      <property name='id' value='delegatePrincipalPicker' />
+      <property name='lazy' value='true' />
+      <property name='multipleSelectionsAllowed' value='false' />
+      <property name='refreshOnApply' value='' />
+      <property name='refreshOnShow' value='true' />
+      <property name='roleSearchAllowed' value='false' />
+      <property name='targetValue' value='#{activePageBean.delegatePrincipal}' />
+      <facet name='popupPanel'>
+        <control component-type='javax.faces.NamingContainer' renderer-type=''>
+          <property name='id' value='delegateTargetPickerPopup' />
+          <control component-type='com.webmethods.caf.faces.command.async.Link' renderer-type='com.webmethods.caf.faces.command.async.Link'>
+            <property name='id' value='showAvailability' />
+            <property name='onclick' value='CAF.Popup.hideAll();' />
+            <property name='refresh' value='personCalendarDialog' />
+            <property name='toggle' value='personCalendarDialog' />
+            <property name='value' value='Show Availability ...' />
+            <control component-type='javax.faces.Parameter' renderer-type=''>
+              <property name='name' value='personURI' />
+              <property name='value' value='#{row.principalURI}' />
+            </control>
+          </control>
+        </control>
+      </facet>
+    </control>
+    <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <design-time-attribute name='controlGetterMethod' value='getPanelDelegateConfirm' />
+      <property name='id' value='panelDelegateConfirm' />
+      <property name='rendered' value='false' />
+      <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+        <property name='converter' value='' />
+        <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.delegate.confirm.header&quot;]}' />
+      </control>
+      <control component-type='com.webmethods.caf.faces.logic.If' renderer-type=''>
+        <property name='value' value='#{activePageBean.selectedTaskInfosProvider.rowCount &gt; 0 }' />
+        <control component-type='com.webmethods.caf.faces.list.DataList' renderer-type='com.webmethods.caf.faces.list.Simple'>
+          <property name='layout' value='ul' />
+          <property name='marker' value='' />
+          <property name='rows' value='10' />
+          <property name='selected' value='true' />
+          <property name='value' value='#{activePageBean.selectedTaskInfosProvider}' />
+          <property name='var' value='selectedTaskRow' />
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.dialog.task.list.text&quot;]} #{selectedTaskRow.taskID}' />
+          </control>
+          <control component-type='com.webmethods.caf.faces.logic.If' renderer-type=''>
+            <property name='id' value='' />
+            <property name='value' value='#{not activePageBean.taskContentProviderExtendedForList.canUserDelegateTask}' />
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+              <property name='converter' value='' />
+              <property name='id' value='' />
+              <property name='value' value=' - #{activePreferencesBean.portletResourcesProvider[&quot;task.dialog.action.notallowed&quot;]}' />
+            </control>
+          </control>
+          <control component-type='com.webmethods.caf.faces.logic.If' renderer-type=''>
+            <property name='value' value='#{activePageBean.taskDisplayProviderForDialog.delegatedFromCurrentUser}' />
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+              <property name='value' value=' - #{activePreferencesBean.portletResourcesProvider[&quot;task.confirm.already.delegated&quot;]}' />
+            </control>
+          </control>
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.logic.Else' renderer-type=''>
+        <property name='value' value='#{activePageBean.selectedTaskInfosProvider.rowCount &lt;= 0}' />
+        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+          <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;task.dialog.nonselected&quot;]}' />
+        </control>
+      </control>
+    </control>
+    <control component-type='com.softwareag.caf.controls.mwsx.PersonCalendarDialog' renderer-type=''>
+      <property name='id' value='personCalendarDialog' />
+      <property name='personURI' value='#{param.personURI}' />
+    </control>
+  </control>
+</view>

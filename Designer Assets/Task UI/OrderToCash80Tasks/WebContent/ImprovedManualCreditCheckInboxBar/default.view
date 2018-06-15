@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+  <property name="pageManagedBean" value="ImprovedManualCreditCheckInboxBarDefaultviewView" />
+  <property name="preferencesBean" value="ImprovedManualCreditCheckInboxBar" />
+  <design-time-attribute name="portlet" value="ImprovedManualCreditCheckInboxBar" />
+  <design-time-attribute name="taskTypeID" value="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F" />
+    <design-time-attribute name="taskPortletType" value="taskInboxBar" />
+    
+
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultCommand' value='#{activePageBean.searchBarControl.defaultCommandId}' />
+    <property name='defaultFocus' value='#{activePageBean.searchBarControl.defaultFocusId}' />
+    <property name='id' value='searchBarForm' />
+    <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='globalOnly' value='true' />
+    </control>
+    <control component-type='com.webmethods.caf.faces.search.SearchBar' renderer-type='com.webmethods.caf.faces.search.SearchBar'>
+      <property name='advancedSearchAvailable' value='false' />
+      <property name='asyncGoRefresh' value='' />
+      <property name='buildQueryStringAction' value='#{activePageBean.doSearch}' />
+      <property name='id' value='searchBarControl' />
+      <property name='keywordsFieldAvailable' value='false' />
+      <property name='savedSearchProvider' value='#{activePageBean.savedSearchProvider}' />
+      <property name='searchOptionsManager' value='#{activePageBean.searchOptionsManager}' />
+      <property name='searchQueryFactory' value='#{activePageBean.searchQueryFactory}' />
+      <property name='useOrConditionAvailable' value='false' />
+      <facet name='refinePanel'>
+		<control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+		  <design-time-attribute name='rolledUp' value='false' />
+		  <property name='id' value='staticRow' />
+		  <property name='style' value='min-width: 800px' />
+		  <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+		    <property name='id' value='staticCell1' />
+		    <property name='width' value='33%' />
+		    <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+		      <design-time-attribute name='rolledUp' value='false' />
+		      <property name='id' value='taskDataPropertyGroup' />
+		      <facet name='label'>
+		        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+		          <property name='id' value='htmlOutputText' />
+		          <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;inbox.refine.group.data.label&quot;]}' />
+		        </control>
+		      </facet>
+		      <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertySubGroup'>
+		        <property name='id' value='propertySubGroup' />
+		        <property name='label' value='TODO: add your custom fields here' />
+		      </control>
+		    </control>
+		  </control>
+		  <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+		    <property name='id' value='staticCell' />
+		    <property name='width' value='33%' />
+		    <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+		      <design-time-attribute name='rolledUp' value='true' />
+		      <property name='id' value='groupTaskInfo' />
+		      <facet name='label'>
+		        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+		          <property name='id' value='htmlOutputText2' />
+		          <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;inbox.refine.group.info.label&quot;]}' />
+		        </control>
+		      </facet>
+		      <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+		        <property name='id' value='staticRow1' />
+		        <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+		          <property name='id' value='staticCell3' />
+		          <property name='width' value='40%' />
+		          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+		            <property name='id' value='htmlOutputText1' />
+		            <property name='styleClass' value='portlet-form-field-label' />
+		            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;inbox.refine.task.id.label&quot;]}:' />
+		          </control>
+		        </control>
+		        <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+		          <property name='align' value='left' />
+		          <property name='id' value='staticCell4' />
+		          <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+		            <property name='id' value='htmlInputText' />
+		            <property name='value' value='#{activePageBean.activeSearchQuery.refineFields.taskID}' />
+		            <property name='width' value='input10' />
+		          </control>
+		        </control>
+		      </control>
+		      <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+		        <property name='id' value='staticRow2' />
+		        <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+		          <property name='id' value='staticCell5' />
+		          <property name='width' value='40%' />
+		          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+		            <property name='id' value='htmlOutputText4' />
+		            <property name='styleClass' value='portlet-form-field-label' />
+		            <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;inbox.refine.task.priority.label&quot;]}:' />
+		          </control>
+		        </control>
+		        <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+		          <property name='align' value='left' />
+		          <property name='id' value='staticCell6' />
+		          <control component-type='javax.faces.HtmlSelectOneMenu' renderer-type='javax.faces.Menu'>
+		            <property name='disabledClass' value='disabled' />
+		            <property name='enabledClass' value='enabled' />
+		            <property name='id' value='htmlSelectOneMenu' />
+		            <property name='value' value='#{activePageBean.activeSearchQuery.refineFields.priority}' />
+		            <property name='width' value='input10' />
+		            <control component-type='javax.faces.SelectItems' renderer-type=''>
+		              <property name='id' value='selectItems' />
+		              <property name='value' value='#{activePageBean.taskPriorityMapProvider}' />
+		            </control>
+		          </control>
+		        </control>
+		      </control>
+		      <control component-type='com.webmethods.caf.faces.panel.StaticRow' renderer-type='com.webmethods.caf.faces.panel.StaticRow'>
+		        <property name='id' value='staticRow3' />
+		        <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+		          <property name='id' value='staticCell7' />
+		          <property name='width' value='40%' />
+		          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+		            <property name='id' value='htmlOutputText5' />
+		            <property name='styleClass' value='portlet-form-field-label' />
+		          </control>
+		        </control>
+		        <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+		          <property name='align' value='left' />
+		          <property name='id' value='staticCell8' />
+		          <control component-type='javax.faces.HtmlSelectBooleanCheckbox' renderer-type='javax.faces.Checkbox'>
+		            <design-time-attribute name='rolledUp' value='false' />
+		            <property name='id' value='htmlSelectBooleanCheckbox' />
+		            <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;inbox.refine.task.accepted.label&quot;]}  ' />
+		            <property name='value' value='#{activePageBean.acceptedByCurrentUser}' />
+		          </control>
+		        </control>
+		      </control>
+		    </control>
+		  </control>
+		  <control component-type='com.webmethods.caf.faces.panel.StaticCell' renderer-type='com.webmethods.caf.faces.panel.StaticCell'>
+		    <property name='id' value='staticCell2' />
+		    <property name='width' value='33%' />
+		    <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+		      <design-time-attribute name='rolledUp' value='true' />
+		      <property name='id' value='groupDateRanges' />
+		      <facet name='label'>
+		        <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+		          <property name='id' value='htmlOutputText3' />
+		          <property name='value' value='#{activePreferencesBean.portletResourcesProvider[&quot;inbox.group.date.ranges&quot;]}' />
+		        </control>
+		      </facet>
+		      <control component-type='com.webmethods.caf.faces.input.DateRangeInput' renderer-type='com.webmethods.caf.faces.input.DateRangeInput'>
+		        <design-time-attribute name='rolledUp' value='true' />
+		        <property name='id' value='createdDateRangeControl' />
+		        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;inbox.refine.created.label&quot;]}' />
+		        <property name='layout' value='collapsed' />
+		        <property name='value' value='#{activePageBean.createdRange}' />
+		      </control>
+		      <control component-type='com.webmethods.caf.faces.input.DateRangeInput' renderer-type='com.webmethods.caf.faces.input.DateRangeInput'>
+		        <property name='futureRanges' value='true' />
+		        <property name='id' value='expiredDateRangeControl' />
+		        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;inbox.refine.expired.label&quot;]}' />
+		        <property name='layout' value='collapsed' />
+		        <property name='value' value='#{activePageBean.expiredRange}' /> 
+		      </control>
+		      <control component-type='com.webmethods.caf.faces.input.DateRangeInput' renderer-type='com.webmethods.caf.faces.input.DateRangeInput'>
+		        <property name='id' value='modifiedDateRangeControl' /> 
+		        <property name='label' value='#{activePreferencesBean.portletResourcesProvider[&quot;inbox.refine.modified.label&quot;]}' />
+		        <property name='layout' value='collapsed' />
+		        <property name='value' value='#{activePageBean.modifiedRange}' />
+		      </control>
+		    </control>
+		  </control>
+		</control>
+      </facet>
+    </control>
+  </control>
+</view>
+

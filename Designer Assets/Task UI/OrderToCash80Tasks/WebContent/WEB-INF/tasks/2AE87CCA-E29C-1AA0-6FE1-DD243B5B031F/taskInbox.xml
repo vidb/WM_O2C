@@ -1,0 +1,33 @@
+<CONFIG>
+	<CONTEXT alias="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F.task.app">
+		<folder name="Improved Manual Credit Check Inbox" description="Improved Manual Credit Check Inbox" alias="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F.task.app.inbox" isTaskFolder="true">
+			<Mode type="sync">
+	            <page>
+	            	<row>
+	            		<column>
+	            			
+	            			<ordertocash80tasks___improvedmanualcreditcheckinboxbar 
+	                            name="Search For"
+	            				description="Search for Improved Manual Credit Check"
+	                            alias="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F.task.app.inbox.bar">
+	                        </ordertocash80tasks___improvedmanualcreditcheckinboxbar>
+	                        
+	                        
+	                        <ordertocash80tasks___improvedmanualcreditcheckinboxresults
+	                            name="Task Results"
+	                            description="Improved Manual Credit Check search results"
+	                            alias="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F.task.app.inbox.result"><relation
+	                            />
+								
+	                            <wiring name="queryString" portlet="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F.task.app.inbox.bar" property="lastSearchState"/>
+	                            
+	                        </ordertocash80tasks___improvedmanualcreditcheckinboxresults>
+	                        
+	                    </column>
+	                </row>
+	                <hobos/>
+	            </page>
+	        </Mode>
+        </folder>
+    </CONTEXT>
+</CONFIG>

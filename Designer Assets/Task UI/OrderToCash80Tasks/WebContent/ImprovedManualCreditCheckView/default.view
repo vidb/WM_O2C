@@ -1,0 +1,470 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<view>
+  <property name='pageManagedBean' value='ImprovedManualCreditCheckViewDefaultviewView' />
+  <property name='preferencesBean' value='ImprovedManualCreditCheckView' />
+  <design-time-attribute name='taskTypeID' value='2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F' />
+  <design-time-attribute name='taskPortletType' value='taskView' />
+  <design-time-attribute name='portlet' value='ImprovedManualCreditCheckView' />
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='taskViewForm' />
+    <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='globalOnly' value='true' />
+    </control>
+    <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertySubGroup'>
+      <property name='id' value='taskDataSubGroup' />
+      <property name='label' value='ValidatedOrderCreditChecked' />
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine' />
+        <property name='label' value='Identifier' />
+        <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='htmlInputText' />
+          <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.identifier}' />
+          <property name='width' value='input20' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine1' />
+        <property name='label' value='OrderDate' />
+        <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='htmlInputText1' />
+          <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.orderDate}' />
+          <property name='width' value='input20' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine2' />
+        <property name='label' value='OrderTotal' />
+        <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='htmlInputText2' />
+          <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.orderTotal}' />
+          <property name='width' value='input20' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine3' />
+        <property name='label' value='CustomerName' />
+        <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='htmlInputText3' />
+          <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.customerName}' />
+          <property name='width' value='input20' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine4' />
+        <property name='label' value='VendorName' />
+        <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='htmlInputText4' />
+          <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.vendorName}' />
+          <property name='width' value='input20' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine5' />
+        <property name='label' value='RequestedShipDate' />
+        <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='htmlInputText5' />
+          <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.requestedShipDate}' />
+          <property name='width' value='input20' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+        <property name='id' value='propertyGroup' />
+        <property name='label' value='Address' />
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='id' value='propertyLine6' />
+          <property name='label' value='Id' />
+          <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlInputText6' />
+            <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.address.id}' />
+            <property name='width' value='input20' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='id' value='propertyLine7' />
+          <property name='label' value='Address1' />
+          <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlInputText7' />
+            <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.address.address1}' />
+            <property name='width' value='input20' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='id' value='propertyLine8' />
+          <property name='label' value='Address2' />
+          <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlInputText8' />
+            <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.address.address2}' />
+            <property name='width' value='input20' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='id' value='propertyLine9' />
+          <property name='label' value='City' />
+          <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlInputText9' />
+            <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.address.city}' />
+            <property name='width' value='input20' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='id' value='propertyLine10' />
+          <property name='label' value='State' />
+          <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlInputText10' />
+            <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.address.state}' />
+            <property name='width' value='input20' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='id' value='propertyLine11' />
+          <property name='label' value='Country' />
+          <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlInputText11' />
+            <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.address.country}' />
+            <property name='width' value='input20' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='id' value='propertyLine12' />
+          <property name='label' value='Zip' />
+          <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlInputText12' />
+            <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.address.zip}' />
+            <property name='width' value='input20' />
+          </control>
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine13' />
+        <property name='label' value='Region' />
+        <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='htmlInputText13' />
+          <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.region}' />
+          <property name='width' value='input20' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine14' />
+        <property name='label' value='Status' />
+        <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='htmlInputText14' />
+          <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.status}' />
+          <property name='width' value='input20' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+        <property name='id' value='propertyLine15' />
+        <property name='label' value='Comments' />
+        <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+          <property name='id' value='htmlInputText15' />
+          <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.comments}' />
+          <property name='width' value='input20' />
+        </control>
+      </control>
+      <control component-type='com.webmethods.caf.faces.table.AsyncTable' renderer-type='com.webmethods.caf.faces.table.AsyncTable'>
+        <property name='footerClass' value='portlet-section-footer' />
+        <property name='headerClass' value='portlet-section-subheader' />
+        <property name='id' value='asyncTable' />
+        <property name='rowClasses' value='portlet-section-body,portlet-section-alternate' />
+        <property name='rows' value='10' />
+        <property name='selectedRowClass' value='portlet-section-selected' />
+        <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskData.validatedOrderCreditChecked.lineItem}' />
+        <property name='var' value='lineItem' />
+        <property name='width' value='100%' />
+        <facet name='header'>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlOutputText' />
+            <property name='value' value='LineItem' />
+          </control>
+        </facet>
+        <facet name='footer'>
+          <control component-type='com.webmethods.caf.faces.table.PrevNext' renderer-type='com.webmethods.caf.faces.table.PrevNext'>
+            <property name='id' value='prevNext' />
+            <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+              <property name='id' value='blockPanel' />
+              <property name='style' value='text-align:center;' />
+              <control component-type='com.webmethods.caf.faces.table.DataTotal' renderer-type='com.webmethods.caf.faces.table.DataTotal'>
+                <property name='id' value='dataTotal' />
+              </control>
+            </control>
+          </control>
+        </facet>
+        <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+          <property name='id' value='htmlTableColumn' />
+          <property name='label' value='Part' />
+          <property name='sort' value='#{lineItem.part}' />
+          <facet name='header'>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+              <property name='id' value='htmlOutputText1' />
+              <property name='value' value='Part' />
+            </control>
+          </facet>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlOutputText2' />
+            <property name='value' value='#{lineItem.part}' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+          <property name='id' value='htmlTableColumn1' />
+          <property name='label' value='Description' />
+          <property name='sort' value='#{lineItem.description}' />
+          <facet name='header'>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+              <property name='id' value='htmlOutputText3' />
+              <property name='value' value='Description' />
+            </control>
+          </facet>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlOutputText4' />
+            <property name='value' value='#{lineItem.description}' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+          <property name='id' value='htmlTableColumn2' />
+          <property name='label' value='UnitPrice' />
+          <property name='sort' value='#{lineItem.unitPrice}' />
+          <facet name='header'>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+              <property name='id' value='htmlOutputText5' />
+              <property name='value' value='UnitPrice' />
+            </control>
+          </facet>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlOutputText6' />
+            <property name='value' value='#{lineItem.unitPrice}' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+          <property name='id' value='htmlTableColumn3' />
+          <property name='label' value='Qty' />
+          <property name='sort' value='#{lineItem.qty}' />
+          <facet name='header'>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+              <property name='id' value='htmlOutputText7' />
+              <property name='value' value='Qty' />
+            </control>
+          </facet>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlOutputText8' />
+            <property name='value' value='#{lineItem.qty}' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.table.html.HtmlTableColumn' renderer-type='com.webmethods.caf.faces.render.table.IExtendedColumnRenderer'>
+          <property name='id' value='htmlTableColumn4' />
+          <property name='label' value='QtyShipped' />
+          <property name='sort' value='#{lineItem.qtyShipped}' />
+          <facet name='header'>
+            <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+              <property name='id' value='htmlOutputText9' />
+              <property name='value' value='QtyShipped' />
+            </control>
+          </facet>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='id' value='htmlOutputText10' />
+            <property name='value' value='#{lineItem.qtyShipped}' />
+          </control>
+        </control>
+      </control>
+    </control>
+    <control component-type='com.webmethods.caf.faces.toggle.OneWayToggleButton' renderer-type='com.webmethods.caf.faces.toggle.OneWayToggleButton'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='for' value=':taskViewForm:optionalPanel' />
+      <property name='value' value='Toggle Task Info' />
+    </control>
+    <control component-type='com.webmethods.caf.faces.panel.HideablePanel' renderer-type='com.webmethods.caf.faces.panel.HideablePanel'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='id' value='optionalPanel' />
+      <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertySubGroup'>
+        <property name='label' value='Task Info' />
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='label' value='Name' />
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskInfo.name}' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='label' value='Description' />
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskInfo.description}' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='label' value='Created On' />
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <converter converter-id='com.webmethods.caf.faces.converter.FormattedDateTime'>
+              <property name='displayTime' value='true' />
+              <property name='pattern' value='#{portletUserAttributes[&quot;user.default.date.format&quot;]}' />
+              <property name='patternTime' value='#{portletUserAttributes[&quot;user.default.time.format&quot;]}' />
+              <property name='timePrecision' value='0' />
+              <property name='timeZone' value='#{portletUserAttributes[&quot;user.default.time_zone&quot;]}' />
+            </converter>
+            <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskInfo.createdDate}' />
+          </control>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='escape' value='false' />
+            <property name='value' value=' By ' />
+          </control>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.taskDisplayProvider.createdByDisplayName}' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='label' value='Last Modified On' />
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <converter converter-id='com.webmethods.caf.faces.converter.FormattedDateTime'>
+              <property name='displayTime' value='true' />
+              <property name='pattern' value='#{portletUserAttributes[&quot;user.default.date.format&quot;]}' />
+              <property name='patternTime' value='#{portletUserAttributes[&quot;user.default.time.format&quot;]}' />
+              <property name='timePrecision' value='0' />
+              <property name='timeZone' value='#{portletUserAttributes[&quot;user.default.time_zone&quot;]}' />
+            </converter>
+            <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskInfo.lastModifiedDate}' />
+          </control>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='escape' value='false' />
+            <property name='value' value=' By ' />
+          </control>
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.taskDisplayProvider.lastModifiedDisplayName}' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='label' value='Expires On' />
+          <control component-type='javax.faces.HtmlOutputText' renderer-type='javax.faces.Text'>
+            <converter converter-id='com.webmethods.caf.faces.converter.FormattedDateTime'>
+              <property name='displayTime' value='true' />
+              <property name='pattern' value='#{portletUserAttributes[&quot;user.default.date.format&quot;]}' />
+              <property name='patternTime' value='#{portletUserAttributes[&quot;user.default.time.format&quot;]}' />
+              <property name='timePrecision' value='0' />
+              <property name='timeZone' value='#{portletUserAttributes[&quot;user.default.time_zone&quot;]}' />
+            </converter>
+            <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskInfo.expireDate}' />
+          </control>
+        </control>
+        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+          <property name='label' value='Status' />
+          <control component-type='com.webmethods.caf.faces.select.SelectOneOutput' renderer-type='com.webmethods.caf.faces.select.SelectOneOutput'>
+            <property name='value' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskInfo.status}' />
+            <control component-type='javax.faces.SelectItem' renderer-type=''>
+              <property name='id' value='activeStatusItem' />
+              <property name='itemLabel' value='Active' />
+              <property name='itemValue' value='active' />
+            </control>
+            <control component-type='javax.faces.SelectItem' renderer-type=''>
+              <property name='id' value='cancelledStatusItem' />
+              <property name='itemLabel' value='Cancelled' />
+              <property name='itemValue' value='cancelled' />
+            </control>
+            <control component-type='javax.faces.SelectItem' renderer-type=''>
+              <property name='id' value='completedStatusItem' />
+              <property name='itemLabel' value='Completed' />
+              <property name='itemValue' value='completed' />
+            </control>
+            <control component-type='javax.faces.SelectItem' renderer-type=''>
+              <property name='id' value='errorStatusItem' />
+              <property name='itemLabel' value='Error' />
+              <property name='itemValue' value='error' />
+            </control>
+            <control component-type='javax.faces.SelectItem' renderer-type=''>
+              <property name='id' value='expiredStatusItem' />
+              <property name='itemLabel' value='Expired' />
+              <property name='itemValue' value='expired' />
+            </control>
+            <control component-type='javax.faces.SelectItem' renderer-type=''>
+              <property name='id' value='suspendedStatusItem' />
+              <property name='itemLabel' value='Suspended' />
+              <property name='itemValue' value='suspended' />
+            </control>
+          </control>
+        </control>
+      </control>
+    </control>
+    <control component-type='com.webmethods.caf.faces.panel.PropertySubmit' renderer-type='com.webmethods.caf.faces.panel.PropertySubmit'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <facet name='submit'>
+        <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+          <property name='action' value='#{ImprovedManualCreditCheckViewDefaultviewView.submitTask}' />
+          <property name='disabled' value='#{not ImprovedManualCreditCheckViewDefaultviewView.taskDisplayProvider.activeStatus}' />
+          <property name='rendered' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.autoAccept || ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskInfo.currentUserAccepted}' />
+          <property name='value' value='Submit' />
+        </control>
+      </facet>
+      <facet name='cancel'>
+        <control component-type='javax.faces.HtmlCommandButton' renderer-type='javax.faces.Button'>
+          <property name='action' value='#{ImprovedManualCreditCheckViewDefaultviewView.cancelView}' />
+          <property name='rendered' value='#{not empty activePreferencesBean.finishUrl}}' />
+          <property name='value' value='Return' />
+        </control>
+      </facet>
+      <facet name='previous'>
+        <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+          <property name='action' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.acceptTask}' />
+          <property name='disabled' value='#{not ImprovedManualCreditCheckViewDefaultviewView.taskDisplayProvider.activeStatus}' />
+          <property name='rendered' value='#{!ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.autoAccept &amp;&amp; !ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskInfo.currentUserAccepted}' />
+          <property name='value' value='Accept' />
+        </control>
+      </facet>
+      <facet name='next'>
+        <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+          <property name='action' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.unacceptTask}' />
+          <property name='disabled' value='#{not ImprovedManualCreditCheckViewDefaultviewView.taskDisplayProvider.activeStatus}' />
+          <property name='rendered' value='#{!ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.autoAccept &amp;&amp; ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskInfo.currentUserAccepted}' />
+          <property name='value' value='Release' />
+        </control>
+      </facet>
+      <control component-type='javax.faces.HtmlCommandButton' renderer-type='javax.faces.Button'>
+        <property name='action' value='#{ImprovedManualCreditCheckViewDefaultviewView.completeTask}' />
+        <property name='disabled' value='#{not ImprovedManualCreditCheckViewDefaultviewView.taskDisplayProvider.activeStatus}' />
+        <property name='rendered' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.autoAccept || ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.taskInfo.currentUserAccepted}' />
+        <property name='value' value='Complete' />
+      </control>
+      <control component-type='com.webmethods.caf.faces.toggle.OneWayToggleButton' renderer-type='com.webmethods.caf.faces.toggle.OneWayToggleButton'>
+        <property name='disabled' value='#{not ImprovedManualCreditCheckViewDefaultviewView.taskDisplayProvider.activeStatus}' />
+        <property name='for' value=':assignToForm:assignedPrincipalPicker' />
+        <property name='id' value='toggleAssignedPrincipalPicker' />
+        <property name='rendered' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.adhocRouting}' />
+        <property name='value' value='Assign to Users...' />
+        <property name='way' value='show' />
+      </control>
+    </control>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='assignToForm' />
+    <property name='rendered' value='#{ImprovedManualCreditCheckViewDefaultviewView.improvedManualCreditCheck.adhocRouting}' />
+    <control component-type='com.softwareag.caf.controls.mwsx.PeoplePickerDialog' renderer-type=''>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='applyButtonAction' value='#{ImprovedManualCreditCheckViewDefaultviewView.assignToPrincipals}' />
+      <property name='groupSearchAllowed' value='false' />
+      <property name='id' value='assignedPrincipalPicker' />
+      <property name='lazy' value='' />
+      <property name='progressDelay' value='' />
+      <property name='refreshOnShow' value='' />
+      <property name='suppressInputs' value='' />
+      <property name='targetValue' value='#{ImprovedManualCreditCheckViewDefaultviewView.principalList}' />
+      <property name='twoPass' value='' />
+      <facet name='popupPanel'>
+        <control component-type='javax.faces.NamingContainer' renderer-type=''>
+          <property name='id' value='assignTargetPickerPopup' />
+          <control component-type='com.webmethods.caf.faces.command.async.Link' renderer-type='com.webmethods.caf.faces.command.async.Link'>
+            <property name='id' value='showAvailability' />
+            <property name='onclick' value='CAF.Popup.hideAll();' />
+            <property name='refresh' value='personCalendarDialog' />
+            <property name='toggle' value='personCalendarDialog' />
+            <property name='value' value='Show Availability ...' />
+            <control component-type='javax.faces.Parameter' renderer-type=''>
+              <property name='name' value='personURI' />
+              <property name='value' value='#{row.principalURI}' />
+            </control>
+          </control>
+        </control>
+      </facet>
+    </control>
+    <control component-type='com.softwareag.caf.controls.mwsx.PersonCalendarDialog' renderer-type=''>
+      <property name='id' value='personCalendarDialog' />
+      <property name='personURI' value='#{param.personURI}' />
+    </control>
+  </control>
+</view>

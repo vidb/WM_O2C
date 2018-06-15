@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<businessProcessDiagram xmlns="http://www.webmethods.com/bpm/2006/"
+  build="1" canvasPool="1" creator="Administrator" description=""
+  focalRole="Focal role" name="OrderToCashProcess" processCategory=""
+  rnSync="false" runtimeVersion="1" version="8.0">
+  <kpiDimensions/>
+  <systemKPIs>
+    <systemKPI description="" name="Volume" unitOfMeasure=""/>
+    <systemKPI description="" name="Cycle Time" unitOfMeasure=""/>
+    <systemKPI description="" name="Error Count" unitOfMeasure=""/>
+  </systemKPIs>
+  <logicalDataItem description="" dimension="0" label="InboundOrder"
+    name="{ProcessNamespace}InboundOrder" type="{ScOrderToCash.Documents}InboundOrder"/>
+  <logicalDataItem description="" dimension="0" label="OrderReceived"
+    name="{ProcessNamespace}OrderReceived" type="{ScOrderToCash.Documents}InboundOrder"/>
+  <logicalDataItem description="" dimension="0" label="ValidatedOrder"
+    name="{ProcessNamespace}ValidatedOrder" type="{ScOrderToCash.Documents}InboundOrder"/>
+  <logicalDataItem description="" dimension="0"
+    label="ValidatedOrderCreditChecked"
+    name="{ProcessNamespace}ValidatedOrderCreditChecked" type="{ScOrderToCash.Documents}CreditCheckedOrder"/>
+  <logicalDataItem description="" dimension="0" label="PurchaseOrder"
+    name="{ProcessNamespace}PurchaseOrder" type="{ScOrderToCash.Documents}PurchaseOrder"/>
+  <logicalDataItem description="" dimension="0" label="BackEndOrder"
+    name="{ProcessNamespace}BackEndOrder" type="{ScOrderToCash.Documents}PurchaseOrder"/>
+  <logicalDataItem description="" dimension="0" label="ShipNotice"
+    name="{ProcessNamespace}ShipNotice" type="{ScOrderToCash.Documents}ShipNotice"/>
+  <logicalDataItem description="" dimension="0"
+    label="DeliveryConfirmation"
+    name="{ProcessNamespace}DeliveryConfirmation" type="{ScOrderToCash.Documents}DeliveryConfirmation"/>
+  <timeout calendarAlias="" calendarTime="0:0:0"
+    dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+    dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+    dynamicFieldName="" isCalendarTimeout="false" isStaticTimeout="true"
+    isXPathTimeout="false" pipelineCalendarAlias=""
+    pipelineCalendarDays="" pipelineCalendarHours=""
+    pipelineCalendarMinutes="" timeoutStyle="RELATIVE"
+    timeoutType="processTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+  <pool blue="128" errorHandler="S40" external="false"
+    externalizeConditions="false" green="128" isCollapsed="false"
+    label="Pool" labelBlue="255" labelGreen="204" labelRed="153"
+    logicalServer="" name="11" orientation="vertical" red="128"
+    retryCount="0" stepLock="false" uid="P12" useCorrelation="false">
+    <documentation/>
+    <businessKPIs/>
+    <fontData boldFont="false" italicFont="false"/>
+    <dataItem type="" uid="V25"/>
+    <dataItem type="" uid="V38"/>
+    <dataItem type="" uid="V61"/>
+    <dataItem type="" uid="V37"/>
+    <dataItem type="" uid="V71"/>
+    <dataItem type="" uid="V62"/>
+    <dataItem type="" uid="V72"/>
+    <dataItem type="" uid="V26"/>
+    <dataItem type="" uid="V29"/>
+    <dataItem type="" uid="V46"/>
+    <dataItem type="" uid="V58"/>
+    <dataItem type="" uid="V49"/>
+    <dataItem type="" uid="V57"/>
+    <dataItem type="" uid="V30"/>
+    <dataItem type="" uid="V42"/>
+    <dataItem type="" uid="V45"/>
+    <dataItem type="" uid="V54"/>
+    <dataItem type="" uid="V53"/>
+    <dataItem type="" uid="V34"/>
+    <dataItem type="" uid="V33"/>
+    <dataItem type="" uid="V41"/>
+    <dataItem type="" uid="V50"/>
+    <dataItem type="{ScOrderToCash.Documents}InboundOrder" uid="V22"/>
+    <receiveStep allowsSynchronousReply="false"
+      externalizeConditions="false" isStart="true"
+      isStartStepServiceRequired="true" label="Receive Order"
+      logicalServer="Default" outputVariable="V22"
+      receiveProtocol="SUBSCRIPTION" receiveType="EMPTY"
+      stepLock="false" uid="S18" useCorrelation="false"
+      wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S18_MAPPING"
+      x="24" y="35">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <output name="{ProcessNamespace}InboundOrder"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <wmExpressionFilter/>
+    </receiveStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V25"
+      invokeContainer="ScOrderToCash.Services"
+      invokeId="ScOrderToCash.Services:_1_receiveOrder"
+      invokeLocation="" invokeName="_1_receiveOrder"
+      invokeType="ISSERVICE" label="Process Received Order"
+      logicalServer="Default" ornamentKey="32_metropolis.png"
+      outputVariable="V26" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S24" useCorrelation="false"
+      wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S24_MAPPING"
+      x="32" y="207">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}InboundOrder"/>
+      <output name="{ProcessNamespace}OrderReceived"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V29"
+      invokeContainer="ScOrderToCash.Services"
+      invokeId="ScOrderToCash.Services:_2_validateOrder"
+      invokeLocation="" invokeName="_2_validateOrder"
+      invokeType="ISSERVICE" label="Validate Order"
+      logicalServer="Default" ornamentKey="32_purchase_order.png"
+      outputVariable="V30" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S28" useCorrelation="false"
+      wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S28_MAPPING"
+      x="123" y="89">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}OrderReceived"/>
+      <output name="{ProcessNamespace}ValidatedOrder"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V33"
+      invokeContainer="ScOrderToCash.Services"
+      invokeId="ScOrderToCash.Services:_3A_autoCreditCheck"
+      invokeLocation="" invokeName="_3A_autoCreditCheck"
+      invokeType="ISSERVICE" label="Auto Credit Check"
+      logicalServer="Default" ornamentKey="32_teller.png"
+      outputVariable="V34" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S32" useCorrelation="false"
+      wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S32_MAPPING"
+      x="221" y="89">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}ValidatedOrder"/>
+      <output name="{ProcessNamespace}ValidatedOrderCreditChecked"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V41"
+      invokeContainer="ScOrderToCash.Services"
+      invokeId="ScOrderToCash.Services:_3C_cancelledOrder"
+      invokeLocation="" invokeName="_3C_cancelledOrder"
+      invokeType="ISSERVICE" label="Cancel Order"
+      logicalServer="Default" ornamentKey="32_error_stop_sign.png"
+      outputVariable="V42" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S40" useCorrelation="false"
+      wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S40_MAPPING"
+      x="233" y="350">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}ValidatedOrderCreditChecked"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V45"
+      invokeContainer="ScOrderToCash.Services"
+      invokeId="ScOrderToCash.Services:_4_dataMapping" invokeLocation=""
+      invokeName="_4_dataMapping" invokeType="ISSERVICE"
+      label="Map Data" logicalServer="Default"
+      ornamentKey="32_web_server.png" outputVariable="V46"
+      retryCount="0" routingRuleSet="" stepLock="false" uid="S44"
+      useCorrelation="false"
+      wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S44_MAPPING"
+      x="388" y="89">
+      <documentation/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false"/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}ValidatedOrderCreditChecked"/>
+      <output name="{ProcessNamespace}PurchaseOrder"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V49"
+      invokeContainer="ScOrderToCash.Services"
+      invokeId="ScOrderToCash.Services:_5_createOrder" invokeLocation=""
+      invokeName="_5_createOrder" invokeType="ISSERVICE"
+      label="Create Order" logicalServer="Default"
+      ornamentKey="32_task.png" outputVariable="V50" retryCount="0"
+      routingRuleSet="" stepLock="false" uid="S48"
+      useCorrelation="false"
+      wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S48_MAPPING"
+      x="488" y="89">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}PurchaseOrder"/>
+      <output name="{ProcessNamespace}BackEndOrder"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V53"
+      invokeContainer="ScOrderToCash.Services"
+      invokeId="ScOrderToCash.Services:_6_scheduleDelivery"
+      invokeLocation="" invokeName="_6_scheduleDelivery"
+      invokeType="ISSERVICE" label="Schedule Delivery"
+      logicalServer="Default"
+      ornamentKey="32_manager_with_clipboard.png" outputVariable="V54"
+      retryCount="0" routingRuleSet="" stepLock="false" uid="S52"
+      useCorrelation="false"
+      wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S52_MAPPING"
+      x="578" y="89">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}BackEndOrder"/>
+      <output name="{ProcessNamespace}ShipNotice"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V57"
+      invokeContainer="ScOrderToCash.Services"
+      invokeId="ScOrderToCash.Services:_7_updateBackEnd"
+      invokeLocation="" invokeName="_7_updateBackEnd"
+      invokeType="ISSERVICE" label="Update Backend"
+      logicalServer="Default" ornamentKey="32_database.png"
+      outputVariable="V58" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S56" useCorrelation="false"
+      wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S56_MAPPING"
+      x="582" y="231">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}ShipNotice"/>
+      <output name="{ProcessNamespace}DeliveryConfirmation"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V61"
+      invokeContainer="ScOrderToCash.Services"
+      invokeId="ScOrderToCash.Services:_8_deliveryConfirmation"
+      invokeLocation="" invokeName="_8_deliveryConfirmation"
+      invokeType="ISSERVICE" label="Send Delivery Confirmation"
+      logicalServer="Default" ornamentKey="32_envelope.png"
+      outputVariable="V62" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S60" useCorrelation="false"
+      wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S60_MAPPING"
+      x="711" y="89">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}DeliveryConfirmation"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V71"
+      invokeContainer="" invokeId="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F"
+      invokeLocation="" invokeName="Improved Manual Credit Check"
+      invokeType="TASK" label="Improved Manual Credit Check"
+      logicalServer="Default" ornamentKey="32_person_with_headset.png"
+      outputVariable="V72" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S70" useCorrelation="false" x="222" y="227">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <input name="{ProcessNamespace}ValidatedOrderCreditChecked"/>
+      <output name="{ProcessNamespace}ValidatedOrderCreditChecked"/>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S18" sourceLocation="197,310" sourceTerminal="BOTTOM"
+      target="S24" targetLocation="214,426" targetTerminal="TOP" uid="T27">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="0" y="0">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S24" sourceLocation="240,451" sourceTerminal="RIGHT"
+      target="S28" targetLocation="296,372" targetTerminal="BOTTOM" uid="T31">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="0" y="0">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="CURVE" red="0"
+      source="S28" sourceLocation="322,333" sourceTerminal="RIGHT"
+      target="S32" targetLocation="378,333" targetTerminal="LEFT" uid="T35">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="0" y="0">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText="Else"
+      conditionType="ELSE" green="0" lineShape="CURVE" red="0"
+      source="S32" sourceLocation="429,333" sourceTerminal="RIGHT"
+      target="S44" targetLocation="527,333" targetTerminal="LEFT" uid="T47">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="0" y="0">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="CURVE" red="0"
+      source="S44" sourceLocation="578,333" sourceTerminal="RIGHT"
+      target="S48" targetLocation="633,333" targetTerminal="LEFT" uid="T51">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="0" y="0">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="CURVE" red="0"
+      source="S48" sourceLocation="684,333" sourceTerminal="RIGHT"
+      target="S52" targetLocation="734,333" targetTerminal="LEFT" uid="T55">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="0" y="0">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="CURVE" red="0"
+      source="S52" sourceLocation="759,372" sourceTerminal="BOTTOM"
+      target="S56" targetLocation="759,450" targetTerminal="TOP" uid="T59">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="0" y="0">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText=""
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S56" sourceLocation="785,475" sourceTerminal="RIGHT"
+      target="S60" targetLocation="884,385" targetTerminal="BOTTOM" uid="T63">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="0" y="0">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription=""
+      conditionText="ValidatedOrderCreditChecked/Status = Approved"
+      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
+      source="S70" sourceLocation="429,471" sourceTerminal="RIGHT"
+      target="S44" targetLocation="552,372" targetTerminal="BOTTOM" uid="T78">
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="13" red="255" width="241" x="348" y="281">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="Status"
+          leftOperand="{ProcessNamespace}ValidatedOrderCreditChecked"
+          operator="=" rightOperand="'Approved'"/>
+      </wmExpression>
+    </transition>
+    <transition blue="255" conditionDescription="" conditionText="Else"
+      conditionType="ELSE" green="0" lineShape="CURVE" red="0"
+      source="S70" sourceLocation="404,523" sourceTerminal="BOTTOM"
+      target="S40" targetLocation="403,569" targetTerminal="TOP" uid="T79">
+      <labelLayout blue="0" defaultLocation="true" green="196"
+        height="-1" red="255" width="-1" x="267" y="326">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition blue="255" conditionDescription=""
+      conditionText="ValidatedOrderCreditChecked/Status = False"
+      conditionType="IF" green="0" lineShape="CURVE" red="0"
+      source="S32" sourceLocation="403,372" sourceTerminal="BOTTOM"
+      target="S70" targetLocation="403,446" targetTerminal="TOP" uid="T80">
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="13" red="255" width="219" x="182" y="199">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression>
+        <row chainOperator="" leftFieldPath="Status"
+          leftOperand="{ProcessNamespace}ValidatedOrderCreditChecked"
+          operator="=" rightOperand="'False'"/>
+      </wmExpression>
+    </transition>
+    <timeout calendarAlias="" calendarTime="0:0:0"
+      dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+      dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+      dynamicFieldName="" isCalendarTimeout="false"
+      isStaticTimeout="true" isXPathTimeout="false"
+      pipelineCalendarAlias="" pipelineCalendarDays=""
+      pipelineCalendarHours="" pipelineCalendarMinutes=""
+      timeoutStyle="RELATIVE" timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    <wmExpression/>
+    <swimlane blue="155" green="205" height="480" labelBlue="255"
+      labelGreen="238" labelRed="221" name="Front Office" red="255"
+      uid="W13" width="544">
+      <documentation/>
+    </swimlane>
+    <swimlane blue="128" green="255" height="480" labelBlue="255"
+      labelGreen="238" labelRed="221" name="Back Office" red="255"
+      uid="W14" width="382">
+      <documentation/>
+    </swimlane>
+  </pool>
+  <pool blue="128" external="true" externalizeConditions="false"
+    green="128" isCollapsed="false" label="Customer" labelBlue="255"
+    labelGreen="204" labelRed="153" logicalServer="" name="4"
+    orientation="horizontal" red="128" retryCount="0" stepLock="false"
+    uid="P5" useCorrelation="false">
+    <documentation/>
+    <businessKPIs/>
+    <fontData boldFont="false" italicFont="false"/>
+    <dataItem type="" uid="V8"/>
+    <dataItem type="" uid="V9"/>
+    <dataItem type="" uid="V65"/>
+    <dataItem type="" uid="V66"/>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V8"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="EMPTY" label="Send Order" logicalServer="Default"
+      ornamentKey="32_person_with_laptop.png" outputVariable="V9"
+      retryCount="0" routingRuleSet="" stepLock="false" uid="S7"
+      useCorrelation="false"
+      wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S7_MAPPING"
+      x="45" y="5">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <invokeStep dynamicReferenceProcess="false"
+      externalizeConditions="false" inputVariable="V65"
+      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
+      invokeType="EMPTY" label="Send E-mail Confirmation"
+      logicalServer="Default" ornamentKey="32_globe.png"
+      outputVariable="V66" retryCount="0" routingRuleSet=""
+      stepLock="false" uid="S64" useCorrelation="false"
+      wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S64_MAPPING"
+      x="534" y="7">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+      <extendedProperty name="retries" value="0"/>
+      <extendedProperty name="retryInterval" value="60000"/>
+      <timeout calendarAlias="" calendarTime="0:0:0"
+        dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+        dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+        dynamicFieldName="" isCalendarTimeout="false"
+        isStaticTimeout="true" isXPathTimeout="false"
+        pipelineCalendarAlias="" pipelineCalendarDays=""
+        pipelineCalendarHours="" pipelineCalendarMinutes=""
+        timeoutStyle="RELATIVE" timeoutType="stepTimeout"
+        timeoutValue="0" xpathTimeoutValue=""/>
+    </invokeStep>
+    <timeout calendarAlias="" calendarTime="0:0:0"
+      dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+      dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+      dynamicFieldName="" isCalendarTimeout="false"
+      isStaticTimeout="true" isXPathTimeout="false"
+      pipelineCalendarAlias="" pipelineCalendarDays=""
+      pipelineCalendarHours="" pipelineCalendarMinutes=""
+      timeoutStyle="RELATIVE" timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    <wmExpression/>
+    <swimlane blue="255" green="213" height="100" labelBlue="255"
+      labelGreen="238" labelRed="221" name="Customer" red="170" uid="W6" width="700">
+      <documentation/>
+    </swimlane>
+  </pool>
+  <pool blue="128" external="true" externalizeConditions="false"
+    green="128" isCollapsed="false" label="Pool" labelBlue="255"
+    labelGreen="204" labelRed="153" logicalServer="" name="1"
+    orientation="horizontal" red="128" retryCount="0" stepLock="false"
+    uid="P2" useCorrelation="false">
+    <documentation/>
+    <businessKPIs/>
+    <fontData boldFont="false" italicFont="false"/>
+    <dataItem type="" uid="V17"/>
+    <dataItem type="" uid="V16"/>
+    <poolReference label="Customer" logicalServer="Default" poolName="4"
+      stepLock="false" uid="S3" useCorrelation="false" x="126" y="32">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" italicFont="false"/>
+    </poolReference>
+    <poolReference label="Pool" logicalServer="Default" poolName="11"
+      stepLock="false" uid="S10" useCorrelation="false" x="126" y="177">
+      <documentation/>
+      <businessKPIs/>
+      <fontData boldFont="false" italicFont="false"/>
+    </poolReference>
+    <timeout calendarAlias="" calendarTime="0:0:0"
+      dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
+      dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
+      dynamicFieldName="" isCalendarTimeout="false"
+      isStaticTimeout="true" isXPathTimeout="false"
+      pipelineCalendarAlias="" pipelineCalendarDays=""
+      pipelineCalendarHours="" pipelineCalendarMinutes=""
+      timeoutStyle="RELATIVE" timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
+    <wmExpression/>
+  </pool>
+  <documentation/>
+  <qualityOfService expressPipeline="true" minLogLevel="5"
+    optimizeLocally="true" volatileTracking="false" volatileTransition="true"/>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S60" sourceLocation="884,308"
+    sourcePool="11" sourceTerminal="TOP" target="S64"
+    targetLocation="732,129" targetPool="4" targetTerminal="BOTTOM" uid="67">
+    <labelLayout blue="0" defaultLocation="true" green="196" height="-1"
+      red="255" width="-1" x="808" y="219">
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+    </labelLayout>
+  </messageFlow>
+  <messageFlow blue="100" conditionDescription="" green="100"
+    lineShape="STRAIGHT" red="100" source="S7" sourceLocation="240,114"
+    sourcePool="4" sourceTerminal="BOTTOM" target="S18"
+    targetLocation="197,254" targetPool="11" targetTerminal="TOP" uid="23">
+    <labelLayout blue="0" defaultLocation="true" green="196" height="-1"
+      red="255" width="-1" x="218" y="185">
+      <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+        <fontColor blue="0" green="0" red="0"/>
+      </fontData>
+    </labelLayout>
+  </messageFlow>
+</businessProcessDiagram>

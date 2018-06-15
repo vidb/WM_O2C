@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/win160"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/com.webmethods.jst.server.wmportal.runtimeTarget/caf.default.runtime"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.jsf.core.internal.jsflibrarycontainer/com.webmethods.caf.faces.controls.portable$$CAF Base Controls"/>
+	<classpathentry kind="con" path="org.eclipse.jst.jsf.core.internal.jsflibrarycontainer/com.webmethods.caf.faces.controls.portable$$CAF Java Logging"/>
+	<classpathentry kind="con" path="org.eclipse.jst.jsf.core.internal.jsflibrarycontainer/com.webmethods.caf.faces.controls.nonportable$$MwS Controls"/>
+	<classpathentry kind="con" path="org.eclipse.jst.jsf.core.internal.jsflibrarycontainer/com.webmethods.caf.portlet.data.ui$$CAF Portlet Controls"/>
+	<classpathentry kind="con" path="org.eclipse.jst.jsf.core.internal.jsflibrarycontainer/com.webmethods.caf.faces.controls.portable$$CAF Base JSF Runtime"/>
+	<classpathentry kind="con" path="org.eclipse.jst.jsf.core.internal.jsflibrarycontainer/com.webmethods.caf.task.ui$$CAF BPM Client"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

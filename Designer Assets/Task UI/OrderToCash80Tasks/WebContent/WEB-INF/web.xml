@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>
+	OrderToCash80Tasks</display-name>
+	<context-param>
+		<description>
+		State saving method: &quot;client&quot; or &quot;server&quot; (= default) See JSF Specification 2.5.2</description>
+		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+		<param-value>client</param-value>
+	</context-param>
+	<context-param>
+		<param-name>com.webmethods.caf.faces.view.FILTER</param-name>
+		<param-value>.*\.view</param-value>
+	</context-param>
+	<context-param>
+		<param-name>com.webmethods.caf.faces.view.CACHE</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<description>
+		Formats the HTML output</description>
+		<param-name>com.webmethods.caf.faces.context.PRETTY_PRINT</param-name>
+		<param-value>false</param-value>
+	</context-param>
+	<context-param>
+		<description>
+		Since CAF uses its own FacesServlet impl, this flag is needed to force the faces-config to be loaded</description>
+		<param-name>com.sun.faces.forceLoadConfiguration</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<filter>
+		<description>
+		Handles multipart form POSTs (file uploads); required by FileInput control.</description>
+		<filter-name>Multipart Filter</filter-name>
+		<filter-class>com.webmethods.caf.faces.servlet.MultipartFilter</filter-class>
+	</filter>
+	<filter>
+		<description>
+		Compresses the response stream to reduce the network bandwith usage.</description>
+		<filter-name>CompressionFilter</filter-name>
+		<filter-class>com.webmethods.caf.faces.servlet.GZIPFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Multipart Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CompressionFilter</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CompressionFilter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>CompressionFilter</filter-name>
+		<url-pattern>*.view</url-pattern>
+	</filter-mapping>
+	<listener>
+		<listener-class>com.sun.faces.config.ConfigureListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.webmethods.caf.faces.application.CAFConfigureListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>
+		com.webmethods.caf.faces.servlet.CAFFacesServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.view</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Pages</web-resource-name>
+			<url-pattern>*.view</url-pattern>
+			<url-pattern>*.jsp</url-pattern>
+			<url-pattern>*.html</url-pattern>
+			<url-pattern>*.htm</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>*</role-name>
+		</auth-constraint>
+	</security-constraint>
+</web-app>

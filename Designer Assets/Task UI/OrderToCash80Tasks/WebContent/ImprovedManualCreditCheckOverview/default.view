@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<view>
+  <property name="pageManagedBean" value="ImprovedManualCreditCheckOverviewDefaultviewView" />
+  <property name="preferencesBean" value="ImprovedManualCreditCheckOverview" />
+  <design-time-attribute name="portlet" value="ImprovedManualCreditCheckOverview" />
+  <design-time-attribute name="taskTypeID" value="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F" />
+  <design-time-attribute name="taskPortletType" value="taskOverview" />
+
+  <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+  </control>
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='taskOverviewTabsForm' />
+    <control component-type='com.webmethods.caf.faces.toggle.ToggleTabs' renderer-type='com.webmethods.caf.faces.toggle.ToggleTabs'>
+      <property name='id' value='taskviewselect' />
+      <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheckOverview.currentTab}' />
+      <control component-type='javax.faces.SelectItem' renderer-type=''>
+        <property name='id' value='TaskDataOption' />
+        <property name='itemLabel' value='Data View' />
+        <property name='itemValue' value='TaskData' />
+        <property name='rendered' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheck.canUserViewTaskData}' />
+      </control>
+	      <control component-type='javax.faces.SelectItem' renderer-type=''>
+	        <property name='id' value='taskDetailsViewOption' />
+	        <property name='itemLabel' value='Details View' />
+	        <property name='itemValue' value='taskDetailsView' />
+	        <property name='rendered' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheck.canUserViewTaskInfo}' />
+	      </control>
+	  
+	      <control component-type='javax.faces.SelectItem' renderer-type=''>
+        	<property name='id' value='taskAuditViewOption' />
+        	<property name='itemLabel' value='Audit View' />
+        	<property name='itemValue' value='taskAuditView' />
+        	<property name='rendered' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheck.canUserViewTaskAudit}' />
+      	</control>
+	  
+	      <control component-type='javax.faces.SelectItem' renderer-type=''>
+	        <property name='id' value='taskCommentsViewOption' />
+	        <property name='itemLabel' value='Comments' />
+	        <property name='itemValue' value='taskCommentsView' />
+	        <property name='rendered' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheck.canUserViewTaskComments and ImprovedManualCreditCheckOverviewDefaultviewView.taskDisplayProvider.commentingEnabled}' />
+	      </control>
+	  
+	      <control component-type='javax.faces.SelectItem' renderer-type=''>
+	        <property name='id' value='taskCollabViewOption' />
+	        <property name='itemLabel' value='Collaboration' />
+	        <property name='itemValue' value='taskCollabView' />
+	        <property name='rendered' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheck.canUserViewCollaboration and ImprovedManualCreditCheckOverviewDefaultviewView.taskDisplayProvider.collaborationEnabled}' />
+	      </control>
+	  
+    </control>
+    <control component-type='com.webmethods.caf.faces.behavior.RaiseOnChange' renderer-type='com.webmethods.caf.faces.behavior.RaiseOnChange'>
+	    <property name='command' value='taskOverviewTabsForm:updateCurrentTab' />
+	    <property name='for' value='taskOverviewTabsForm:taskviewselect' />
+	    <property name='id' value='raiseOnChange' />
+  	</control>
+    <control component-type='com.webmethods.caf.faces.panel.HideablePanel' renderer-type='com.webmethods.caf.faces.panel.HideablePanel'>
+	    <property name='id' value='blockPanel' />
+	    <property name='progressDelay' value='9999' />
+	    <property name='progressFlashOnComplete' value='false' />
+	    <control component-type='com.webmethods.caf.faces.command.async.Hidden' renderer-type='com.webmethods.caf.faces.command.async.Hidden'>
+	      <property name='id' value='updateCurrentTab' />
+	      <property name='refresh' value='taskOverviewTabsForm:blockPanel' />
+	    </control>
+	</control>
+  </control>
+  <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+    <property name='id' value='taskTabViewsBlock' />
+	<control component-type='com.webmethods.caf.faces.panel.HideablePanel' renderer-type='com.webmethods.caf.faces.panel.HideablePanel'>
+      <design-time-attribute name='rolledUp' value='false' />
+      <property name='id' value='TaskData' />
+	  <property name='progressFlashOnComplete' value='false' />
+	  <property name='refreshOnShow' value='true' />
+	  <property name='lazy' value='true' />
+      <property name='rendered' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheck.canUserViewTaskData}' />
+      <control component-type='com.webmethods.caf.faces.component.portlet.PortletInclude' renderer-type='com.webmethods.caf.faces.render.html.output.PortletIncludeRenderer'>
+        <property name='id' value='taskDataPortletInclude' />
+        <property name='portlet' value='/portlet/ordertocash80tasks___improvedmanualcreditcheckview' />
+        <control component-type='javax.faces.Parameter' renderer-type=''>
+          <property name='name' value='taskID' />
+          <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheckOverview.taskID}' />
+        </control>
+        <control component-type='javax.faces.Parameter' renderer-type=''>
+          <property name='name' value='cancelUrl' />
+          <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheckOverview.cancelUrl}' />
+        </control>
+        <control component-type='javax.faces.Parameter' renderer-type=''>
+          <property name='name' value='finishUrl' />
+          <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheckOverview.finishUrl}' />
+        </control>
+        <control component-type='javax.faces.Parameter' renderer-type=''>
+          <property name='name' value='requestID' />
+          <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.requestID}' />
+        </control>
+      </control>
+    </control>
+		<control component-type='com.webmethods.caf.faces.panel.HideablePanel' renderer-type='com.webmethods.caf.faces.panel.HideablePanel'>
+	      <design-time-attribute name='rolledUp' value='false' />
+	      <property name='id' value='taskDetailsView' />
+		  <property name='progressFlashOnComplete' value='false' />
+		  <property name='lazy' value='true' />
+		  <property name='refreshOnShow' value='true' />
+	      <property name='rendered' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheck.canUserViewTaskInfo}' />
+	      <control component-type='com.webmethods.caf.faces.component.portlet.PortletInclude' renderer-type='com.webmethods.caf.faces.render.html.output.PortletIncludeRenderer'>
+	        <design-time-attribute name='rolledUp' value='false' />
+	        <property name='id' value='taskDetailsViewInclude' />
+	        <property name='portlet' value='/portlet/wm_task_search___taskinfoview' />
+	        <control component-type='javax.faces.Parameter' renderer-type=''>
+	          <property name='name' value='taskID' />
+	          <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheckOverview.taskID}' />
+	        </control>
+	        <control component-type='javax.faces.Parameter' renderer-type=''>
+	          <property name='name' value='finishUrl' />
+	          <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheckOverview.finishUrl}' />
+	        </control>
+	        <control component-type='javax.faces.Parameter' renderer-type=''>
+	          <property name='name' value='requestID' />
+	          <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.requestID}' />
+	        </control>
+	      </control>
+	    </control>
+	
+	    <control component-type='com.webmethods.caf.faces.panel.HideablePanel' renderer-type='com.webmethods.caf.faces.panel.HideablePanel'>
+	      <design-time-attribute name='rolledUp' value='false' />
+	      <property name='id' value='taskAuditView' />
+		  <property name='progressFlashOnComplete' value='false' />
+		  <property name='lazy' value='true' />
+	  	  <property name='refreshOnShow' value='true' />
+	      <property name='rendered' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheck.canUserViewTaskAudit}' />
+	      <control component-type='com.webmethods.caf.faces.component.portlet.PortletInclude' renderer-type='com.webmethods.caf.faces.render.html.output.PortletIncludeRenderer'>
+	        <property name='id' value='taskAuditViewInclude' />
+	        <property name='portlet' value='/portlet/wm_task_search___taskauditview' />
+	        <control component-type='javax.faces.Parameter' renderer-type=''>
+	          <property name='name' value='taskID' />
+	          <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheckOverview.taskID}' />
+	        </control>
+	        <control component-type='javax.faces.Parameter' renderer-type=''>
+	          <property name='name' value='finishUrl' />
+	          <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheckOverview.finishUrl}' />
+	        </control>
+	        <control component-type='javax.faces.Parameter' renderer-type=''>
+	          <property name='name' value='requestID' />
+	          <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.requestID}' />
+	        </control>
+	      </control>
+	    </control>
+	
+	    <control component-type='com.webmethods.caf.faces.panel.HideablePanel' renderer-type='com.webmethods.caf.faces.panel.HideablePanel'>
+	      <design-time-attribute name='rolledUp' value='false' />
+	      <property name='id' value='taskCommentsView' />
+		  <property name='progressFlashOnComplete' value='false' />
+		  <property name='lazy' value='true' />
+		  <property name='refreshOnShow' value='true' />
+	      <property name='rendered' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheck.canUserViewTaskComments and ImprovedManualCreditCheckOverviewDefaultviewView.taskDisplayProvider.commentingEnabled}' />
+	      <control component-type='com.webmethods.caf.faces.component.portlet.PortletInclude' renderer-type='com.webmethods.caf.faces.render.html.output.PortletIncludeRenderer'>
+	        <property name='id' value='taskCommentsViewInclude' />
+	        <property name='portlet' value='/portlet/wm_comments_editor___commentseditor' />
+	        <control component-type='javax.faces.Parameter' renderer-type=''>
+	          <property name='name' value='commentsContainerID' />
+	          <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheckOverview.taskID}' />
+	        </control>
+	        <control component-type='javax.faces.Parameter' renderer-type=''>
+	          <property name='name' value='forTask' />
+	          <property name='value' value='true' />
+	        </control>
+	        <control component-type='javax.faces.Parameter' renderer-type=''>
+    	      <property name='name' value='finishUrl' />
+        	  <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheckOverview.finishUrl}' />
+        	</control>
+	        <control component-type='javax.faces.Parameter' renderer-type=''>
+	          <property name='name' value='requestID' />
+	          <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.requestID}' />
+	        </control>
+	      </control>
+	    </control>
+	
+	    <control component-type='com.webmethods.caf.faces.panel.HideablePanel' renderer-type='com.webmethods.caf.faces.panel.HideablePanel'>
+	      <design-time-attribute name='rolledUp' value='false' />
+	      <property name='id' value='taskCollabView' />
+		  <property name='progressFlashOnComplete' value='false' />
+		  <property name='lazy' value='true' />
+		  <property name='refreshOnShow' value='true' />
+	      <property name='rendered' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheck.canUserViewCollaboration and ImprovedManualCreditCheckOverviewDefaultviewView.taskDisplayProvider.collaborationEnabled}' />
+	      <control component-type='com.webmethods.caf.faces.component.portlet.PortletInclude' renderer-type='com.webmethods.caf.faces.render.html.output.PortletIncludeRenderer'>
+	        <property name='id' value='taskCollabViewInclude' />
+	        <property name='portlet' value='/portlet/wm_task_search___taskprocess' />
+	        <control component-type='javax.faces.Parameter' renderer-type=''>
+	          <property name='name' value='taskID' />
+	          <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheckOverview.taskID}' />
+	        </control>
+	        <control component-type='javax.faces.Parameter' renderer-type=''>
+    	      <property name='name' value='finishUrl' />
+        	  <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.improvedManualCreditCheckOverview.finishUrl}' />
+        	</control>
+	        <control component-type='javax.faces.Parameter' renderer-type=''>
+	          <property name='name' value='requestID' />
+	          <property name='value' value='#{ImprovedManualCreditCheckOverviewDefaultviewView.requestID}' />
+	        </control>
+	      </control>
+	    </control>
+	
+  </control>
+</view>
+
+

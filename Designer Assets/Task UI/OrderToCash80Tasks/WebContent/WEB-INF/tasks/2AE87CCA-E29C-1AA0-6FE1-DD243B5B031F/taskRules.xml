@@ -1,0 +1,20 @@
+
+<CONFIG depCheck="false">
+	<Mode type="sync">
+	    <!-- Setup distribution rules -->
+	    <CONTEXT alias="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F.routing.rules.storage">
+	    </CONTEXT>
+	
+	    <!-- Setup distribution filters -->
+	    <CONTEXT alias="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F.filter.rules.storage">
+	    </CONTEXT>
+	
+	    <!-- Setup trigger rules -->
+	    <CONTEXT alias="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F.change.rules.storage">
+	    </CONTEXT>
+	
+	    <!-- Setup schedule rules -->
+	    <CONTEXT alias="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F.schedule.rules.storage">
+	    </CONTEXT>
+	</Mode>
+</CONFIG>

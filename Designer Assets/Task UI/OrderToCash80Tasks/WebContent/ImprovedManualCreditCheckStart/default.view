@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+    <property name="pageManagedBean" value="ImprovedManualCreditCheckStartDefaultviewView" />
+    <property name="preferencesBean" value="ImprovedManualCreditCheckStart" />
+    <design-time-attribute name="portlet" value="ImprovedManualCreditCheckStart" />
+    <design-time-attribute name="taskTypeID" value="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F" />
+    <design-time-attribute name="taskPortletType" value="taskStart" />
+
+  <control component-type='javax.faces.HtmlForm' renderer-type='javax.faces.Form'>
+    <property name='defaultFocus' value='_first' />
+    <property name='id' value='taskStartForm' />
+
+    <control component-type='com.webmethods.caf.faces.panel.ModalDialog' renderer-type='com.webmethods.caf.faces.panel.ModalDialog'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <property name='id' value='statusDialog' />
+      <facet name='submit'>
+        <control component-type='com.webmethods.caf.faces.toggle.OneWayToggleButton' renderer-type='com.webmethods.caf.faces.toggle.OneWayToggleButton'>
+          <property name='for' value='statusDialog' />
+          <property name='value' value='OK' />
+        </control>
+      </facet>
+      
+      <control component-type='javax.faces.HtmlPanelGroup' renderer-type='com.webmethods.caf.faces.panel.BlockPanel'>
+        <property name='id' value='statusPanel' />
+	    <control component-type='com.webmethods.caf.faces.output.ErrorMessages' renderer-type='com.webmethods.caf.faces.output.ErrorMessages'>
+            <design-time-attribute name='rolledUp' value='true' />
+	    	<property name='globalOnly' value='false' />
+	    </control>
+        <control component-type='javax.faces.HtmlOutputLink' renderer-type='javax.faces.Link'>
+          <design-time-attribute name='rolledUp' value='true' />
+          <property name='rendered' value='#{ImprovedManualCreditCheckStartDefaultviewView.improvedManualCreditCheck.taskInfo.taskURL != null}' />
+          <property name='value' value='#{ImprovedManualCreditCheckStartDefaultviewView.improvedManualCreditCheck.taskInfo.taskURL}' />
+          <control component-type='javax.faces.HtmlOutputFormat' renderer-type='javax.faces.Format'>
+            <property name='value' value='Open the task.' />
+          </control>
+        </control>
+      </control> 
+      
+    </control>    
+
+    <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertyGroup'>
+      <property name='description' value='' />
+      <property name='label' value='New Task' />
+      <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertySubGroup'>
+        <property name='id' value='taskDataSubGroup' />
+        <property name='label' value='Task Data: TODO: add your task data fields into this group' />
+      </control>
+
+      <control component-type='com.webmethods.caf.faces.toggle.OneWayToggleButton' renderer-type='com.webmethods.caf.faces.toggle.OneWayToggleButton'>
+        <design-time-attribute name='rolledUp' value='true' />
+        <property name='for' value='optionalPanel' />
+        <property name='value' value='Toggle Optional Task Info' />
+      </control>
+      
+      <control component-type='com.webmethods.caf.faces.panel.HideablePanel' renderer-type='com.webmethods.caf.faces.panel.HideablePanel'>
+		<design-time-attribute name='rolledUp' value='true' />      
+        <property name='id' value='optionalPanel' />
+        <property name='visible' value='true' />
+	      <control component-type='com.webmethods.caf.faces.panel.PropertyGroup' renderer-type='com.webmethods.caf.faces.panel.PropertySubGroup'>
+	        <property name='label' value='' />
+	        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+	          <property name='label' value='Name' />
+	          <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+	            <property name='value' value='#{ImprovedManualCreditCheckStartDefaultviewView.improvedManualCreditCheck.taskInfo.name}' />
+	            <property name='width' value='input20' />
+	          </control>
+	        </control>
+	        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+	          <property name='description' value='' />
+	          <property name='label' value='Description' />
+	          <control component-type='javax.faces.HtmlInputTextarea' renderer-type='javax.faces.Textarea'>
+	            <property name='cols' value='' />
+	            <property name='rows' value='3' />
+	            <property name='style' value='' />
+	            <property name='styleClass' value='' />
+	            <property name='value' value='#{ImprovedManualCreditCheckStartDefaultviewView.improvedManualCreditCheck.taskInfo.description}' />
+	            <property name='width' value='input20' />
+	          </control>
+	        </control>
+            <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+	          <property name='description' value='' />
+		      <property name='label' value='Priority' />
+				<control component-type='javax.faces.HtmlSelectOneMenu' renderer-type='javax.faces.Menu'>
+				  <property name='disabledClass' value='disabled' />
+				  <property name='enabledClass' value='enabled' />
+		          <property name='value' value='#{ImprovedManualCreditCheckStartDefaultviewView.improvedManualCreditCheck.taskInfo.priority}' />
+				  <property name='width' value='input20' />
+				  <control component-type='javax.faces.SelectItem' renderer-type=''>
+				  </control>
+				  <control component-type='javax.faces.SelectItem' renderer-type=''>
+				    <property name='itemLabel' value='4-Low' />
+				    <property name='itemValue' value='low' />
+				  </control>
+				  <control component-type='javax.faces.SelectItem' renderer-type=''>
+				    <property name='itemLabel' value='3-Medium' />
+				    <property name='itemValue' value='medium' />
+				  </control>
+				  <control component-type='javax.faces.SelectItem' renderer-type=''>
+				    <property name='itemLabel' value='2-High' />
+				    <property name='itemValue' value='high' />
+				  </control>
+				  <control component-type='javax.faces.SelectItem' renderer-type=''>
+				    <property name='itemLabel' value='1-Critical' />
+				    <property name='itemValue' value='critical' />
+				  </control>
+				  <control component-type='javax.faces.SelectItem' renderer-type=''>
+				    <property name='itemLabel' value='None' />
+				    <property name='itemValue' value='none' />
+				  </control>
+				</control>
+	        </control>
+	        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+	          <property name='description' value='' />
+	          <property name='label' value='Custom Task ID' />
+	          <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+	            <property name='value' value='#{ImprovedManualCreditCheckStartDefaultviewView.improvedManualCreditCheck.taskInfo.customTaskID}' />
+	            <property name='width' value='input20' />
+	          </control>
+	        </control>
+	        <!--
+	        <control component-type='com.webmethods.caf.faces.panel.PropertyLine' renderer-type='com.webmethods.caf.faces.panel.PropertyLine'>
+	          <property name='description' value='' />
+	          <property name='label' value='Expiration Date' />
+	          <control component-type='javax.faces.HtmlInputText' renderer-type='javax.faces.Text'>
+	            <property name='value' value='#{ImprovedManualCreditCheckStartDefaultviewView.improvedManualCreditCheck.taskInfo.expireDate}' />
+	            <property name='width' value='input20' />
+	            <converter converter-id='com.webmethods.caf.faces.converter.FormattedDateTime'>
+	              <property name='customErrorMsg' value='Please use mm/dd/yyyy format for the date' />
+	              <property name='pattern' value='mm/dd/yyyy' />
+	            </converter>
+	          </control>
+	        </control>
+	        -->
+	      </control>
+      </control>
+    </control>
+    <control component-type='com.webmethods.caf.faces.panel.PropertySubmit' renderer-type='com.webmethods.caf.faces.panel.PropertySubmit'>
+      <design-time-attribute name='rolledUp' value='true' />
+      <facet name='submit'>
+        <control component-type='com.webmethods.caf.faces.command.async.Button' renderer-type='com.webmethods.caf.faces.command.async.Button'>
+          <property name='refresh' value='statusPanel' />
+          <property name='onclick' value='CAF.model(&quot;#{ImprovedManualCreditCheckStartDefaultviewView.clientIds[&quot;statusDialog&quot;]}&quot;).show()' />
+          <property name='id' value='startTaskCommandButton' />
+          <property name='action' value='#{ImprovedManualCreditCheckStartDefaultviewView.queueNewTask}' />
+          <property name='value' value='Start Task' />
+        </control>
+      </facet>
+      <facet name='cancel'>
+        <control component-type='javax.faces.HtmlCommandButton' renderer-type='javax.faces.Button'>
+          <property name='action' value='#{ImprovedManualCreditCheckStartDefaultviewView.doReturnURL}' />
+          <property name='rendered' value='#{not empty ImprovedManualCreditCheckStart.returnUrl}' />
+          <property name='value' value='Return' />
+        </control>
+      </facet>
+    </control>
+  </control>
+</view>
