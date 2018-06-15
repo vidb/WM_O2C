@@ -6,13 +6,12 @@ pipeline {
 
     stages {
         stage('Build'){
-	    agent { 
-                label "buildserver"
-            }
-            steps {
-	        sh "hostname ;pwd;id -a ;ls -l ${env.SAG_HOME}"	
-                sh "${env.SAG_HOME}/common/AssetBuildEnvironment/ant/bin/ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} build"
-            }
+	    node ("buildserver"){
+            	steps {
+	        	sh "hostname ;pwd;id -a ;ls -l ${env.SAG_HOME}"	
+                	sh "${env.SAG_HOME}/common/AssetBuildEnvironment/ant/bin/ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} build"
+            	}
+	    }
         }
         stage('Deploy') {
             steps {
