@@ -1,13 +1,13 @@
 pipeline {
    
     agent { 
-                label 'buildserver'
+                label "buildserver"
             }
 
     stages {
         stage('Build'){
 	    agent { 
-                label 'buildserver'
+                label "buildserver"
             }
             steps {
 	        sh "hostname ;pwd;id -a ;ls -l ${env.SAG_HOME}"	
