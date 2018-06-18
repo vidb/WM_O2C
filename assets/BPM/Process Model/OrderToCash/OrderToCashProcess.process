@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <businessProcessDiagram xmlns="http://www.webmethods.com/bpm/2006/"
-  build="1" canvasPool="1" creator="Administrator" description=""
-  focalRole="Focal role" name="OrderToCashProcess" processCategory=""
-  rnSync="false" runtimeVersion="1" version="8.0">
+  Id="30ead863-f0c1-4bf5-b013-8c9f758e40b0" bpmnStyle="false" build="1"
+  canvasPool="1" creator="Administrator" description=""
+  failProcessOnStepFailure="false" focalRole="Focal role"
+  name="OrderToCashProcess" processCategory="" rnSync="false"
+  runtimeVersion="1" transitionLabelPref="expression"
+  unSynchJoinDeadPath="true" version="10.2.0">
   <kpiDimensions/>
   <systemKPIs>
-    <systemKPI description="" name="Volume" unitOfMeasure=""/>
-    <systemKPI description="" name="Cycle Time" unitOfMeasure=""/>
-    <systemKPI description="" name="Error Count" unitOfMeasure=""/>
+    <systemKPI Id="" description="" name="Volume" unitOfMeasure=""/>
+    <systemKPI Id="" description="" name="Cycle Time" unitOfMeasure=""/>
+    <systemKPI Id="" description="" name="Error Count" unitOfMeasure=""/>
   </systemKPIs>
-  <logicalDataItem description="" dimension="0" label="InboundOrder"
-    name="{ProcessNamespace}InboundOrder" type="{ScOrderToCash.Documents}InboundOrder"/>
-  <logicalDataItem description="" dimension="0" label="OrderReceived"
-    name="{ProcessNamespace}OrderReceived" type="{ScOrderToCash.Documents}InboundOrder"/>
-  <logicalDataItem description="" dimension="0" label="ValidatedOrder"
-    name="{ProcessNamespace}ValidatedOrder" type="{ScOrderToCash.Documents}InboundOrder"/>
-  <logicalDataItem description="" dimension="0"
+  <logicalDataItem Id="" description="" dimension="0"
+    label="InboundOrder" name="{ProcessNamespace}InboundOrder" type="{ScOrderToCash.Documents}InboundOrder"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="OrderReceived" name="{ProcessNamespace}OrderReceived" type="{ScOrderToCash.Documents}InboundOrder"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="ValidatedOrder" name="{ProcessNamespace}ValidatedOrder" type="{ScOrderToCash.Documents}InboundOrder"/>
+  <logicalDataItem Id="" description="" dimension="0"
     label="ValidatedOrderCreditChecked"
     name="{ProcessNamespace}ValidatedOrderCreditChecked" type="{ScOrderToCash.Documents}CreditCheckedOrder"/>
-  <logicalDataItem description="" dimension="0" label="PurchaseOrder"
-    name="{ProcessNamespace}PurchaseOrder" type="{ScOrderToCash.Documents}PurchaseOrder"/>
-  <logicalDataItem description="" dimension="0" label="BackEndOrder"
-    name="{ProcessNamespace}BackEndOrder" type="{ScOrderToCash.Documents}PurchaseOrder"/>
-  <logicalDataItem description="" dimension="0" label="ShipNotice"
+  <logicalDataItem Id="" description="" dimension="0"
+    label="PurchaseOrder" name="{ProcessNamespace}PurchaseOrder" type="{ScOrderToCash.Documents}PurchaseOrder"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="BackEndOrder" name="{ProcessNamespace}BackEndOrder" type="{ScOrderToCash.Documents}PurchaseOrder"/>
+  <logicalDataItem Id="" description="" dimension="0" label="ShipNotice"
     name="{ProcessNamespace}ShipNotice" type="{ScOrderToCash.Documents}ShipNotice"/>
-  <logicalDataItem description="" dimension="0"
+  <logicalDataItem Id="" description="" dimension="0"
     label="DeliveryConfirmation"
     name="{ProcessNamespace}DeliveryConfirmation" type="{ScOrderToCash.Documents}DeliveryConfirmation"/>
+  <logicalDataItem Id="" description="" dimension="0"
+    label="ProcessData" name="{ProcessNamespace}ProcessData" type="{pub.prt}ProcessData"/>
   <timeout calendarAlias="" calendarTime="0:0:0"
     dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
     dynamicCalendarStaticHours="" dynamicCalendarStaticMinutes=""
@@ -35,45 +40,29 @@
     pipelineCalendarDays="" pipelineCalendarHours=""
     pipelineCalendarMinutes="" timeoutStyle="RELATIVE"
     timeoutType="processTimeout" timeoutValue="0" xpathTimeoutValue=""/>
-  <pool blue="128" errorHandler="S40" external="false"
-    externalizeConditions="false" green="128" isCollapsed="false"
+  <pool Id="49b78bdf-896f-4084-bdde-9c69a907c9e2" blue="128"
+    containerType="LEGACY_WEBM_SUBPROCESS" errorHandler="S40"
+    external="false" externalizeConditions="false" green="128"
+    isCollapsed="false" isCompensating="false" isTestAfter="false"
     label="Pool" labelBlue="255" labelGreen="204" labelRed="153"
-    logicalServer="" name="11" orientation="vertical" red="128"
-    retryCount="0" stepLock="false" uid="P12" useCorrelation="false">
+    logicalServer="" loopMaximum="0" loopMaximumField="" name="11"
+    orientation="vertical" red="128" retryCount="0" stepLock="false"
+    uid="P12" useCorrelation="false">
     <documentation/>
     <businessKPIs/>
-    <fontData boldFont="false" italicFont="false"/>
-    <dataItem type="" uid="V25"/>
-    <dataItem type="" uid="V38"/>
-    <dataItem type="" uid="V61"/>
-    <dataItem type="" uid="V37"/>
-    <dataItem type="" uid="V71"/>
-    <dataItem type="" uid="V62"/>
-    <dataItem type="" uid="V72"/>
-    <dataItem type="" uid="V26"/>
-    <dataItem type="" uid="V29"/>
-    <dataItem type="" uid="V46"/>
-    <dataItem type="" uid="V58"/>
-    <dataItem type="" uid="V49"/>
-    <dataItem type="" uid="V57"/>
-    <dataItem type="" uid="V30"/>
-    <dataItem type="" uid="V42"/>
-    <dataItem type="" uid="V45"/>
-    <dataItem type="" uid="V54"/>
-    <dataItem type="" uid="V53"/>
-    <dataItem type="" uid="V34"/>
-    <dataItem type="" uid="V33"/>
-    <dataItem type="" uid="V41"/>
-    <dataItem type="" uid="V50"/>
+    <fontData boldFont="false" fontFamily="" italicFont="false"/>
     <dataItem type="{ScOrderToCash.Documents}InboundOrder" uid="V22"/>
-    <receiveStep allowsSynchronousReply="false"
-      externalizeConditions="false" isStart="true"
+    <receiveStep Id="c8e15ab7-8504-4034-8755-cc4ca64de530"
+      allowsSynchronousReply="false" edaEventQName="" edaSubFilter=""
+      edaSubFilterLang="" eventType="START"
+      externalizeConditions="false" height="34"
       isStartStepServiceRequired="true" label="Receive Order"
-      logicalServer="Default" outputVariable="V22"
+      labelHeight="-1" labelWidth="-1" logicalServer="Default"
+      outputMessageType="{ScOrderToCash.Documents}InboundOrder"
       receiveProtocol="SUBSCRIPTION" receiveType="EMPTY"
-      stepLock="false" uid="S18" useCorrelation="false"
+      stepLock="false" uid="S18" useCorrelation="false" width="34"
       wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S18_MAPPING"
-      x="24" y="35">
+      x="54" y="47">
       <documentation/>
       <businessKPIs/>
       <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
@@ -84,23 +73,26 @@
       <extendedProperty name="retryInterval" value="60000"/>
       <wmExpressionFilter/>
     </receiveStep>
-    <invokeStep dynamicReferenceProcess="false"
-      externalizeConditions="false" inputVariable="V25"
-      invokeContainer="ScOrderToCash.Services"
+    <invokeStep Id="5135c360-dab2-4a7c-bedc-8be024ff678c"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="53" invokeContainer="ScOrderToCash.Services"
       invokeId="ScOrderToCash.Services:_1_receiveOrder"
       invokeLocation="" invokeName="_1_receiveOrder"
-      invokeType="ISSERVICE" label="Process Received Order"
-      logicalServer="Default" ornamentKey="32_metropolis.png"
-      outputVariable="V26" retryCount="0" routingRuleSet=""
-      stepLock="false" uid="S24" useCorrelation="false"
+      invokeType="ISSERVICE" isCompensating="false" isTestAfter="false"
+      label="Process Received Order" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" loopMaximum="0" loopMaximumField=""
+      ornamentKey="32_metropolis.png" retryCount="0" routingRuleSet=""
+      ruleType="TASK" stepLock="false" uid="S24" useCorrelation="false"
+      width="83"
       wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S24_MAPPING"
-      x="32" y="207">
+      x="44" y="219">
       <documentation/>
       <businessKPIs/>
       <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
         <fontColor blue="0" green="0" red="0"/>
       </fontData>
       <input name="{ProcessNamespace}InboundOrder"/>
+      <wmExpression/>
       <output name="{ProcessNamespace}OrderReceived"/>
       <extendedProperty name="retries" value="0"/>
       <extendedProperty name="retryInterval" value="60000"/>
@@ -114,23 +106,26 @@
         timeoutStyle="RELATIVE" timeoutType="stepTimeout"
         timeoutValue="0" xpathTimeoutValue=""/>
     </invokeStep>
-    <invokeStep dynamicReferenceProcess="false"
-      externalizeConditions="false" inputVariable="V29"
-      invokeContainer="ScOrderToCash.Services"
+    <invokeStep Id="52e42c77-2801-407d-a26e-88a321049348"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="53" invokeContainer="ScOrderToCash.Services"
       invokeId="ScOrderToCash.Services:_2_validateOrder"
       invokeLocation="" invokeName="_2_validateOrder"
-      invokeType="ISSERVICE" label="Validate Order"
-      logicalServer="Default" ornamentKey="32_purchase_order.png"
-      outputVariable="V30" retryCount="0" routingRuleSet=""
-      stepLock="false" uid="S28" useCorrelation="false"
+      invokeType="ISSERVICE" isCompensating="false" isTestAfter="false"
+      label="Validate Order" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" loopMaximum="0" loopMaximumField=""
+      ornamentKey="32_purchase_order.png" retryCount="0"
+      routingRuleSet="" ruleType="TASK" stepLock="false" uid="S28"
+      useCorrelation="false" width="83"
       wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S28_MAPPING"
-      x="123" y="89">
+      x="135" y="101">
       <documentation/>
       <businessKPIs/>
       <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
         <fontColor blue="0" green="0" red="0"/>
       </fontData>
       <input name="{ProcessNamespace}OrderReceived"/>
+      <wmExpression/>
       <output name="{ProcessNamespace}ValidatedOrder"/>
       <extendedProperty name="retries" value="0"/>
       <extendedProperty name="retryInterval" value="60000"/>
@@ -144,23 +139,26 @@
         timeoutStyle="RELATIVE" timeoutType="stepTimeout"
         timeoutValue="0" xpathTimeoutValue=""/>
     </invokeStep>
-    <invokeStep dynamicReferenceProcess="false"
-      externalizeConditions="false" inputVariable="V33"
-      invokeContainer="ScOrderToCash.Services"
+    <invokeStep Id="90257114-73da-43d1-82ed-e885a382aab8"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="53" invokeContainer="ScOrderToCash.Services"
       invokeId="ScOrderToCash.Services:_3A_autoCreditCheck"
       invokeLocation="" invokeName="_3A_autoCreditCheck"
-      invokeType="ISSERVICE" label="Auto Credit Check"
-      logicalServer="Default" ornamentKey="32_teller.png"
-      outputVariable="V34" retryCount="0" routingRuleSet=""
-      stepLock="false" uid="S32" useCorrelation="false"
+      invokeType="ISSERVICE" isCompensating="false" isTestAfter="false"
+      label="Auto Credit Check" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" loopMaximum="0" loopMaximumField=""
+      ornamentKey="32_teller.png" retryCount="0" routingRuleSet=""
+      ruleType="TASK" stepLock="false" uid="S32" useCorrelation="false"
+      width="83"
       wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S32_MAPPING"
-      x="221" y="89">
+      x="233" y="101">
       <documentation/>
       <businessKPIs/>
       <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
         <fontColor blue="0" green="0" red="0"/>
       </fontData>
       <input name="{ProcessNamespace}ValidatedOrder"/>
+      <wmExpression/>
       <output name="{ProcessNamespace}ValidatedOrderCreditChecked"/>
       <extendedProperty name="retries" value="0"/>
       <extendedProperty name="retryInterval" value="60000"/>
@@ -174,23 +172,26 @@
         timeoutStyle="RELATIVE" timeoutType="stepTimeout"
         timeoutValue="0" xpathTimeoutValue=""/>
     </invokeStep>
-    <invokeStep dynamicReferenceProcess="false"
-      externalizeConditions="false" inputVariable="V41"
-      invokeContainer="ScOrderToCash.Services"
+    <invokeStep Id="917a2fc8-dade-4b28-bb6f-079487a60d5c"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="53" invokeContainer="ScOrderToCash.Services"
       invokeId="ScOrderToCash.Services:_3C_cancelledOrder"
       invokeLocation="" invokeName="_3C_cancelledOrder"
-      invokeType="ISSERVICE" label="Cancel Order"
-      logicalServer="Default" ornamentKey="32_error_stop_sign.png"
-      outputVariable="V42" retryCount="0" routingRuleSet=""
-      stepLock="false" uid="S40" useCorrelation="false"
+      invokeType="ISSERVICE" isCompensating="false" isTestAfter="false"
+      label="Cancel Order" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" loopMaximum="0" loopMaximumField=""
+      ornamentKey="32_error_stop_sign.png" retryCount="0"
+      routingRuleSet="" ruleType="TASK" stepLock="false" uid="S40"
+      useCorrelation="false" width="83"
       wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S40_MAPPING"
-      x="233" y="350">
+      x="245" y="362">
       <documentation/>
       <businessKPIs/>
       <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
         <fontColor blue="0" green="0" red="0"/>
       </fontData>
       <input name="{ProcessNamespace}ValidatedOrderCreditChecked"/>
+      <wmExpression/>
       <extendedProperty name="retries" value="0"/>
       <extendedProperty name="retryInterval" value="60000"/>
       <timeout calendarAlias="" calendarTime="0:0:0"
@@ -203,24 +204,27 @@
         timeoutStyle="RELATIVE" timeoutType="stepTimeout"
         timeoutValue="0" xpathTimeoutValue=""/>
     </invokeStep>
-    <invokeStep dynamicReferenceProcess="false"
-      externalizeConditions="false" inputVariable="V45"
-      invokeContainer="ScOrderToCash.Services"
+    <invokeStep Id="1154f612-aa6e-470c-ae28-e64a53ba3933"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="53" invokeContainer="ScOrderToCash.Services"
       invokeId="ScOrderToCash.Services:_4_dataMapping" invokeLocation=""
       invokeName="_4_dataMapping" invokeType="ISSERVICE"
-      label="Map Data" logicalServer="Default"
-      ornamentKey="32_web_server.png" outputVariable="V46"
-      retryCount="0" routingRuleSet="" stepLock="false" uid="S44"
-      useCorrelation="false"
+      isCompensating="false" isTestAfter="false" label="Map Data"
+      labelHeight="-1" labelWidth="-1" logicalServer="Default"
+      loopMaximum="0" loopMaximumField=""
+      ornamentKey="32_web_server.png" retryCount="0" routingRuleSet=""
+      ruleType="TASK" stepLock="false" uid="S44" useCorrelation="false"
+      width="83"
       wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S44_MAPPING"
-      x="388" y="89">
+      x="400" y="101">
       <documentation/>
-      <join joinType="UnsynchronizedOr" suppressJoinFailure="false"/>
+      <join joinType="UnsynchronizedOr" suppressJoinFailure="false" synchronizationPoint="false"/>
       <businessKPIs/>
       <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
         <fontColor blue="0" green="0" red="0"/>
       </fontData>
       <input name="{ProcessNamespace}ValidatedOrderCreditChecked"/>
+      <wmExpression/>
       <output name="{ProcessNamespace}PurchaseOrder"/>
       <extendedProperty name="retries" value="0"/>
       <extendedProperty name="retryInterval" value="60000"/>
@@ -234,23 +238,25 @@
         timeoutStyle="RELATIVE" timeoutType="stepTimeout"
         timeoutValue="0" xpathTimeoutValue=""/>
     </invokeStep>
-    <invokeStep dynamicReferenceProcess="false"
-      externalizeConditions="false" inputVariable="V49"
-      invokeContainer="ScOrderToCash.Services"
+    <invokeStep Id="7e8b1f1f-8dab-4389-826e-0b6ad66f4bc3"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="53" invokeContainer="ScOrderToCash.Services"
       invokeId="ScOrderToCash.Services:_5_createOrder" invokeLocation=""
       invokeName="_5_createOrder" invokeType="ISSERVICE"
-      label="Create Order" logicalServer="Default"
-      ornamentKey="32_task.png" outputVariable="V50" retryCount="0"
-      routingRuleSet="" stepLock="false" uid="S48"
-      useCorrelation="false"
+      isCompensating="false" isTestAfter="false" label="Create Order"
+      labelHeight="-1" labelWidth="-1" logicalServer="Default"
+      loopMaximum="0" loopMaximumField="" ornamentKey="32_task.png"
+      retryCount="0" routingRuleSet="" ruleType="TASK" stepLock="false"
+      uid="S48" useCorrelation="false" width="83"
       wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S48_MAPPING"
-      x="488" y="89">
+      x="500" y="101">
       <documentation/>
       <businessKPIs/>
       <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
         <fontColor blue="0" green="0" red="0"/>
       </fontData>
       <input name="{ProcessNamespace}PurchaseOrder"/>
+      <wmExpression/>
       <output name="{ProcessNamespace}BackEndOrder"/>
       <extendedProperty name="retries" value="0"/>
       <extendedProperty name="retryInterval" value="60000"/>
@@ -264,24 +270,26 @@
         timeoutStyle="RELATIVE" timeoutType="stepTimeout"
         timeoutValue="0" xpathTimeoutValue=""/>
     </invokeStep>
-    <invokeStep dynamicReferenceProcess="false"
-      externalizeConditions="false" inputVariable="V53"
-      invokeContainer="ScOrderToCash.Services"
+    <invokeStep Id="f34bbee3-3572-485b-9594-fa37fde5e896"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="53" invokeContainer="ScOrderToCash.Services"
       invokeId="ScOrderToCash.Services:_6_scheduleDelivery"
       invokeLocation="" invokeName="_6_scheduleDelivery"
-      invokeType="ISSERVICE" label="Schedule Delivery"
-      logicalServer="Default"
-      ornamentKey="32_manager_with_clipboard.png" outputVariable="V54"
-      retryCount="0" routingRuleSet="" stepLock="false" uid="S52"
-      useCorrelation="false"
+      invokeType="ISSERVICE" isCompensating="false" isTestAfter="false"
+      label="Schedule Delivery" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" loopMaximum="0" loopMaximumField=""
+      ornamentKey="32_manager_with_clipboard.png" retryCount="0"
+      routingRuleSet="" ruleType="TASK" stepLock="false" uid="S52"
+      useCorrelation="false" width="83"
       wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S52_MAPPING"
-      x="578" y="89">
+      x="590" y="101">
       <documentation/>
       <businessKPIs/>
       <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
         <fontColor blue="0" green="0" red="0"/>
       </fontData>
       <input name="{ProcessNamespace}BackEndOrder"/>
+      <wmExpression/>
       <output name="{ProcessNamespace}ShipNotice"/>
       <extendedProperty name="retries" value="0"/>
       <extendedProperty name="retryInterval" value="60000"/>
@@ -295,23 +303,26 @@
         timeoutStyle="RELATIVE" timeoutType="stepTimeout"
         timeoutValue="0" xpathTimeoutValue=""/>
     </invokeStep>
-    <invokeStep dynamicReferenceProcess="false"
-      externalizeConditions="false" inputVariable="V57"
-      invokeContainer="ScOrderToCash.Services"
+    <invokeStep Id="e5275916-4bae-43bc-89ee-71b0f11e885b"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="53" invokeContainer="ScOrderToCash.Services"
       invokeId="ScOrderToCash.Services:_7_updateBackEnd"
       invokeLocation="" invokeName="_7_updateBackEnd"
-      invokeType="ISSERVICE" label="Update Backend"
-      logicalServer="Default" ornamentKey="32_database.png"
-      outputVariable="V58" retryCount="0" routingRuleSet=""
-      stepLock="false" uid="S56" useCorrelation="false"
+      invokeType="ISSERVICE" isCompensating="false" isTestAfter="false"
+      label="Update Backend" labelHeight="-1" labelWidth="-1"
+      logicalServer="Default" loopMaximum="0" loopMaximumField=""
+      ornamentKey="32_database.png" retryCount="0" routingRuleSet=""
+      ruleType="TASK" stepLock="false" uid="S56" useCorrelation="false"
+      width="83"
       wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S56_MAPPING"
-      x="582" y="231">
+      x="594" y="243">
       <documentation/>
       <businessKPIs/>
       <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
         <fontColor blue="0" green="0" red="0"/>
       </fontData>
       <input name="{ProcessNamespace}ShipNotice"/>
+      <wmExpression/>
       <output name="{ProcessNamespace}DeliveryConfirmation"/>
       <extendedProperty name="retries" value="0"/>
       <extendedProperty name="retryInterval" value="60000"/>
@@ -325,23 +336,26 @@
         timeoutStyle="RELATIVE" timeoutType="stepTimeout"
         timeoutValue="0" xpathTimeoutValue=""/>
     </invokeStep>
-    <invokeStep dynamicReferenceProcess="false"
-      externalizeConditions="false" inputVariable="V61"
-      invokeContainer="ScOrderToCash.Services"
+    <invokeStep Id="03f75229-fd11-4739-8a71-f8e20cc529aa"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="53" invokeContainer="ScOrderToCash.Services"
       invokeId="ScOrderToCash.Services:_8_deliveryConfirmation"
       invokeLocation="" invokeName="_8_deliveryConfirmation"
-      invokeType="ISSERVICE" label="Send Delivery Confirmation"
-      logicalServer="Default" ornamentKey="32_envelope.png"
-      outputVariable="V62" retryCount="0" routingRuleSet=""
-      stepLock="false" uid="S60" useCorrelation="false"
+      invokeType="ISSERVICE" isCompensating="false" isTestAfter="false"
+      label="Send Delivery Confirmation" labelHeight="-1"
+      labelWidth="-1" logicalServer="Default" loopMaximum="0"
+      loopMaximumField="" ornamentKey="32_envelope.png" retryCount="0"
+      routingRuleSet="" ruleType="TASK" stepLock="false" uid="S60"
+      useCorrelation="false" width="83"
       wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S60_MAPPING"
-      x="711" y="89">
+      x="723" y="101">
       <documentation/>
       <businessKPIs/>
       <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
         <fontColor blue="0" green="0" red="0"/>
       </fontData>
       <input name="{ProcessNamespace}DeliveryConfirmation"/>
+      <wmExpression/>
       <extendedProperty name="retries" value="0"/>
       <extendedProperty name="retryInterval" value="60000"/>
       <timeout calendarAlias="" calendarTime="0:0:0"
@@ -354,20 +368,24 @@
         timeoutStyle="RELATIVE" timeoutType="stepTimeout"
         timeoutValue="0" xpathTimeoutValue=""/>
     </invokeStep>
-    <invokeStep dynamicReferenceProcess="false"
-      externalizeConditions="false" inputVariable="V71"
-      invokeContainer="" invokeId="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F"
-      invokeLocation="" invokeName="Improved Manual Credit Check"
-      invokeType="TASK" label="Improved Manual Credit Check"
-      logicalServer="Default" ornamentKey="32_person_with_headset.png"
-      outputVariable="V72" retryCount="0" routingRuleSet=""
-      stepLock="false" uid="S70" useCorrelation="false" x="222" y="227">
+    <invokeStep Id="6aaa369c-1e4e-42ae-b6da-3e27e71614a6"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="53" invokeContainer=""
+      invokeId="2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F" invokeLocation=""
+      invokeName="Improved Manual Credit Check" invokeType="TASK"
+      isCompensating="false" isTestAfter="false"
+      label="Improved Manual Credit Check" labelHeight="-1"
+      labelWidth="-1" logicalServer="Default" loopMaximum="0"
+      loopMaximumField="" ornamentKey="32_person_with_headset.png"
+      retryCount="0" routingRuleSet="" ruleType="TASK" stepLock="false"
+      uid="S70" useCorrelation="false" width="83" x="234" y="239">
       <documentation/>
       <businessKPIs/>
       <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
         <fontColor blue="0" green="0" red="0"/>
       </fontData>
       <input name="{ProcessNamespace}ValidatedOrderCreditChecked"/>
+      <wmExpression/>
       <output name="{ProcessNamespace}ValidatedOrderCreditChecked"/>
       <extendedProperty name="retries" value="0"/>
       <extendedProperty name="retryInterval" value="60000"/>
@@ -381,10 +399,13 @@
         timeoutStyle="RELATIVE" timeoutType="stepTimeout"
         timeoutValue="0" xpathTimeoutValue=""/>
     </invokeStep>
-    <transition blue="255" conditionDescription="" conditionText=""
-      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
-      source="S18" sourceLocation="197,310" sourceTerminal="BOTTOM"
-      target="S24" targetLocation="214,426" targetTerminal="TOP" uid="T27">
+    <transition Id="97305c1c-0cd8-4898-9f72-79e1ca0287a5" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S18"
+      sourceLocation="-1,-1" sourceTerminal="BOTTOM" target="S24"
+      targetLocation="-1,-1" targetTerminal="TOP" uid="T27">
+      <bendpoint index="0" location="198,356" weight="0.5"/>
+      <bendpoint index="1" location="212,356" weight="0.5"/>
       <labelLayout blue="0" defaultLocation="true" green="196"
         height="-1" red="255" width="-1" x="0" y="0">
         <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
@@ -393,10 +414,12 @@
       </labelLayout>
       <wmExpression/>
     </transition>
-    <transition blue="255" conditionDescription="" conditionText=""
-      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
-      source="S24" sourceLocation="240,451" sourceTerminal="RIGHT"
-      target="S28" targetLocation="296,372" targetTerminal="BOTTOM" uid="T31">
+    <transition Id="e6d22579-a7c5-418b-bb0e-edca00ece03b" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S24"
+      sourceLocation="-1,-1" sourceTerminal="RIGHT" target="S28"
+      targetLocation="-1,-1" targetTerminal="BOTTOM" uid="T31">
+      <bendpoint index="0" location="303,452" weight="0.5"/>
       <labelLayout blue="0" defaultLocation="true" green="196"
         height="-1" red="255" width="-1" x="0" y="0">
         <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
@@ -405,10 +428,11 @@
       </labelLayout>
       <wmExpression/>
     </transition>
-    <transition blue="255" conditionDescription="" conditionText=""
-      conditionType="IF" green="0" lineShape="CURVE" red="0"
-      source="S28" sourceLocation="322,333" sourceTerminal="RIGHT"
-      target="S32" targetLocation="378,333" targetTerminal="LEFT" uid="T35">
+    <transition Id="f913f442-368f-4ecb-a128-020667cd044b" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S28"
+      sourceLocation="-1,-1" sourceTerminal="RIGHT" target="S32"
+      targetLocation="-1,-1" targetTerminal="LEFT" uid="T35">
       <labelLayout blue="0" defaultLocation="true" green="196"
         height="-1" red="255" width="-1" x="0" y="0">
         <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
@@ -417,10 +441,24 @@
       </labelLayout>
       <wmExpression/>
     </transition>
-    <transition blue="255" conditionDescription="" conditionText="Else"
+    <transition Id="6ca6a84a-a9ee-4e3b-9cbd-a58bf944cafb" blue="255"
+      conditionDescription="" conditionText="Default"
       conditionType="ELSE" green="0" lineShape="CURVE" red="0"
-      source="S32" sourceLocation="429,333" sourceTerminal="RIGHT"
-      target="S44" targetLocation="527,333" targetTerminal="LEFT" uid="T47">
+      source="S32" sourceLocation="-1,-1" sourceTerminal="RIGHT"
+      target="S44" targetLocation="-1,-1" targetTerminal="LEFT" uid="T47">
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="465" y="318">
+        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
+          <fontColor blue="0" green="0" red="0"/>
+        </fontData>
+      </labelLayout>
+      <wmExpression/>
+    </transition>
+    <transition Id="de202050-3f4d-4851-85c2-7f4dee96c69c" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S44"
+      sourceLocation="-1,-1" sourceTerminal="RIGHT" target="S48"
+      targetLocation="-1,-1" targetTerminal="LEFT" uid="T51">
       <labelLayout blue="0" defaultLocation="true" green="196"
         height="-1" red="255" width="-1" x="0" y="0">
         <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
@@ -429,10 +467,11 @@
       </labelLayout>
       <wmExpression/>
     </transition>
-    <transition blue="255" conditionDescription="" conditionText=""
-      conditionType="IF" green="0" lineShape="CURVE" red="0"
-      source="S44" sourceLocation="578,333" sourceTerminal="RIGHT"
-      target="S48" targetLocation="633,333" targetTerminal="LEFT" uid="T51">
+    <transition Id="7ffd98b8-15c2-4af3-ba78-ce403e72f0e9" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S48"
+      sourceLocation="-1,-1" sourceTerminal="RIGHT" target="S52"
+      targetLocation="-1,-1" targetTerminal="LEFT" uid="T55">
       <labelLayout blue="0" defaultLocation="true" green="196"
         height="-1" red="255" width="-1" x="0" y="0">
         <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
@@ -441,10 +480,11 @@
       </labelLayout>
       <wmExpression/>
     </transition>
-    <transition blue="255" conditionDescription="" conditionText=""
-      conditionType="IF" green="0" lineShape="CURVE" red="0"
-      source="S48" sourceLocation="684,333" sourceTerminal="RIGHT"
-      target="S52" targetLocation="734,333" targetTerminal="LEFT" uid="T55">
+    <transition Id="d7a20900-6d8b-4541-8986-912167234cd5" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="CURVE" red="0" source="S52"
+      sourceLocation="-1,-1" sourceTerminal="BOTTOM" target="S56"
+      targetLocation="-1,-1" targetTerminal="TOP" uid="T59">
       <labelLayout blue="0" defaultLocation="true" green="196"
         height="-1" red="255" width="-1" x="0" y="0">
         <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
@@ -453,10 +493,12 @@
       </labelLayout>
       <wmExpression/>
     </transition>
-    <transition blue="255" conditionDescription="" conditionText=""
-      conditionType="IF" green="0" lineShape="CURVE" red="0"
-      source="S52" sourceLocation="759,372" sourceTerminal="BOTTOM"
-      target="S56" targetLocation="759,450" targetTerminal="TOP" uid="T59">
+    <transition Id="17a7e1c8-e90b-4c11-b1f6-0270e331b2b7" blue="255"
+      conditionDescription="" conditionText="" conditionType="IF"
+      green="0" lineShape="STRAIGHT" red="0" source="S56"
+      sourceLocation="-1,-1" sourceTerminal="RIGHT" target="S60"
+      targetLocation="-1,-1" targetTerminal="BOTTOM" uid="T63">
+      <bendpoint index="0" location="891,476" weight="0.5"/>
       <labelLayout blue="0" defaultLocation="true" green="196"
         height="-1" red="255" width="-1" x="0" y="0">
         <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
@@ -465,25 +507,15 @@
       </labelLayout>
       <wmExpression/>
     </transition>
-    <transition blue="255" conditionDescription="" conditionText=""
-      conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
-      source="S56" sourceLocation="785,475" sourceTerminal="RIGHT"
-      target="S60" targetLocation="884,385" targetTerminal="BOTTOM" uid="T63">
-      <labelLayout blue="0" defaultLocation="true" green="196"
-        height="-1" red="255" width="-1" x="0" y="0">
-        <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
-          <fontColor blue="0" green="0" red="0"/>
-        </fontData>
-      </labelLayout>
-      <wmExpression/>
-    </transition>
-    <transition blue="255" conditionDescription=""
+    <transition Id="72e100f0-54a0-40a4-a880-cd36a33fd0ea" blue="255"
+      conditionDescription=""
       conditionText="ValidatedOrderCreditChecked/Status = Approved"
       conditionType="IF" green="0" lineShape="STRAIGHT" red="0"
-      source="S70" sourceLocation="429,471" sourceTerminal="RIGHT"
-      target="S44" targetLocation="552,372" targetTerminal="BOTTOM" uid="T78">
+      source="S70" sourceLocation="-1,-1" sourceTerminal="RIGHT"
+      target="S44" targetLocation="-1,-1" targetTerminal="BOTTOM" uid="T78">
+      <bendpoint index="0" location="568,472" weight="0.5"/>
       <labelLayout blue="0" defaultLocation="false" green="196"
-        height="13" red="255" width="241" x="348" y="281">
+        height="13" red="255" width="241" x="474" y="488">
         <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
           <fontColor blue="0" green="0" red="0"/>
         </fontData>
@@ -494,25 +526,27 @@
           operator="=" rightOperand="'Approved'"/>
       </wmExpression>
     </transition>
-    <transition blue="255" conditionDescription="" conditionText="Else"
+    <transition Id="13e1bee0-7a85-496d-b490-a997db63e081" blue="255"
+      conditionDescription="" conditionText="Default"
       conditionType="ELSE" green="0" lineShape="CURVE" red="0"
-      source="S70" sourceLocation="404,523" sourceTerminal="BOTTOM"
-      target="S40" targetLocation="403,569" targetTerminal="TOP" uid="T79">
-      <labelLayout blue="0" defaultLocation="true" green="196"
-        height="-1" red="255" width="-1" x="267" y="326">
+      source="S70" sourceLocation="-1,-1" sourceTerminal="BOTTOM"
+      target="S40" targetLocation="-1,-1" targetTerminal="TOP" uid="T79">
+      <labelLayout blue="0" defaultLocation="false" green="196"
+        height="-1" red="255" width="-1" x="387" y="518">
         <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
           <fontColor blue="0" green="0" red="0"/>
         </fontData>
       </labelLayout>
       <wmExpression/>
     </transition>
-    <transition blue="255" conditionDescription=""
+    <transition Id="6de31d19-5369-455d-905e-b34106f07d2c" blue="255"
+      conditionDescription=""
       conditionText="ValidatedOrderCreditChecked/Status = False"
       conditionType="IF" green="0" lineShape="CURVE" red="0"
-      source="S32" sourceLocation="403,372" sourceTerminal="BOTTOM"
-      target="S70" targetLocation="403,446" targetTerminal="TOP" uid="T80">
+      source="S32" sourceLocation="-1,-1" sourceTerminal="BOTTOM"
+      target="S70" targetLocation="-1,-1" targetTerminal="TOP" uid="T80">
       <labelLayout blue="0" defaultLocation="false" green="196"
-        height="13" red="255" width="219" x="182" y="199">
+        height="13" red="255" width="219" x="308" y="406">
         <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
           <fontColor blue="0" green="0" red="0"/>
         </fontData>
@@ -532,43 +566,47 @@
       pipelineCalendarHours="" pipelineCalendarMinutes=""
       timeoutStyle="RELATIVE" timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
     <wmExpression/>
-    <swimlane blue="155" green="205" height="480" labelBlue="255"
+    <swimlane Id="7a06236b-c494-437a-b6ee-397b372f8dec" blue="155"
+      green="205" height="480" label="Front Office" labelBlue="255"
       labelGreen="238" labelRed="221" name="Front Office" red="255"
       uid="W13" width="544">
       <documentation/>
     </swimlane>
-    <swimlane blue="128" green="255" height="480" labelBlue="255"
+    <swimlane Id="a5e32e75-cf99-4ca1-b0ac-767856260ba2" blue="128"
+      green="255" height="480" label="Back Office" labelBlue="255"
       labelGreen="238" labelRed="221" name="Back Office" red="255"
       uid="W14" width="382">
       <documentation/>
     </swimlane>
   </pool>
-  <pool blue="128" external="true" externalizeConditions="false"
-    green="128" isCollapsed="false" label="Customer" labelBlue="255"
-    labelGreen="204" labelRed="153" logicalServer="" name="4"
+  <pool Id="a4d39910-6f51-4074-b0a8-bef968ad0ac9" blue="128"
+    containerType="LEGACY_WEBM_SUBPROCESS" external="true"
+    externalizeConditions="false" green="128" isCollapsed="false"
+    isCompensating="false" isTestAfter="false" label="Customer"
+    labelBlue="255" labelGreen="204" labelRed="153" logicalServer=""
+    loopMaximum="0" loopMaximumField="" name="4"
     orientation="horizontal" red="128" retryCount="0" stepLock="false"
     uid="P5" useCorrelation="false">
     <documentation/>
     <businessKPIs/>
-    <fontData boldFont="false" italicFont="false"/>
-    <dataItem type="" uid="V8"/>
-    <dataItem type="" uid="V9"/>
-    <dataItem type="" uid="V65"/>
-    <dataItem type="" uid="V66"/>
-    <invokeStep dynamicReferenceProcess="false"
-      externalizeConditions="false" inputVariable="V8"
-      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
-      invokeType="EMPTY" label="Send Order" logicalServer="Default"
-      ornamentKey="32_person_with_laptop.png" outputVariable="V9"
-      retryCount="0" routingRuleSet="" stepLock="false" uid="S7"
-      useCorrelation="false"
+    <fontData boldFont="false" fontFamily="" italicFont="false"/>
+    <invokeStep Id="9fe2cbd6-d894-492e-a926-998235577a83"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="53" invokeContainer="" invokeId="" invokeLocation=""
+      invokeName="" invokeType="EMPTY" isCompensating="false"
+      isTestAfter="false" label="Send Order" labelHeight="-1"
+      labelWidth="-1" logicalServer="Default" loopMaximum="0"
+      loopMaximumField="" ornamentKey="32_person_with_laptop.png"
+      retryCount="0" routingRuleSet="" ruleType="TASK" stepLock="false"
+      uid="S7" useCorrelation="false" width="83"
       wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S7_MAPPING"
-      x="45" y="5">
+      x="57" y="17">
       <documentation/>
       <businessKPIs/>
       <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
         <fontColor blue="0" green="0" red="0"/>
       </fontData>
+      <wmExpression/>
       <extendedProperty name="retries" value="0"/>
       <extendedProperty name="retryInterval" value="60000"/>
       <timeout calendarAlias="" calendarTime="0:0:0"
@@ -581,20 +619,23 @@
         timeoutStyle="RELATIVE" timeoutType="stepTimeout"
         timeoutValue="0" xpathTimeoutValue=""/>
     </invokeStep>
-    <invokeStep dynamicReferenceProcess="false"
-      externalizeConditions="false" inputVariable="V65"
-      invokeContainer="" invokeId="" invokeLocation="" invokeName=""
-      invokeType="EMPTY" label="Send E-mail Confirmation"
-      logicalServer="Default" ornamentKey="32_globe.png"
-      outputVariable="V66" retryCount="0" routingRuleSet=""
-      stepLock="false" uid="S64" useCorrelation="false"
+    <invokeStep Id="7f8714d1-18e9-4c46-9828-640fa464e727"
+      dynamicReferenceProcess="false" externalizeConditions="false"
+      height="53" invokeContainer="" invokeId="" invokeLocation=""
+      invokeName="" invokeType="EMPTY" isCompensating="false"
+      isTestAfter="false" label="Send E-mail Confirmation"
+      labelHeight="-1" labelWidth="-1" logicalServer="Default"
+      loopMaximum="0" loopMaximumField="" ornamentKey="32_globe.png"
+      retryCount="0" routingRuleSet="" ruleType="TASK" stepLock="false"
+      uid="S64" useCorrelation="false" width="83"
       wrapperService="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:S64_MAPPING"
-      x="534" y="7">
+      x="546" y="19">
       <documentation/>
       <businessKPIs/>
       <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
         <fontColor blue="0" green="0" red="0"/>
       </fontData>
+      <wmExpression/>
       <extendedProperty name="retries" value="0"/>
       <extendedProperty name="retryInterval" value="60000"/>
       <timeout calendarAlias="" calendarTime="0:0:0"
@@ -616,32 +657,36 @@
       pipelineCalendarHours="" pipelineCalendarMinutes=""
       timeoutStyle="RELATIVE" timeoutType="stepTimeout" timeoutValue="0" xpathTimeoutValue=""/>
     <wmExpression/>
-    <swimlane blue="255" green="213" height="100" labelBlue="255"
+    <swimlane Id="e8c7ac11-44aa-40b4-931c-1cf86920200f" blue="255"
+      green="213" height="120" label="Customer" labelBlue="255"
       labelGreen="238" labelRed="221" name="Customer" red="170" uid="W6" width="700">
       <documentation/>
     </swimlane>
   </pool>
-  <pool blue="128" external="true" externalizeConditions="false"
-    green="128" isCollapsed="false" label="Pool" labelBlue="255"
-    labelGreen="204" labelRed="153" logicalServer="" name="1"
+  <pool Id="8ade9d1d-ca3d-4442-95af-d721dd9096dd" blue="128"
+    containerType="LEGACY_WEBM_SUBPROCESS" external="true"
+    externalizeConditions="false" green="128" isCollapsed="false"
+    isCompensating="false" isTestAfter="false" label="Pool"
+    labelBlue="255" labelGreen="204" labelRed="153" logicalServer=""
+    loopMaximum="0" loopMaximumField="" name="1"
     orientation="horizontal" red="128" retryCount="0" stepLock="false"
     uid="P2" useCorrelation="false">
     <documentation/>
     <businessKPIs/>
-    <fontData boldFont="false" italicFont="false"/>
-    <dataItem type="" uid="V17"/>
-    <dataItem type="" uid="V16"/>
-    <poolReference label="Customer" logicalServer="Default" poolName="4"
+    <fontData boldFont="false" fontFamily="" italicFont="false"/>
+    <poolReference Id="c7439364-eeed-40b6-be5b-7ff9f678bee0"
+      label="Customer" logicalServer="Default" poolName="4"
       stepLock="false" uid="S3" useCorrelation="false" x="126" y="32">
       <documentation/>
       <businessKPIs/>
-      <fontData boldFont="false" italicFont="false"/>
+      <fontData boldFont="false" fontFamily="" italicFont="false"/>
     </poolReference>
-    <poolReference label="Pool" logicalServer="Default" poolName="11"
+    <poolReference Id="ccb1a54f-ac31-4648-a026-b5e0afa3bd47"
+      label="Pool" logicalServer="Default" poolName="11"
       stepLock="false" uid="S10" useCorrelation="false" x="126" y="177">
       <documentation/>
       <businessKPIs/>
-      <fontData boldFont="false" italicFont="false"/>
+      <fontData boldFont="false" fontFamily="" italicFont="false"/>
     </poolReference>
     <timeout calendarAlias="" calendarTime="0:0:0"
       dynamicCalendarStaticAlias="" dynamicCalendarStaticDays=""
@@ -656,10 +701,15 @@
   <documentation/>
   <qualityOfService expressPipeline="true" minLogLevel="5"
     optimizeLocally="true" volatileTracking="false" volatileTransition="true"/>
-  <messageFlow blue="100" conditionDescription="" green="100"
-    lineShape="STRAIGHT" red="100" source="S60" sourceLocation="884,308"
-    sourcePool="11" sourceTerminal="TOP" target="S64"
-    targetLocation="732,129" targetPool="4" targetTerminal="BOTTOM" uid="67">
+  <edaIntrinsics processEvent="false" stepEvent="false"/>
+  <easeOfOperations enableProcessForTrackingInTarget="false" enableProcessInTarget="false"/>
+  <messageFlow Id="d97291a3-5236-429d-b113-5862325e8452" blue="100"
+    conditionDescription="" green="100" lineShape="STRAIGHT" red="100"
+    source="S60" sourceLocation="-1,-1" sourcePool="11"
+    sourceTerminal="TOP" target="S64" targetLocation="-1,-1"
+    targetPool="4" targetTerminal="BOTTOM" uid="67">
+    <bendpoint index="0" location="891,206" weight="0.5"/>
+    <bendpoint index="1" location="743,206" weight="0.5"/>
     <labelLayout blue="0" defaultLocation="true" green="196" height="-1"
       red="255" width="-1" x="808" y="219">
       <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
@@ -667,10 +717,13 @@
       </fontData>
     </labelLayout>
   </messageFlow>
-  <messageFlow blue="100" conditionDescription="" green="100"
-    lineShape="STRAIGHT" red="100" source="S7" sourceLocation="240,114"
-    sourcePool="4" sourceTerminal="BOTTOM" target="S18"
-    targetLocation="197,254" targetPool="11" targetTerminal="TOP" uid="23">
+  <messageFlow Id="f1197828-adb6-4fc3-b3a7-bfb09ecdfdd5" blue="100"
+    conditionDescription="" green="100" lineShape="STRAIGHT" red="100"
+    source="S7" sourceLocation="-1,-1" sourcePool="4"
+    sourceTerminal="BOTTOM" target="S18" targetLocation="-1,-1"
+    targetPool="11" targetTerminal="TOP" uid="23">
+    <bendpoint index="0" location="254,178" weight="0.5"/>
+    <bendpoint index="1" location="198,178" weight="0.5"/>
     <labelLayout blue="0" defaultLocation="true" green="196" height="-1"
       red="255" width="-1" x="218" y="185">
       <fontData boldFont="false" fontFamily="Tahoma" fontSize="8" italicFont="false">
