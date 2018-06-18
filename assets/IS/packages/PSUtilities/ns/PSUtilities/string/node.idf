@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="shared">LyoqIFVzZWQgYnkgIm11bHRpQ29uY2F0IgogICogCiAgKiBAYXV0aG9yIFRvbSBUYW4sIFByb2Zl
+c3Npb25hbCBTZXJ2aWNlcywgd2ViTWV0aG9kcywgSW5jLgogICogQHZlcnNpb24gMS4wCiAgKi8K
+cHJpdmF0ZSBzdGF0aWMgU3RyaW5nIGNoZWNrTnVsbChTdHJpbmcgaW5wdXRTdHJpbmcpCnsKCWlm
+KCBpbnB1dFN0cmluZyA9PSBudWxsICkKCQlyZXR1cm4gIiI7CgllbHNlCgkJcmV0dXJuIGlucHV0
+U3RyaW5nOwp9</value>
+  <value name="encodeutf8">true</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>java.util.StringTokenizer</value>
+    <value>java.text.*</value>
+    <value>java.util.Date</value>
+  </array>
+</Values>

@@ -1,0 +1,191 @@
+
+
+// -----( B2B Java IM Code Template v1.2
+// -----( CREATED: Thu May 30 12:06:12 EDT 2002
+// -----( ON-HOST: WSTEWART.webmethods.com
+
+import com.wm.data.*;
+import com.wm.util.Values;
+import com.wm.app.b2b.server.Service;
+import com.wm.app.b2b.server.ServiceException;
+// --- <<B2B-START-IMPORTS>> ---
+import java.lang.*;
+import java.util.*;
+import com.wm.data.*;
+import com.wm.app.b2b.client.*;
+import com.wm.app.b2b.server.*;
+import com.wm.app.repo.*;
+// --- <<B2B-END-IMPORTS>> ---
+
+public final class purgeRepo
+{
+	// ---( internal utility methods )---
+
+	final static purgeRepo _instance = new purgeRepo();
+
+	static purgeRepo _newInstance() { return new purgeRepo(); }
+
+	static purgeRepo _cast(Object o) { return (purgeRepo)o; }
+
+	// ---( server methods )---
+
+
+
+
+	public static final void deleteIndivRepoCntx (IData pipeline)
+        throws ServiceException
+	{
+		// --- <<B2B-START(deleteIndivRepoCntx)>> ---
+		// @sigtype java 3.5
+		// [i] field:0:required ContextID
+		IDataCursor idc = pipeline.getCursor();
+		
+		// del all repo contexts that has this pattern
+		String pattern = "TNConversationStore";
+		
+		if(idc.first("ContextID"))
+			pattern = (String) idc.getValue();
+		
+		try
+		{
+			Repository rp = Repository.getCurrent();
+		
+			// enumerate all the contexts in the repository
+			for(Enumeration en = rp.keys();en.hasMoreElements();)
+			{
+				String ctxName = (String) en.nextElement();
+				if(ctxName.indexOf(pattern) >= 0){
+					rp.deleteContext(ctxName);
+					System.out.println("Deleting Context: "+ctxName);
+				}
+			}
+		}
+		catch(Exception e)
+		{
+			throw new ServiceException ( e );
+		}
+		// --- <<B2B-END>> ---
+
+                
+	}
+
+
+
+	public static final void deleteRepoCtxs (IData pipeline)
+        throws ServiceException
+	{
+		// --- <<B2B-START(deleteRepoCtxs)>> ---
+		// @sigtype java 3.5
+		// [i] field:0:required pattern {"TNConversationStore","TNQueryResults"}
+		IDataCursor idc = pipeline.getCursor();
+		
+		// del all repo contexts that has this pattern
+		String pattern = "TN";
+		if(idc.first("pattern"))
+			pattern = (String) idc.getValue();
+		
+		try
+		{
+			Repository rp = Repository.getCurrent();
+		
+			// enumerate all the contexts in the repository
+			for(Enumeration en = rp.keys();en.hasMoreElements();)
+			{
+				String ctxName = (String) en.nextElement();
+				if(ctxName.indexOf(pattern) != -1)
+					rp.deleteContext(ctxName);
+			}
+		}
+		catch(Exception e)
+		{
+			throw new ServiceException ( e );
+		}
+		// --- <<B2B-END>> ---
+
+                
+	}
+
+
+
+	public static final void indexPositionOf (IData pipeline)
+        throws ServiceException
+	{
+		// --- <<B2B-START(indexPositionOf)>> ---
+		// @sigtype java 3.5
+		// [i] field:0:required stringToSearch
+		// [i] field:0:required stringToFind
+		// [i] field:0:required iStart
+		// [o] field:0:required iPosition
+		IDataHashCursor pipelineCursor = pipeline.getHashCursor();
+		pipelineCursor.first( "stringToSearch" );
+		String	stringToSearch = (String) pipelineCursor.getValue();
+		pipelineCursor.first( "stringToFind" );
+		String	stringToFind = (String) pipelineCursor.getValue();
+		pipelineCursor.first( "iStart" );
+		String	sStart = (String) pipelineCursor.getValue();
+		
+		int iPosition = -1, iStart=0;
+		if(stringToSearch==null){
+			pipelineCursor.last();
+			pipelineCursor.insertAfter( "iPosition", "-1" );
+			pipelineCursor.destroy();
+			return;
+			}
+		else if(stringToSearch.trim().length()==0){
+			pipelineCursor.last();
+			pipelineCursor.insertAfter( "iPosition", "-1" );
+			pipelineCursor.destroy();
+			return;
+			}
+		else{
+			try{
+				iStart = Integer.parseInt(sStart);
+				iPosition = stringToSearch.indexOf(stringToFind,iStart);
+				}
+			catch(Exception e){
+				throw new ServiceException(e);
+				}
+			}
+		
+		pipelineCursor.last();
+		pipelineCursor.insertAfter( "iPosition", ""+iPosition );
+		pipelineCursor.destroy();
+		// --- <<B2B-END>> ---
+
+                
+	}
+
+
+
+	public static final void listRepoCtxs (IData pipeline)
+        throws ServiceException
+	{
+		// --- <<B2B-START(listRepoCtxs)>> ---
+		// @sigtype java 3.5
+		// [o] object:1:required contexts
+		try
+		{
+			Repository rp = Repository.getCurrent();
+		
+			Vector container = new Vector();
+		
+			for(Enumeration en = rp.keys();en.hasMoreElements();)
+			{
+				String ctxName = (String) en.nextElement();
+				container.addElement(ctxName);
+			}
+		
+			IDataCursor idc = pipeline.getCursor();
+		
+			idc.insertAfter("contexts",container.toArray());
+		}
+		catch(Exception e)
+		{
+			throw new ServiceException ( e );
+		}
+		// --- <<B2B-END>> ---
+
+                
+	}
+}
+

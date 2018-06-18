@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="svc_type">java</value>
+  <value name="svc_subtype">default</value>
+  <value name="svc_sigtype">java 3.5</value>
+  <record name="svc_sig" javaclass="com.wm.util.Values">
+    <record name="sig_in" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="nillable">true</value>
+      <list name="rec_fields">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">sourcePath</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">targetDir</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="node_comment"></value>
+          <record name="node_hints" javaclass="com.wm.util.Values">
+            <value name="field_usereditable">false</value>
+            <value name="field_largerEditor">false</value>
+            <value name="field_password">false</value>
+          </record>
+          <value name="field_name">useTimeStamp</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <array name="field_options" type="value" depth="1">
+            <value>false</value>
+            <value>true</value>
+          </array>
+          <value name="nillable">true</value>
+        </record>
+      </list>
+    </record>
+    <record name="sig_out" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="nillable">true</value>
+      <list name="rec_fields">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">status</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">targetFilePath</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+        </record>
+      </list>
+    </record>
+  </record>
+  <value name="node_comment">SYNOPSIS
+Moves a file from its source path to a target directory with
+the same base file name or with a datetime stamp appended.  
+
+Please note that there is bug in java.io.File.renameTo().  This
+manifests itself in the output parameter 'status' in that it
+could be misleading if a target directory denies permission to
+move into it, in which case this service simply moves the file
+into the very same SOURCE directory, not the intended target
+directory, and returns a status of 'true' and a target file path
+that's wrong.  Beware!
+
+INPUT
+(1) sourcePath - absolute path of a file to be moved
+(2) targetDir - target directory to which the file is moved
+(3) useTimeStamp - indicates whether to append datetime stamp
+    to filename; default is 'false'
+OUTPUT
+(4) status - 'true' if moved successfully; 'false' otherwise (but could be misleading, please see
+notes description in SYNOPSIS, due to underlying java.io.File.rename() function).
+(5) targetFilePath - the full path of the file that is moved to the target directory
+AUTHOR
+Ming Lu, webMethods 01/09/2002
+
+Additional note:
+Do not use this service when moving files between mounted directories!
+This service makes use of the File.renameTo() service, which does not
+work when moving a file from one file system to another.
+
+If you want to move files between mounted directories, use the copyFile
+and deleteFile services instead.
+</value>
+  <value name="stateless">no</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="template_type">html</value>
+  <value name="audit_level">brief</value>
+  <value name="check_internal_acls">no</value>
+  <value name="svc_in_validator_options">none</value>
+  <value name="svc_out_validator_options">none</value>
+  <value name="auditoption">2</value>
+  <record name="auditsettings" javaclass="com.wm.util.Values">
+    <value name="document_data">0</value>
+    <value name="startExecution">true</value>
+    <value name="stopExecution">true</value>
+    <value name="onError">true</value>
+  </record>
+</Values>

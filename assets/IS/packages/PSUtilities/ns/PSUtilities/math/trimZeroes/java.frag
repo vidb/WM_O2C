@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">trimZeroes</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">CglJRGF0YUN1cnNvciBpZGNQaXBlbGluZSA9IHBpcGVsaW5lLmdldEN1cnNvcigpOwoJaWYgKCFp
+ZGNQaXBlbGluZS5maXJzdCgibnVtYmVyIikpCgl7CgkJdGhyb3cgbmV3IFNlcnZpY2VFeGNlcHRp
+b24oImlucHV0IG51bWJlciB3YXMgbnVsbCEiKTsKCX0KCglTdHJpbmcgc3RyTnVtYmVyID0gKFN0
+cmluZylpZGNQaXBlbGluZS5nZXRWYWx1ZSgpOwoJZG91YmxlIGRibE51bWJlciA9IERvdWJsZS5w
+YXJzZURvdWJsZShzdHJOdW1iZXIpOwoKCURlY2ltYWxGb3JtYXQgZGYgPSBuZXcgRGVjaW1hbEZv
+cm1hdCgiIyIpOwoJCgovLwlpZGNQaXBlbGluZS5pbnNlcnRBZnRlcigidHJpbW1lZE51bWJlciIs
+IERvdWJsZS50b1N0cmluZyhkYmxOdW1iZXIpKTsKCWlkY1BpcGVsaW5lLmluc2VydEFmdGVyKCJ0
+cmltbWVkTnVtYmVyIiwgZGYuZm9ybWF0KGRibE51bWJlcikpOwoKCWlkY1BpcGVsaW5lLmRlc3Ry
+b3koKTsK</value>
+</Values>

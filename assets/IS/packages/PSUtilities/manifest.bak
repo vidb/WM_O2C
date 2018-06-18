@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="enabled">no</value>
+  <value name="version">1.3</value>
+  <value name="name">PSUtilities</value>
+  <value name="build">1.0</value>
+  <value name="description"></value>
+  <value name="time">2004-02-29 22:22:49 PST</value>
+  <value name="jvm_version">1.4.2_03</value>
+  <value name="publisher">192.168.0.3</value>
+  <value name="patch_nums"></value>
+  <record name="startup_services" javaclass="com.wm.util.Values">
+    <null name="PSUtilities.config:loadPSUtilitiesConfig"/>
+    <null name="PSUtilities.config:setACLs"/>
+  </record>
+  <null name="shutdown_services"/>
+  <null name="replication_services"/>
+  <null name="requires"/>
+  <value name="system_package">no</value>
+  <value name="listACL">Developers</value>
+</Values>

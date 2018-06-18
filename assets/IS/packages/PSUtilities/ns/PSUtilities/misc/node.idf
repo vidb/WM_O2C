@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="shared">LyoqIFVzZWQgYnkgImRlZXBDb252ZXJ0IgogICogCiAgKiBAYXV0aG9yIFJ5YW4gSm9obnN0b24s
+IFByb2Zlc3Npb25hbCBTZXJ2aWNlcywgd2ViTWV0aG9kcywgSW5jLgogICogQHZlcnNpb24gMS4w
+CiAgKi8KcHJpdmF0ZSBzdGF0aWMgZmluYWwgVmFsdWVzIGNvbnZlcnQoSGFzaHRhYmxlIGhUKXsN
+CgkvL0ZvbGxvd2luZyBzdGF0ZW1lbnQgZ2V0cyBhbGwgYXJyYXlzIGluIHRoaXMgb2JqZWN0Lg0K
+CWJvb2xlYW4gbnVsbEZsYWcgPSBmYWxzZTsNCglPYmplY3RbXSBoVEFycmF5ID0gaFQudmFsdWVz
+KCkudG9BcnJheSgpOw0KCUVudW1lcmF0aW9uIGhURW51bWVyYXRpb24gPSBoVC5rZXlzKCk7DQoJ
+VmFsdWVzIG91dGJvdW5kID0gbmV3IFZhbHVlcygpOw0KDQoJZm9yKGludCBpPTA7aTxoVEFycmF5
+Lmxlbmd0aDtpKyspew0KCQlTdHJpbmcga2V5ID0gKFN0cmluZyloVEVudW1lcmF0aW9uLm5leHRF
+bGVtZW50KCk7DQoJCWlmKGhUQXJyYXlbaV0gaW5zdGFuY2VvZiBqYXZhLmxhbmcuU3RyaW5nKXsN
+CgkJCW91dGJvdW5kLnB1dChrZXksKFN0cmluZyloVEFycmF5W2ldKTsNCgkJfQ0KCQllbHNlIGlm
+KGhUQXJyYXlbaV0gaW5zdGFuY2VvZiBqYXZhLnV0aWwuSGFzaHRhYmxlKXsNCgkJCVZhbHVlcyBp
+bnRlcm5hbE9iamVjdCA9IGNvbnZlcnQoKEhhc2h0YWJsZSloVEFycmF5W2ldKTsNCgkJCWlmKGlu
+dGVybmFsT2JqZWN0ID09IG51bGwpew0KCQkJCW51bGxGbGFnID0gdHJ1ZTsNCgkJCQlyZXR1cm4g
+bnVsbDsNCgkJCX0NCgkJCW91dGJvdW5kLnB1dChrZXksaW50ZXJuYWxPYmplY3QpOwkJCQkJCQ0K
+CQl9DQoJCWVsc2V7DQoJCQlTeXN0ZW0ub3V0LnByaW50bG4oIkNvbnZlcnNpb24gRmFpbHVyZToi
+ICsgInVuc3VwcG9ydGVkIHR5cGUgd2l0aGluIGluYm91bmQgSGFzaHRhYmxlLiIpOw0KCQkJcmV0
+dXJuIG51bGw7DQoJCX0NCgl9DQoJcmV0dXJuIG91dGJvdW5kOyANCn0NCgpwdWJsaWMgc3RhdGlj
+IGZpbmFsIGludCBNQVhTTEVFUCA9IDM2MDAwMDA7ICAvLyBvbmUgaHIK</value>
+  <value name="encodeutf8">true</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>java.net.InetAddress</value>
+    <value>java.net.UnknownHostException</value>
+    <value>com.wm.util.Debug</value>
+    <value>java.io.*</value>
+    <value>java.util.*</value>
+    <value>java.lang.System</value>
+    <value>com.wm.app.b2b.server.*</value>
+    <value>com.wm.util.Table</value>
+    <value>java.text.*</value>
+    <value>com.wm.lang.ns.*</value>
+  </array>
+</Values>

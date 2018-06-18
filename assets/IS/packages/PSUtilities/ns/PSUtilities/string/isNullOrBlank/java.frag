@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">isNullOrBlank</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">LyoqIFNlcnZpY2UgcmVjZWl2ZXMgYW4gaW5wdXQgU3RyaW5nLiBJZiBpbnB1dCBTdHJpbmcgaGFz
+IHZhbHVlIG9mIG51bGwgb3IgIiIsIHJldHVybnMgInJlc3VsdCIgb2YgCiAgKiAidHJ1ZSI7IG90
+aGVyd2lzZSwgcmV0dXJucyAicmVzdWx0IiBvZiAiZmFsc2UiLgogICoKICAqIEBhdXRob3IgVG9t
+IFRhbiwgUHJvZmVzc2lvbmFsIFNlcnZpY2VzLCB3ZWJNZXRob2RzLCBJbmMuCiAgKiBAdmVyc2lv
+biAxLjAKICAqLwoKU3RyaW5nIGluU3RyID0gaW4uZ2V0U3RyaW5nKCJpblN0cmluZyIpOwppZigg
+aW5TdHIgPT0gbnVsbCApCnsKCW91dC5wdXQoICJyZXN1bHQiLCAidHJ1ZSIgKTsKCXJldHVybiBv
+dXQ7Cn0KCmluU3RyLnRyaW0oKTsKCmlmKCBpblN0ci5lcXVhbHMoIiIpICkKewoJb3V0LnB1dCgg
+InJlc3VsdCIsICJ0cnVlIiApOwoJcmV0dXJuIG91dDsKfQoKb3V0LnB1dCggInJlc3VsdCIsICJm
+YWxzZSIgKTsgCg==</value>
+</Values>

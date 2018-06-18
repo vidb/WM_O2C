@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="encodeutf8">true</value>
+  <array name="imports" type="value" depth="1">
+    <value>java.io.*</value>
+    <value>java.lang.SecurityException</value>
+    <value>java.util.Properties</value>
+    <value>com.wm.lang.ns.*</value>
+  </array>
+  <value name="shared">cHJpdmF0ZSBzdGF0aWMgZmluYWwgYm9vbGVhbiBjaGVja1BhdGhWYWxpZGl0eShTdHJpbmcgc3Ry
+UGF0aCwgU3RyaW5nIHN0ckFjdGlvbikKICB0aHJvd3MgRXhjZXB0aW9uCnsKCXRyeQoJewoJCS8v
+ICoqKiBDaGVjayBpZiBzZXJ2aWNlIGlzIG9uIHRoZSBhbGxvd2VkIGxpc3QgKioqCgkJSURhdGEg
+aW4gPSBJRGF0YUZhY3RvcnkuY3JlYXRlKCk7CgkJSURhdGFDdXJzb3IgaWRjSW4gPSBpbi5nZXRD
+dXJzb3IoKTsKCQlpZGNJbi5pbnNlcnRBZnRlcigicGF0aCIsIHN0clBhdGgpOwoJCWlkY0luLmlu
+c2VydEFmdGVyKCJhY3Rpb24iLCBzdHJBY3Rpb24pOwoJCU5TTmFtZSBuc0NoZWNrU2VydmljZU5h
+bWUgPSBOU05hbWUuY3JlYXRlKCJQU1V0aWxpdGllcy5jb25maWc6Y2hlY2tQYXRoVmFsaWRpdHki
+KTsKCQlpZGNJbi5kZXN0cm95KCk7CgkJSURhdGEgb3V0OwoJCW91dCA9IFNlcnZpY2UuZG9JbnZv
+a2UobnNDaGVja1NlcnZpY2VOYW1lLCBpbik7CgkJSURhdGFDdXJzb3IgaWRjT3V0ID0gb3V0Lmdl
+dEN1cnNvcigpOwoJCVN0cmluZyBzdHJWYWxpZCA9IG51bGw7CgkJaWYgKGlkY091dC5maXJzdCgi
+dmFsaWQiKSkKCQl7CgkJCXN0clZhbGlkID0gKFN0cmluZylpZGNPdXQuZ2V0VmFsdWUoKTsKCQl9
+CgkJaWRjT3V0LmRlc3Ryb3koKTsKCgkJaWYgKHN0clZhbGlkLmVxdWFscygiZmFsc2UiKSkKCQl7
+CgkJCXJldHVybiBmYWxzZTsKCQl9CgkJcmV0dXJuIHRydWU7CgkJLy8gKioqIEVuZCBjaGVjayAq
+KioKCX0KCWNhdGNoIChFeGNlcHRpb24gZSkKCXsKCQl0aHJvdyBlOwoJfQp9Cg==</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+</Values>

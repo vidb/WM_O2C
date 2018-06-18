@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="svc_type">flow</value>
+  <value name="svc_subtype">default</value>
+  <value name="svc_sigtype">java 3.5</value>
+  <record name="svc_sig" javaclass="com.wm.util.Values">
+    <record name="sig_in" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="nillable">true</value>
+      <list name="rec_fields">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">dbAlias1</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">dbAlias2</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">serviceNS</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="node_comment"></value>
+          <record name="node_hints" javaclass="com.wm.util.Values">
+            <value name="field_largerEditor">false</value>
+            <value name="field_password">false</value>
+          </record>
+          <value name="field_name">input</value>
+          <value name="field_type">record</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">true</value>
+          <value name="nillable">true</value>
+          <list name="rec_fields">
+          </list>
+        </record>
+      </list>
+    </record>
+    <record name="sig_out" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="nillable">true</value>
+      <list name="rec_fields">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">successFlag</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">errorMsg</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">output</value>
+          <value name="field_type">record</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+          <list name="rec_fields">
+          </list>
+        </record>
+      </list>
+    </record>
+  </record>
+  <value name="node_comment">&lt;h5&gt;
+The Wrapper provides the framework so that DB services do not need to worry transaction management, connection management 
+and exception trapping when processing DB logic .  the wrapper is built on basis of WmDB connection pooling.  It has
+been tested on IS 4.6 SP2 with fix 105 and 150.  The wrapper handles all exceptions raised within (including ones
+from invoked DB flow service).  &lt;br&gt;&lt;br&gt;
+
+xaTransactionWrapper handles cross transaction between two DB destinations&lt;br&gt;&lt;br&gt;
+
+&lt;u&gt;Caution: xaTransactionWrapper does NOT satisfy JTS cross transaction management requirements.  It uses two commits
+in sequence (not two phase commit).  Under rare situations, it could commit the first transaction but fail to do
+so on the second one.&lt;/u&gt;
+&lt;/h5&gt;&lt;br&gt;
+&lt;p&gt;
+&lt;h5&gt;&lt;i&gt;Service Input&lt;/h5&gt;&lt;/i&gt;
+&lt;b&gt;dbAlias1:&lt;/b&gt; (required)WmDB database alias for 1st destination&lt;br&gt;
+&lt;b&gt;dbAlias2:&lt;/b&gt; (required)WmDB database alias for 2st destination&lt;br&gt;
+&lt;b&gt;serviceNS:&lt;/b&gt; (required) The namespace of flow service that contains the DB logic (e.g. myFolder.mySubFolder:myDBService).
+		The flow service will be given two connection objects named "db1Connection" &amp; "db2Connection" 
+		by the wrapper in addition to other inputs the service needs &lt;br&gt;
+&lt;b&gt;input:&lt;/b&gt;	(optional) input data for the service specified in the "serviceNS" parameter &lt;br&gt;
+
+&lt;/P&gt;
+
+&lt;p&gt;
+&lt;h5&gt;&lt;i&gt;Service Output&lt;/h5&gt;&lt;/i&gt;
+&lt;b&gt;successFlag:&lt;/b&gt; "true" or "false", if set to "false", there is an error when executing the DB flow.  &lt;br&gt;
+&lt;b&gt;errorMsg:&lt;/b&gt; If there is an error when executing the DB flow, it will be populated with error message &lt;br&gt;
+&lt;b&gt;output:&lt;/b&gt; contains DB flow service output
+&lt;/P&gt;</value>
+  <value name="stateless">no</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="audit_level">brief</value>
+  <value name="check_internal_acls">no</value>
+  <value name="svc_in_validator_options">default</value>
+  <value name="svc_out_validator_options">none</value>
+  <value name="auditoption">2</value>
+  <record name="auditsettings" javaclass="com.wm.util.Values">
+    <value name="document_data">0</value>
+    <value name="startExecution">true</value>
+    <value name="stopExecution">true</value>
+    <value name="onError">true</value>
+  </record>
+</Values>

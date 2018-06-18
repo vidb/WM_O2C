@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">putObjectInSession</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">CglJRGF0YUN1cnNvciBpZGNQaXBlbGluZSA9IHBpcGVsaW5lLmdldEN1cnNvcigpOwoJT2JqZWN0
+IG9iaiA9IG51bGw7CglTdHJpbmcgc3RyT2JqZWN0TmFtZSA9ICIiOwoJaWYgKGlkY1BpcGVsaW5l
+LmZpcnN0KCJvYmplY3QiKSkKCXsKCQlvYmogPSBpZGNQaXBlbGluZS5nZXRWYWx1ZSgpOwoJfQoK
+CWlmIChpZGNQaXBlbGluZS5maXJzdCgib2JqZWN0TmFtZSIpKQoJewoJCXN0ck9iamVjdE5hbWUg
+PSAoU3RyaW5nKWlkY1BpcGVsaW5lLmdldFZhbHVlKCk7Cgl9CgllbHNlCgl7CgkJdGhyb3cgbmV3
+IFNlcnZpY2VFeGNlcHRpb24gKCJvYmplY3ROYW1lIGlzIG51bGwhIik7Cgl9CgoJU2Vzc2lvbiBz
+ZXNzaW9uID0gU2VydmljZS5nZXRTZXNzaW9uKCk7CglzZXNzaW9uLnB1dChzdHJPYmplY3ROYW1l
+LCBvYmopOwoKCWlkY1BpcGVsaW5lLmRlc3Ryb3koKTsK</value>
+</Values>

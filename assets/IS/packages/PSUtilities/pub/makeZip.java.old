@@ -1,0 +1,61 @@
+/*
+ * This class has been created to make zip files of the packages.
+ * \webMethods\Developer3\lib\client.zip has to be added to the classpath
+ * The packaged zip files are put in the \webMethods\Server3\replicate\outbound.
+ * Parameters to be supplied at run time : <host> <port> <Username> <password> <package1> <package2> ....
+ * eg: makeZip localhost 5555 Administrator <password> <package1>.........
+ */
+
+import java.io.*;
+import java.util.Vector;
+import com.wm.util.Table;
+import com.wm.util.Values;
+import com.wm.app.b2b.util.GenUtil;
+import com.wm.app.b2b.client.Context;
+import com.wm.app.b2b.client.ServiceException;
+import com.wm.util.coder.ValuesCodable;
+
+public class makeZip 
+{
+    public static void main(String[] args)
+    {
+	  
+	  String host = args[0];
+	  String port = args[1];
+
+        // Set username and password for protected services
+	  String username =  args[2];
+	  String password = args[3];
+
+        // Connect to server
+        String  server = host + ":" + port;
+        Context context = new Context();
+
+        try {
+  	          context.connect(server, username, password);
+      	} catch (ServiceException e) {
+            		System.out.println("\nError connecting to the server \""+server+"\""); 
+        	}
+
+	  System.out.println("\nNo. of packages to be zipped: " + (args.length - 4)); 
+	  int count=0;
+
+        Values out = new Values();
+
+        for(int i=4;i<args.length;++i)
+	  {                
+	        try
+      	  {
+			out.put("package",args[i]);
+	      	context.invoke("wm.server.replicator","packageMakeZip", out);
+                  System.out.println ("\nZipping package: " + args[i]);
+			++count;
+	        }
+      	  catch (Exception e) {
+            		System.err.println("\nError making zip file for the package \""+args[i]+"\" : "+ e.toString());
+	        }
+    	  }
+	  System.out.println("\nNo. of packages zipped: " + count);
+    }
+}
+

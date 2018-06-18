@@ -1,0 +1,7 @@
+allowedWritePaths	C:\\wm6\\test*C:\\wm6\\test.txt
+allowedReadPaths	C:\\wm6\\test*C:\\wm6\\test.txt
+allowedDeletePaths C:\\wm6\\test*C:\\wm6\\test.txt
+allowedCommands	property1*cmd.exe /c dir*property3
+allowedServices	pub.flow:debugLog*service2
+allowedFromEmails	employee@somecompany.com*test@test.com
+maxSleep	60000

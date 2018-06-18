@@ -1,0 +1,2 @@
+%loop recordElements%%value recordElements%%loopsep ','%%endloop%%nl%
+%loop recordList%%loop -struct%%value%%loopsep ','%%endloop%%nl%%endloop%
