@@ -8,7 +8,7 @@
         <!-- remap the VCS structure defined in project.properties to have absolute paths -->
         <property name="isProjectsDir" location="${isPackages}"/>
         <property name="isTestDir" location="${isTests}"/>
-        <property name="bpmProjectsDir" location="${bpmProjects}"/>
+        <property name="bpmProjectsDir" location=".//assets/BPM/Process Model"/>
         <property name="mwsProjectsDir" location="${mwsProjects}"/>
         <property name="rulesProjectsDir" location="${rulesProjects}"/>
         <property name="umProjectsDir" location="${umExport}"/>
