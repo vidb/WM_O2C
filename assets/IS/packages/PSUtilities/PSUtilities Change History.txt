@@ -1,4 +1,0 @@
-1.0 Original Version
-1.1 Added regex,backup package
-1.2 Corrected bugs: 1) Removed all IDataHashCursor references, 2) Due to difference in behavior between wM 4.6 and 6.x, added check for existing of field before making IDataCursor.delete() call.
-1.3 Added some extra input checking for PSUtilities.date:calculateDateDifference, PSUtilities.file:objectToFile, PSUtilities.math:compareFloats, PSUtilities.math:compareInts, PSUtilities.remote:runContextJob, PSUtilities.remote:runTContextJob
