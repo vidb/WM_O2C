@@ -12,21 +12,6 @@ pipeline {
  		 }
         }
 	
-        stage('pushACDLS') {
-            steps {
-	    	echo "pushing acdls to git"
-		
-            }
-        }
-	
- 	stage('deploy') {
-            steps {
-	    	echo "deploy & provision using sagcc"
-		
-            }
-	    
-        }
-	
 	stage('test') {
             steps {
 		echo "test"
