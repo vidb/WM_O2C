@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="svc_type">AdapterService</value>
+  <value name="svc_subtype">unknown</value>
+  <value name="svc_sigtype">unknown</value>
+  <record name="svc_sig" javaclass="com.wm.util.Values">
+    <record name="sig_in" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_name">getOptimizeCountInput</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="nillable">true</value>
+      <array name="rec_fields" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">getOptimizeCountInput</value>
+          <value name="field_type">record</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+          <array name="rec_fields" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="node_type">unknown</value>
+              <value name="field_name">table</value>
+              <value name="field_type">string</value>
+              <value name="field_dim">0</value>
+              <value name="nillable">true</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="node_type">unknown</value>
+              <value name="field_name">numdays</value>
+              <value name="field_type">string</value>
+              <value name="field_dim">0</value>
+              <value name="nillable">true</value>
+            </record>
+          </array>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">$connectionName</value>
+          <value name="field_type">string</value>
+          <value name="field_dim">0</value>
+          <value name="field_opt">true</value>
+          <value name="nillable">false</value>
+        </record>
+      </array>
+    </record>
+    <record name="sig_out" javaclass="com.wm.util.Values">
+      <value name="node_type">record</value>
+      <value name="field_name">getOptimizeCountOutput</value>
+      <value name="field_type">record</value>
+      <value name="field_dim">0</value>
+      <value name="nillable">true</value>
+      <array name="rec_fields" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="node_type">record</value>
+          <value name="field_name">getOptimizeCountOutput</value>
+          <value name="field_type">record</value>
+          <value name="field_dim">0</value>
+          <value name="nillable">true</value>
+          <array name="rec_fields" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="node_type">unknown</value>
+              <value name="field_name">SQLStatement</value>
+              <value name="field_type">string</value>
+              <value name="field_dim">0</value>
+              <value name="nillable">true</value>
+            </record>
+            <record javaclass="com.wm.util.Values">
+              <value name="node_type">record</value>
+              <value name="field_name">results</value>
+              <value name="field_type">record</value>
+              <value name="field_dim">1</value>
+              <value name="nillable">true</value>
+              <array name="rec_fields" type="record" depth="1">
+                <record javaclass="com.wm.util.Values">
+                  <value name="node_type">unknown</value>
+                  <value name="field_name">rowCount</value>
+                  <value name="field_type">string</value>
+                  <value name="field_dim">0</value>
+                  <value name="nillable">true</value>
+                </record>
+              </array>
+            </record>
+          </array>
+        </record>
+      </array>
+    </record>
+  </record>
+  <value name="stateless">no</value>
+  <value name="caching">no</value>
+  <value name="prefetch">no</value>
+  <value name="cache_ttl">15</value>
+  <value name="prefetch_level">1</value>
+  <value name="audit_level">off</value>
+  <value name="check_internal_acls">no</value>
+  <value name="icontext_policy">$null</value>
+  <value name="system_service">no</value>
+  <value name="retry_max">0</value>
+  <value name="retry_interval">0</value>
+  <value name="svc_in_validator_options">none</value>
+  <value name="svc_out_validator_options">none</value>
+  <value name="auditoption">0</value>
+  <record name="auditsettings" javaclass="com.wm.util.Values">
+    <value name="document_data">0</value>
+    <value name="startExecution">false</value>
+    <value name="stopExecution">false</value>
+    <value name="onError">true</value>
+  </record>
+  <value name="node_type">service</value>
+  <value name="IRTNODE_VERSION">1</value>
+  <value name="IRTNODE_PROPERTY">CwQAAAABBQEEGQBjAG8AbQAuAHcAbQAuAGQAYQB0AGEALgBJAFMATQBlAG0ARABhAHQAYQBJAG0AcABsBBMAcwBlAHIAdgBpAGMAZQBUAGUAbQBwAGwAYQB0AGUATgBhAG0AZQQpAGMAbwBtAC4AdwBtAC4AYQBkAGEAcAB0AGUAcgAuAHcAbQBqAGQAYgBjAC4AcwBlAHIAdgBpAGMAZQBzAC4ARAB5AG4AYQBtAGkAYwBTAFEATAQOAGMAbwBuAG4AZQBjAHQAaQBvAG4ATgBhAG0AZQQ2AFMAYwBCAEEATQBGAHIAYQBtAGUAdwBvAHIAawAuAEEAZABhAHAAdABlAHIAUwB2AGMALgBjAG8AbgBuAGUAYwB0AGkAbwBuAC4ATwByAGEAYwBsAGUAOgBvAHAAdABpAG0AaQB6AGUAZABiBBIAdABlAG0AcABsAGEAdABlAFAAcgBvAHAAZQByAHQAaQBlAHMFAQACBAMAcwBxAGwETwBTAGUAbABlAGMAdAAgAGMAbwB1AG4AdAAoACoAKQAgAGYAcgBvAG0AIAAkAHsAdABhAGIAbABlAH0AIAB3AGgAZQByAGUAIABjAHQAcgBsAF8AaQBuAHMAZQByAHQAXwBkAHQAIAA8ACAAKABzAHkAcwBkAGEAdABlACAALQAgACQAewBuAHUAbQBkAGEAeQBzAH0AKQANAAoADQAKBAwAcwBxAGwARgBpAGUAbABkAFQAeQBwAGUEEABqAGEAdgBhAC4AbABhAG4AZwAuAFMAdAByAGkAbgBnBA4AcwBxAGwATwB1AHQAcAB1AHQARgBpAGUAbABkBAwAUwBRAEwAUwB0AGEAdABlAG0AZQBuAHQEDABzAHEAbABWAGEAcgBpAGEAYgBsAGUAcwoCAA0EBQB0AGEAYgBsAGUEBwBuAHUAbQBkAGEAeQBzBA4AcwBxAGwASQBuAHAAdQB0AEYAaQBlAGwAZABzCgIADQATABQEEgBzAHEAbABJAG4AcAB1AHQARgBpAGUAbABkAFQAeQBwAGUAcwoCAA0ADQANBA0AaQBuAHAAdQB0AEoARABCAEMAVAB5AHAAZQoAAA0EDgBpAG4AcAB1AHQARgBpAGUAbABkAFQAeQBwAGUKAAANBAoAaQBuAHAAdQB0AEYAaQBlAGwAZAoAAA0EDgBvAHUAdABwAHUAdABKAEQAQgBDAFQAeQBwAGUKAQANBAcAVgBBAFIAQwBIAEEAUgQPAG8AdQB0AHAAdQB0AEYAaQBlAGwAZABUAHkAcABlCgEADQANBA8AcgBlAHMAdQBsAHQARgBpAGUAbABkAFQAeQBwAGUKAQANBBIAagBhAHYAYQAuAGwAYQBuAGcALgBTAHQAcgBpAG4AZwBbAF0ECwBvAHUAdABwAHUAdABGAGkAZQBsAGQKAQANBAgAcgBvAHcAQwBvAHUAbgB0BAsAcgBlAHMAdQBsAHQARgBpAGUAbABkCgEADQQSAHIAZQBzAHUAbAB0AHMAWwBdAC4AcgBvAHcAQwBvAHUAbgB0BA8AcgBlAGEAbABPAHUAdABwAHUAdABGAGkAZQBsAGQKAQANADsEBgBtAGEAeABSAG8AdwQBADAEDgByAGUAcwB1AGwAdABSAG8AdwBGAGkAZQBsAGQEAAQSAHIAZQBzAHUAbAB0AFIAbwB3AEYAaQBlAGwAZABUAHkAcABlBBEAagBhAHYAYQAuAGwAYQBuAGcALgBJAG4AdABlAGcAZQByBBAAZABlAHMAaQBnAG4AVABpAG0AZQBMAG8AYwBhAGwAZQQFAGUAbgBfAFUAUwIABBkAYQBkAGEAcAB0AGUAcgBTAGUAcgB2AGkAYwBlAE4AbwBkAGUAVgBlAHIAcwBpAG8AbgsEAAAAAgQLAGEAZABhAHAAdABlAHIAVAB5AHAAZQQLAEoARABCAEMAQQBkAGEAcAB0AGUAcgQPAGkAbgBwAHUAdABSAGUAYwBvAHIAZABOAGEAbQBlBBUAZwBlAHQATwBwAHQAaQBtAGkAegBlAEMAbwB1AG4AdABJAG4AcAB1AHQEEABvAHUAdABwAHUAdABSAGUAYwBvAHIAZABOAGEAbQBlBBYAZwBlAHQATwBwAHQAaQBtAGkAegBlAEMAbwB1AG4AdABPAHUAdABwAHUAdAIA</value>
+</Values>

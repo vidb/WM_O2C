@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">rangedRandomNumber</value>
+  <value name="encodeutf8">true</value>
+  <value name="body">Ci8vIHBpcGVsaW5lCklEYXRhQ3Vyc29yIHBpcGVsaW5lQ3Vyc29yID0gcGlwZWxpbmUuZ2V0Q3Vy
+c29yKCk7ClN0cmluZwltYXhWYWx1ZSA9IElEYXRhVXRpbC5nZXRTdHJpbmcoIHBpcGVsaW5lQ3Vy
+c29yLCAibWF4VmFsdWUiICk7CnBpcGVsaW5lQ3Vyc29yLmRlc3Ryb3koKTsKCi8vIHBpcGVsaW5l
+ClJhbmRvbSByYW5kID0gbmV3IFJhbmRvbSgpOwppbnQgcm51bSA9IHJhbmQubmV4dEludChJbnRl
+Z2VyLnBhcnNlSW50KG1heFZhbHVlKSk7ClN0cmluZyBybnVtU3RyID0gU3RyaW5nLnZhbHVlT2Yo
+cm51bSk7CklEYXRhQ3Vyc29yIHBpcGVsaW5lQ3Vyc29yXzEgPSBwaXBlbGluZS5nZXRDdXJzb3Io
+KTsKSURhdGFVdGlsLnB1dCggcGlwZWxpbmVDdXJzb3JfMSwgInJSYW5kb20iLCBybnVtU3RyICk7
+CnBpcGVsaW5lQ3Vyc29yXzEuZGVzdHJveSgpOwoK</value>
+</Values>
