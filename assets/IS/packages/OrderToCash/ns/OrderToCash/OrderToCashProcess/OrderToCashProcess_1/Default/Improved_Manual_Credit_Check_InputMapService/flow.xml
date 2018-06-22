@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+
+  <!-- nodes -->
+
+<INVOKE SERVICE="OrderToCash.OrderToCashProcess.OrderToCashProcess_1.Default:Improved_Manual_Credit_Check_QueueTask">
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/ValidatedOrderCreditChecked;4;0;ScOrderToCash.Documents:CreditCheckedOrder" TO="/TaskData;2;0/ValidatedOrderCreditChecked;2;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/Improved_Manual_Credit_CheckInputEnv;4;0;pub.task:TaskQueueInfo" TO="/TaskQueueInfo;4;0;pub.task:TaskQueueInfo">
+</MAPCOPY>
+</MAP>
+</INVOKE>
+</FLOW>

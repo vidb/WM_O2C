@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+
+  <!-- nodes -->
+
+<INVOKE SERVICE="pub.task.taskclient:queueTask">
+
+  <!-- nodes -->
+
+<MAP MODE="INPUT">
+
+  <!-- nodes -->
+
+<MAPCOPY FROM="/TaskData;2;0;" TO="/TaskData;2;0">
+</MAPCOPY>
+
+<MAPCOPY FROM="/ProcessData;4;0;pub.prt:ProcessData" TO="/CallbackData;2;0">
+</MAPCOPY>
+
+<MAPSET OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/CallbackServiceName;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">wm.prt.tde:tdeCallback</value>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="TaskQueueInfo;4;0;pub.task:TaskQueueInfo/name;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">Improved Manual Credit Check</value>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/ruleSet;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml"></value>
+</Values>
+</DATA>
+</MAPSET>
+
+<MAPSET OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/taskTypeID;1;0">
+  <DATA ENCODING="XMLValues" I18N="true">
+
+<Values version="2.0">
+  <value name="xml">2AE87CCA-E29C-1AA0-6FE1-DD243B5B031F</value>
+</Values>
+</DATA>
+</MAPSET>
+</MAP>
+</INVOKE>
+</FLOW>

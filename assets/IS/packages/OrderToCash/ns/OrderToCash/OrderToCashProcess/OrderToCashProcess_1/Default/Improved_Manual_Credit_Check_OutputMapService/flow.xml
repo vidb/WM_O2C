@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FLOW VERSION="3.0" CLEANUP="true">
+
+  <!-- nodes -->
+
+<MAP MODE="STANDALONE">
+
+  <!-- nodes -->
+
+<MAPCOPY NAME="Link" FROM="/TaskData;2;0/ValidatedOrderCreditChecked;2;0" TO="/ValidatedOrderCreditChecked;4;0;ScOrderToCash.Documents:CreditCheckedOrder">
+</MAPCOPY>
+
+<MAPCOPY FROM="/TaskCompletionInfo;4;0;pub.task:TaskCompletionInfo" TO="/Improved_Manual_Credit_CheckOutputEnv;4;0;pub.task:TaskCompletionInfo">
+</MAPCOPY>
+</MAP>
+</FLOW>

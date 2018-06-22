@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">webMethods/trigger</value>
+  <value name="node_subtype">unknown</value>
+  <value name="node_nsName">OrderToCash.OrderToCashProcess.Default:subscriptionTrigger</value>
+  <value name="node_pkg">OrderToCash</value>
+  <value name="is_public">false</value>
+  <value name="trigger_type">broker-trigger</value>
+  <record name="trigger" javaclass="com.wm.util.Values">
+    <value name="serialSuspendOnError">false</value>
+    <value name="concurrent">true</value>
+    <value name="ordering">0</value>
+    <value name="auditOption">0</value>
+    <record name="auditSettings" javaclass="com.wm.util.Values">
+      <value name="document_data">0</value>
+      <value name="startExecution">false</value>
+      <value name="stopExecution">false</value>
+      <value name="onError">true</value>
+    </record>
+    <record name="redeliveryOptions" javaclass="com.wm.util.Values">
+      <value name="max">-1</value>
+      <value name="delayInterval">10000</value>
+      <value name="onRedeliveryFailure">0</value>
+      <value name="resumeTaskSvcName">wm.prt.admin:monitorPRTDB</value>
+    </record>
+    <value name="joinTimeout">86400000</value>
+    <value name="maxConcurrentThreads">10</value>
+    <value name="inDoubtDetection">false</value>
+    <value name="resolveWithHistory">false</value>
+    <value name="resolutionHistoryTTL">7200000</value>
+    <value name="uniqueId">bRv2LWOmknEWbSVK4LD8Wb76GMM=</value>
+    <value name="executeUser">Administrator</value>
+    <array name="conditions" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="type">simple</value>
+        <record name="data" javaclass="com.wm.util.Values">
+          <record name="messageTypeFilterPair" javaclass="com.wm.util.Values">
+            <value name="messageType">wm.prt.dispatch:SubprocessStart</value>
+            <null name="filter"/>
+            <value name="umFilter">ProcessModelID = 'OrderToCash/OrderToCashProcess'</value>
+          </record>
+          <value name="serviceName">wm.prt.dispatch:handleSubprocessStart</value>
+          <value name="conditionName">Subprocess Start Event</value>
+        </record>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="type">join</value>
+        <record name="data" javaclass="com.wm.util.Values">
+          <array name="messageTypeFilterPairs" type="record" depth="1">
+            <record javaclass="com.wm.util.Values">
+              <value name="messageType">ScOrderToCash.Documents:InboundOrder</value>
+              <null name="filter"/>
+            </record>
+          </array>
+          <value name="serviceName">wm.prt.dispatch:handlePublishedInput</value>
+          <value name="conditionName">Subscribed inputs</value>
+          <number name="joinType" type="Integer">3</number>
+        </record>
+      </record>
+    </array>
+    <value name="processingSuspended">false</value>
+    <value name="retrievalSuspended">false</value>
+    <value name="transportAckSize">1</value>
+    <value name="deliverEnabled">true</value>
+    <value name="executeEnabled">true</value>
+    <value name="docsPrefetchMax">10</value>
+    <value name="docsPrefetchMin">4</value>
+    <value name="priorityEnabled">false</value>
+    <null name="namedObjectString"/>
+  </record>
+  <value name="LOCK_REQUIRED">true</value>
+</Values>
