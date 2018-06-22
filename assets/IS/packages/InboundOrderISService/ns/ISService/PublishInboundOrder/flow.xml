@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <FLOW VERSION="3.0" CLEANUP="true">
+  <COMMENT></COMMENT>
 
   <!-- nodes -->
 
-<MAP TIMEOUT="" MODE="STANDALONE">
+<MAP TIMEOUT="" MODE="STANDALONE" DISABLED="true">
   <COMMENT></COMMENT>
   <MAPTARGET>
 
@@ -15,7 +16,6 @@
     <value name="is_public">false</value>
     <value name="field_type">record</value>
     <value name="field_dim">0</value>
-    <value name="wrapper_type">IData</value>
     <value name="nillable">true</value>
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
@@ -331,7 +331,6 @@
         <value name="field_name">InboundOrder</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
-        <value name="wrapper_type">IData</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -409,7 +408,6 @@
     <value name="is_public">false</value>
     <value name="field_type">record</value>
     <value name="field_dim">0</value>
-    <value name="wrapper_type">IData</value>
     <value name="nillable">true</value>
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
@@ -783,61 +781,61 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/Identifier;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Identifier;1;0">
+<MAPCOPY FROM="/Identifier;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Identifier;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/OrderDate;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/OrderDate;1;0">
+<MAPCOPY FROM="/OrderDate;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/OrderDate;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/OrderTotal;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/OrderTotal;1;0">
+<MAPCOPY FROM="/OrderTotal;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/OrderTotal;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/CustomerName;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/CustomerName;1;0">
+<MAPCOPY FROM="/CustomerName;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/CustomerName;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/VendorName;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/VendorName;1;0">
+<MAPCOPY FROM="/VendorName;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/VendorName;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/RequestedShipDate;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/RequestedShipDate;1;0">
+<MAPCOPY FROM="/RequestedShipDate;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/RequestedShipDate;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/Id;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Address;2;0/Id;1;0">
+<MAPCOPY FROM="/Id;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Address;2;0/Id;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/Address1;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Address;2;0/Address1;1;0">
+<MAPCOPY FROM="/Address1;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Address;2;0/Address1;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/Address2;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Address;2;0/Address2;1;0">
+<MAPCOPY FROM="/Address2;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Address;2;0/Address2;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/City;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Address;2;0/City;1;0">
+<MAPCOPY FROM="/City;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Address;2;0/City;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/State;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Address;2;0/State;1;0">
+<MAPCOPY FROM="/State;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Address;2;0/State;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/Country;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Address;2;0/Country;1;0">
+<MAPCOPY FROM="/Country;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Address;2;0/Country;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/Zip;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Address;2;0/Zip;1;0">
+<MAPCOPY FROM="/Zip;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Address;2;0/Zip;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/Region;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Region;1;0">
+<MAPCOPY FROM="/Region;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Region;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/Comments;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Comments;1;0">
+<MAPCOPY FROM="/Comments;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Comments;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/Status;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Status;1;0">
+<MAPCOPY FROM="/Status;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Status;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/Cost;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Cost;1;0">
+<MAPCOPY FROM="/Cost;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Cost;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/Quantity;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Quantity;1;0">
+<MAPCOPY FROM="/Quantity;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/Quantity;1;0" DISABLED="true">
 </MAPCOPY>
 
-<MAPCOPY FROM="/State2;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/State;1;0">
+<MAPCOPY FROM="/State2;1;0" TO="/InboundOrder;4;0;ScOrderToCash.Documents:InboundOrder/State;1;0" DISABLED="true">
 </MAPCOPY>
 </MAP>
 
@@ -857,7 +855,6 @@
     <value name="field_name">publishInput</value>
     <value name="field_type">record</value>
     <value name="field_dim">0</value>
-    <value name="wrapper_type">IData</value>
     <value name="nillable">true</value>
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
@@ -880,7 +877,6 @@
         <value name="field_name">document</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
-        <value name="wrapper_type">IData</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -934,7 +930,6 @@
     <value name="is_public">false</value>
     <value name="field_type">record</value>
     <value name="field_dim">0</value>
-    <value name="wrapper_type">IData</value>
     <value name="nillable">true</value>
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
@@ -1250,12 +1245,68 @@
         <value name="field_name">InboundOrder</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
-        <value name="wrapper_type">IData</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
         <value name="modifiable">true</value>
         <value name="rec_ref">ScOrderToCash.Documents:InboundOrder</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">Cost</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">Quantity</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+      </record>
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="node_comment"></value>
+        <record name="node_hints" javaclass="com.wm.util.Values">
+          <value name="field_usereditable">true</value>
+          <value name="field_largerEditor">false</value>
+          <value name="field_password">false</value>
+        </record>
+        <value name="is_public">false</value>
+        <value name="field_name">State2</value>
+        <value name="field_type">string</value>
+        <value name="field_dim">0</value>
+        <array name="field_options" type="value" depth="1">
+        </array>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
       </record>
     </array>
     <value name="modifiable">true</value>
