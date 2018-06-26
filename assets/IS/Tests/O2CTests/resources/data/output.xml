@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.util.Values">
+    <value name="in1">12</value>
+    <value name="in2">12</value>
+    <value name="out">24</value>
+  </record>
+</IDataXMLCoder>

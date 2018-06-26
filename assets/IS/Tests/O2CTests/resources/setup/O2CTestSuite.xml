@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webMethodsTestSuite description="O2CTestSuite" name="O2CTestSuite">
+    <webMethodsTestCase name="testSum">
+        <service folder="O2CTests" name="testSum">
+            <input>
+                <file filename="resources/data/input1.xml"/>
+            </input>
+            <expected>
+                <file filename="resources/data/output.xml"/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
+    <webMethodsTestCase name="verifyNewAutoOrder">
+        <service folder="O2CTests" name="publishAndVerifyAutoComplete">
+            <input>
+                <file filename="resources/data/AutoComplete.xml"/>
+            </input>
+            <expected>
+                <file filename="resources/data/AutoCompleteOutput.xml"/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
+    <webMethodsTestCase name="verifyNewManualCompleteOrder">
+        <service folder="O2CTests" name="publishAndVerifyManualComplete">
+            <input>
+                <file filename="resources/data/manualComplete.xml"/>
+            </input>
+            <expected>
+                <file filename="resources/data/manualCompleteOutput.xml"/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
+</webMethodsTestSuite>
