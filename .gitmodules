@@ -1,0 +1,3 @@
+[submodule "assets/IS/packages"]
+	path = assets/IS/packages
+	url = https://github.com/vidb/packages.git
