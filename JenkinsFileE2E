@@ -1,6 +1,6 @@
 pipeline {
 
-    node ("buildserver")
+ agent {node 'buildserver'}
 
     stages {
 		node ("buildserver")
