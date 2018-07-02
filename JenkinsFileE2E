@@ -1,6 +1,6 @@
 pipeline {
 
-    agent {node 'buildserver'}
+    node ("buildserver")
 
     stages {
 		node ("buildserver")
@@ -52,12 +52,11 @@ pipeline {
 			}
         }
 		
-		stage('TEST E2E'){
+	stage('TEST E2E'){
 			node("test")
 			steps{
 				echo ("Executing E2E Scenarios")
 			}
-		}
 	}
     
 }
