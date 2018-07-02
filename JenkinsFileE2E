@@ -15,9 +15,12 @@ pipeline {
 	
 		stage("UNITTEST WMTESUITE") {
 				steps {
+				node("buildserver") {
 					echo "test"
 					sh "${env.SAG_HOME}/common/AssetBuildEnvironment/ant/bin/ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} test" 
 					junit 'report/'
+				
+				}
 		
             }
 	    
@@ -25,6 +28,7 @@ pipeline {
 		
 		stage('UPLOAD TO CC REPO'){
 			steps {
+			node("buildserver") {
 				dir ('/opt/softwareag/common/AssetBuildEnvironment/master_build/WmO2CProjectACDLS') 
 				sh 'git init'
 				sh 'git pull https://github.com/vidb/WmO2CProjectACDLS.git'
@@ -34,14 +38,15 @@ pipeline {
 				sh 'git commit -am "pushing acdls"'
 				sh 'git push https://vidb:vidb123@github.com/vidb/WmO2CProjectACDLS.git --all | true'
 			}
+			}
         }
 
         stage('PROVISION ASSETS'){
 		
-	    node("master")
+	   
 			
             steps {
-			
+		 node("master"){	
             	echo "installing IS project"
 	        	sh "/var/lib/jenkins/.sag/tools/CommandCentral/client/bin/sagcc exec provisioning assets TestServer WmO2CProjectACDLS install runtimeComponentId=integrationServer-default --server=http://dcsiqa01:8090/cce -p manage"	
 				
@@ -49,12 +54,15 @@ pipeline {
 				sh '/var/lib/jenkins/.sag/tools/CommandCentral/client/bin/sagcc exec provisioning assets TestServer WmO2CProjectACDLS install runtimeComponentId=MwsProgramFiles-default --server=http://dcsiqa01:8090/cce -p manage'
                 	
 			}
+		}
         }
 		
 	stage('TEST E2E'){
-			node("test")
+			
 			steps{
+			node("test"){
 				echo ("Executing E2E Scenarios")
+			}
 			}
 	}
     
