@@ -26,7 +26,7 @@ pipeline {
 		
 		stage('UPLOAD TO CC REPO'){
 			steps {
-				dir ('/opt/softwareag/common/AssetBuildEnvironment/master_build/WmO2CProjectACDLS') { 
+				dir ('/opt/softwareag/common/AssetBuildEnvironment/master_build/WmO2CProjectACDLS') 
 				sh 'git init'
 				sh 'git pull https://github.com/vidb/WmO2CProjectACDLS.git'
 				sh 'git add .'
@@ -40,14 +40,16 @@ pipeline {
         stage('PROVISION ASSETS'){
 		
 			node("master")
+			
             steps {
+			
             	echo "installing IS project"
 	        	sh "/var/lib/jenkins/.sag/tools/CommandCentral/client/bin/sagcc exec provisioning assets TestServer WmO2CProjectACDLS install runtimeComponentId=integrationServer-default --server=http://dcsiqa01:8090/cce -p manage"	
 				
 				echo "installing MWS project"
 				sh '/var/lib/jenkins/.sag/tools/CommandCentral/client/bin/sagcc exec provisioning assets TestServer WmO2CProjectACDLS install runtimeComponentId=MwsProgramFiles-default --server=http://dcsiqa01:8090/cce -p manage'
                 	
- 		 }
+			}
         }
 		
 		stage('TEST E2E'){
@@ -59,5 +61,3 @@ pipeline {
 	}
     
 }
-
-
