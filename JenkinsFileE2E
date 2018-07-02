@@ -1,0 +1,63 @@
+pipeline {
+
+    agent {node 'buildserver'}
+
+    stages {
+		agent {node 'buildserver'}
+		
+        stage("BUILD"){
+   
+            	steps {
+	        	sh "hostname ;pwd;id -a ;ls -l ${env.SAG_HOME}"	
+                	sh "${env.SAG_HOME}/common/AssetBuildEnvironment/ant/bin/ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} build"
+ 		 }
+		 
+        }
+	
+		stage("UNITTEST WMTESUITE") {
+				steps {
+					echo "test"
+					sh "${env.SAG_HOME}/common/AssetBuildEnvironment/ant/bin/ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} test" 
+					junit 'report/'
+		
+            }
+	    
+        }
+		
+		stage('UPLOAD TO CC REPO'){
+			steps {
+				dir ('/opt/softwareag/common/AssetBuildEnvironment/master_build/WmO2CProjectACDLS') { 
+				sh 'git init'
+				sh 'git pull https://github.com/vidb/WmO2CProjectACDLS.git'
+				sh 'git add .'
+				sh 'git config --global user.name "vidb"'
+				sh 'git config --global user.email vidya.bhagwat@softwareag.com'
+				sh 'git commit -am "pushing acdls"'
+				sh 'git push https://vidb:vidb123@github.com/vidb/WmO2CProjectACDLS.git --all | true'
+			}
+        }
+
+        stage('PROVISION ASSETS'){
+		
+			node("master")
+            steps {
+            	echo "installing IS project"
+	        	sh "/var/lib/jenkins/.sag/tools/CommandCentral/client/bin/sagcc exec provisioning assets TestServer WmO2CProjectACDLS install runtimeComponentId=integrationServer-default --server=http://dcsiqa01:8090/cce -p manage"	
+				
+				echo "installing MWS project"
+				sh '/var/lib/jenkins/.sag/tools/CommandCentral/client/bin/sagcc exec provisioning assets TestServer WmO2CProjectACDLS install runtimeComponentId=MwsProgramFiles-default --server=http://dcsiqa01:8090/cce -p manage'
+                	
+ 		 }
+        }
+		
+		stage('TEST E2E'){
+			node("test")
+			steps{
+				echo ("Executing E2E Scenarios")
+			}
+		}
+	}
+    
+}
+
+
