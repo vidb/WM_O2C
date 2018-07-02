@@ -7,6 +7,7 @@ pipeline {
         stage("BUILD"){
    		steps {
             	node("buildserver") {
+			echo "Buidling Composites"
 	        	sh "hostname ;pwd;id -a ;ls -l ${env.SAG_HOME}"	
                 	sh "${env.SAG_HOME}/common/AssetBuildEnvironment/ant/bin/ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} build"
  		 }
@@ -17,8 +18,7 @@ pipeline {
 				steps {
 				node("buildserver") {
 					echo "test"
-					sh "${env.SAG_HOME}/common/AssetBuildEnvironment/ant/bin/ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} test" 
-					junit 'report/'
+					echo "need to adapt tests here"
 				
 				}
 		
@@ -29,6 +29,7 @@ pipeline {
 		stage('UPLOAD TO CC REPO'){
 			steps {
 			node("buildserver") {
+				rcho "uploading build composites into cc repo"
 				dir ('/opt/softwareag/common/AssetBuildEnvironment/master_build/WmO2CProjectACDLS') 
 				sh 'git init'
 				sh 'git pull https://github.com/vidb/WmO2CProjectACDLS.git'
@@ -47,7 +48,8 @@ pipeline {
 			
             steps {
 		 node("master"){	
-            	echo "installing IS project"
+		 	echo "starting deploying assets using cc"
+            		echo "installing IS project"
 	        	sh "/var/lib/jenkins/.sag/tools/CommandCentral/client/bin/sagcc exec provisioning assets TestServer WmO2CProjectACDLS install runtimeComponentId=integrationServer-default --server=http://dcsiqa01:8090/cce -p manage"	
 				
 				echo "installing MWS project"
@@ -60,8 +62,11 @@ pipeline {
 	stage('TEST E2E'){
 			
 			steps{
-			node("test"){
+			node("buildserver"){
 				echo ("Executing E2E Scenarios")
+				echo "test"
+					sh "${env.SAG_HOME}/common/AssetBuildEnvironment/ant/bin/ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} test" 
+					junit 'report/'
 			}
 			}
 	}
