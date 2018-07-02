@@ -39,7 +39,7 @@ pipeline {
 
         stage('PROVISION ASSETS'){
 		
-			node("master")
+	    node("master")
 			
             steps {
 			
@@ -59,4 +59,5 @@ pipeline {
 			}
 	}
     
+}
 }
