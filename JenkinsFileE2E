@@ -27,7 +27,9 @@ pipeline {
 				echo "uploading build composites into cc repo"
 				dir ('/opt/softwareag/common/AssetBuildEnvironment/master_build/WmO2CProjectACDLS') {
 					sh 'git init'
+					sh 'git stash'
 					sh 'git pull https://github.com/vidb/WmO2CProjectACDLS.git'
+					sh 'git stash pop'
 					sh 'git add .'
 					sh 'git config --global user.name "vidb"'
 					sh 'git config --global user.email vidya.bhagwat@softwareag.com'
