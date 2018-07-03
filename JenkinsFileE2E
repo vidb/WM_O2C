@@ -25,14 +25,15 @@ pipeline {
 		stage('UPLOAD TO CC REPO'){
 			steps {
 				echo "uploading build composites into cc repo"
-				dir ('/opt/softwareag/common/AssetBuildEnvironment/master_build/WmO2CProjectACDLS') 
-				sh 'git init'
-				sh 'git pull https://github.com/vidb/WmO2CProjectACDLS.git'
-				sh 'git add .'
-				sh 'git config --global user.name "vidb"'
-				sh 'git config --global user.email vidya.bhagwat@softwareag.com'
-				sh 'git commit -am "pushing acdls"'
-				sh 'git push https://vidb:vidb123@github.com/vidb/WmO2CProjectACDLS.git --all | true'
+				dir ('/opt/softwareag/common/AssetBuildEnvironment/master_build/WmO2CProjectACDLS') {
+					sh 'git init'
+					sh 'git pull https://github.com/vidb/WmO2CProjectACDLS.git'
+					sh 'git add .'
+					sh 'git config --global user.name "vidb"'
+					sh 'git config --global user.email vidya.bhagwat@softwareag.com'
+					sh 'git commit -am "pushing acdls"'
+					sh 'git push https://vidb:vidb123@github.com/vidb/WmO2CProjectACDLS.git --all | true'
+				}
 			}
         }
 
