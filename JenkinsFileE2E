@@ -24,7 +24,7 @@ pipeline {
 		
 		stage('UPLOAD TO CC REPO'){
 			steps {
-				rcho "uploading build composites into cc repo"
+				echo "uploading build composites into cc repo"
 				dir ('/opt/softwareag/common/AssetBuildEnvironment/master_build/WmO2CProjectACDLS') 
 				sh 'git init'
 				sh 'git pull https://github.com/vidb/WmO2CProjectACDLS.git'
