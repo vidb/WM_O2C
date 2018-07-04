@@ -27,9 +27,7 @@ pipeline {
 				echo "uploading build composites into cc repo"
 				dir ('/opt/softwareag/common/AssetBuildEnvironment/master_build/WmO2CProjectACDLS') {
 					sh 'git init'
-					sh 'git stash'
 					sh 'git pull https://github.com/vidb/WmO2CProjectACDLS.git'
-					sh 'git stash pop'
 					sh 'git add .'
 					sh 'git config --global user.name "vidb"'
 					sh 'git config --global user.email vidya.bhagwat@softwareag.com'
@@ -60,7 +58,9 @@ pipeline {
 			
 			steps{
 				echo ("Executing E2E Scenarios")
-				echo "test"
+				echo "test will be started after 3 minutes"
+				 // A sleep to complete asset deployment!
+        			sleep 180
 					sh "${env.SAG_HOME}/common/AssetBuildEnvironment/ant/bin/ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} test" 
 					junit 'report/'
 			}
