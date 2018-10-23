@@ -69,8 +69,9 @@ pipeline {
 	}
 	
 	stage('Deploy to Next Stage') {
-  		input 'Keep going?'
+  		
 		steps {
+					input 'Keep going?'
 					echo "Input steps execution"
 					echo "need to Manual Approval Logic here"
 				
