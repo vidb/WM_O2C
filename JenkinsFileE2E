@@ -67,6 +67,12 @@ pipeline {
 					junit 'report/'
 			}
 	}
+	
+	stage('Deploy to Next Stage') {
+  		timeout(10) {
+   		 input 'Keep going?'
+  		}
+	}
     
 }
 }
