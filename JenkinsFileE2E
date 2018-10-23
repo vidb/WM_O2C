@@ -69,8 +69,7 @@ pipeline {
 	}
 	
 	stage('Deploy to Next Stage') {
-  		timeout(time: 60 units: 'SECONDS')
-   		input 'Keep going?'
+  		input 'Keep going?'
   		
 	}
     
