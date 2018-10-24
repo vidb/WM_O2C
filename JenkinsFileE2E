@@ -69,12 +69,12 @@ pipeline {
 	}
 	
 	stage('Deploy to Next Stage') {
-  		timeout(10)
 		steps {
-					input 'Keep going?'
+				 timeout(time: 10, uint: 'SECONDS'){
+				 	input 'Keep going?'
 					echo "Input steps execution"
 					echo "need to Manual Approval Logic here"
-				
+				}
 		
             	}
   		
