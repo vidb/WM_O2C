@@ -4,7 +4,7 @@
   <record javaclass="com.wm.data.ISMemDataImpl">
     <value name="ProcessName">OrderToCashProcess</value>
     <value name="DocumentName">InboundOrder</value>
-    <value name="sleeptime_millis">200</value>
+    <value name="sleeptime_millis">5000</value>
     <value name="Identifier">ID001</value>
     <value name="OrderDate">1-1-2009</value>
     <value name="OrderTotal">25000</value>

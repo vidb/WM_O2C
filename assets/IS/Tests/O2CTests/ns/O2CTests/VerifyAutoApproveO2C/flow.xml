@@ -1036,6 +1036,7 @@
     <value name="field_name">publishInput</value>
     <value name="field_type">record</value>
     <value name="field_dim">0</value>
+    <value name="wrapper_type">IData</value>
     <value name="nillable">true</value>
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
@@ -1058,6 +1059,7 @@
         <value name="field_name">document</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -1111,6 +1113,7 @@
     <value name="is_public">false</value>
     <value name="field_type">record</value>
     <value name="field_dim">0</value>
+    <value name="wrapper_type">IData</value>
     <value name="nillable">true</value>
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
@@ -1459,6 +1462,7 @@
         <value name="field_name">InboundOrder</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -2010,9 +2014,6 @@
 <MAPCOPY FROM="/DocumentName;1;0" TO="/getInstanceByIdentifierInput;2;0/DOCUMENTNAME_1;1;0">
 </MAPCOPY>
 
-<MAPCOPY FROM="/Identifier;1;0" TO="/getInstanceByIdentifierInput;2;0/STRINGVALUE_3;1;0">
-</MAPCOPY>
-
 <MAPSET NAME="Setter" OVERWRITE="true" VARIABLES="false" GLOBALVARIABLES="false" FIELD="/getInstanceByIdentifierInput;2;0/FIELDNAME_2;1;0">
   <DATA ENCODING="XMLValues" I18N="true">
 
@@ -2032,6 +2033,12 @@
 </Values>
 </DATA>
 </MAPSET>
+
+<MAPCOPY FROM="/Identifier;1;0" TO="/getInstanceByIdentifierInput;2;0/STRINGVALUE_3;1;0">
+</MAPCOPY>
+</MAP>
+
+<MAP MODE="OUTPUT">
 </MAP>
 </INVOKE>
 
@@ -2056,6 +2063,7 @@
     <value name="field_name">getInstanceInput</value>
     <value name="field_type">record</value>
     <value name="field_dim">0</value>
+    <value name="wrapper_type">IData</value>
     <value name="nillable">true</value>
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
@@ -2085,6 +2093,7 @@
     <value name="is_public">false</value>
     <value name="field_type">record</value>
     <value name="field_dim">0</value>
+    <value name="wrapper_type">IData</value>
     <value name="nillable">true</value>
     <value name="form_qualified">false</value>
     <value name="is_global">false</value>
@@ -2096,6 +2105,7 @@
         <value name="field_name">getInstanceByIdentifierInput</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -2121,6 +2131,7 @@
         <value name="field_name">document</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -2472,6 +2483,7 @@
         <value name="field_name">InboundOrder</value>
         <value name="field_type">recref</value>
         <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -2485,20 +2497,7 @@
         <value name="field_name">getInstanceByIdentifierOutput</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-        <array name="rec_fields" type="record" depth="1">
-        </array>
-        <value name="modifiable">true</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">record</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">getInstanceIDByLoggedFieldAdapterOutput</value>
-        <value name="field_type">record</value>
-        <value name="field_dim">0</value>
+        <value name="wrapper_type">IData</value>
         <value name="nillable">true</value>
         <value name="form_qualified">false</value>
         <value name="is_global">false</value>
@@ -2506,10 +2505,16 @@
           <record javaclass="com.wm.util.Values">
             <value name="node_type">record</value>
             <value name="node_subtype">unknown</value>
+            <value name="node_comment"></value>
+            <record name="node_hints" javaclass="com.wm.util.Values">
+              <value name="field_largerEditor">false</value>
+              <value name="field_password">false</value>
+            </record>
             <value name="is_public">false</value>
             <value name="field_name">results</value>
             <value name="field_type">record</value>
             <value name="field_dim">0</value>
+            <value name="wrapper_type">IData</value>
             <value name="nillable">true</value>
             <value name="form_qualified">false</value>
             <value name="is_global">false</value>
@@ -2569,7 +2574,7 @@
 
   <!-- nodes -->
 
-<MAPCOPY FROM="/getInstanceIDByLoggedFieldAdapterOutput;2;0/results;2;0/INSTANCEID;1;0" TO="/instanceID;1;0">
+<MAPCOPY FROM="/getInstanceByIdentifierOutput;2;0/results;2;0/INSTANCEID;1;0" TO="/instanceID;1;0">
 </MAPCOPY>
 </MAP>
 
@@ -3012,20 +3017,6 @@
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
         <value name="field_name">getInstanceByIdentifierOutput</value>
-        <value name="field_type">record</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-        <array name="rec_fields" type="record" depth="1">
-        </array>
-        <value name="modifiable">true</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">record</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">getInstanceIDByLoggedFieldAdapterOutput</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
@@ -3568,20 +3559,6 @@
         <value name="node_subtype">unknown</value>
         <value name="is_public">false</value>
         <value name="field_name">getInstanceByIdentifierOutput</value>
-        <value name="field_type">record</value>
-        <value name="field_dim">0</value>
-        <value name="nillable">true</value>
-        <value name="form_qualified">false</value>
-        <value name="is_global">false</value>
-        <array name="rec_fields" type="record" depth="1">
-        </array>
-        <value name="modifiable">true</value>
-      </record>
-      <record javaclass="com.wm.util.Values">
-        <value name="node_type">record</value>
-        <value name="node_subtype">unknown</value>
-        <value name="is_public">false</value>
-        <value name="field_name">getInstanceIDByLoggedFieldAdapterOutput</value>
         <value name="field_type">record</value>
         <value name="field_dim">0</value>
         <value name="nillable">true</value>
