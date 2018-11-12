@@ -47,7 +47,7 @@ pipeline {
 		 node("master"){	
 		 	echo "starting deploying assets using cc"
             		echo "installing IS project"
-	        	sh "/var/lib/jenkins/.sag/tools/CommandCentral/client/bin/sagcc exec provisioning assets TestServer WmO2CProjectACDLS install runtimeComponentId=integrationServer-default --server=http://dcsiqa01:8090/cce -p manage"	
+	        	sh "/var/lib/jenkins/.sag/tools/CommandCentral/client/bin/sagcc exec provisioning assets TestServer WmO2CProjectACDLS install runtimeComponentId=integrationServer-default artifacts=[InboundOrderISService,OrderToCash,ScOrderToCash] --server=http://dcsiqa01:8090/cce -p manage"	
 				
 				echo "installing MWS project"
 				sh '/var/lib/jenkins/.sag/tools/CommandCentral/client/bin/sagcc exec provisioning assets TestServer WmO2CProjectACDLS install runtimeComponentId=MwsProgramFiles-default --server=http://dcsiqa01:8090/cce -p manage'
@@ -70,11 +70,17 @@ pipeline {
 	
 	stage('Deploy to Next Stage') {
 		steps {
-				 timeout(time: 10, unit: 'SECONDS'){
-				 	input 'Keep going?'
-					echo "Input steps execution"
-					echo "need to Manual Approval Logic here"
-				}
+				 timeout(time: 45, unit: 'SECONDS'){
+				 	script {
+                     
+                    				mail to: 'Vidya.Bhagwat@softwareag.com',
+                     				subject: "Job '${env.JOB_BASE_NAME}' (${env.BUILD_NUMBER}) is waiting for input",
+                     				body: "Please go to console output of ${env.BUILD_URL}console to approve or Reject."
+						input 'Keep going?'
+						echo "Input steps execution"
+						echo "need to Manual Approval Logic here"
+					}
+				}	
 		
             	}
   		
