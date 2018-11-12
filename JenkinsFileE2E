@@ -71,14 +71,14 @@ pipeline {
 	stage('Deploy to Next Stage') {
 		steps {
 				 timeout(time: 10, unit: 'SECONDS'){
-				 	input 'Keep going?'
-					echo "Input steps execution"
-					echo "need to Manual Approval Logic here"
-					script {
+				 	script {
                      
                     				mail to: 'Vidya.Bhagwat@softwareag.com',
                      				subject: "Job '${env.JOB_BASE_NAME}' (${env.BUILD_NUMBER}) is waiting for input",
                      				body: "Please go to console output of ${env.BUILD_URL}console to approve or Reject."
+						input 'Keep going?'
+						echo "Input steps execution"
+						echo "need to Manual Approval Logic here"
 					}
 				}	
 		
