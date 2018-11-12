@@ -24,7 +24,7 @@
     </record>
     <value name="Region">South</value>
     <value name="State">CA</value>
-    <value name="Status">Approved</value>
+    <value name="Status">False</value>
     <value name="Comments">Comments</value>
     <array name="LineItem" type="record" depth="1">
       <record javaclass="com.wm.data.ISMemDataImpl">
@@ -35,5 +35,7 @@
         <value name="QtyShipped">12</value>
       </record>
     </array>
+    <value name="TaskName">Improved Manual Credit</value>
+    <value name="OrderConfirm">Approved</value>
   </record>
 </IDataXMLCoder>

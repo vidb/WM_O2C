@@ -34,20 +34,22 @@
     <webMethodsTestCase name="verifyCompletionManualOrder">
         <service folder="O2CTests" name="verifyManualApproveO2C">
             <input>
-                <file/>
+                <file filename="resources/data/VerifyManualApproveO2CInput.xml"/>
             </input>
             <expected>
                 <file/>
+                <field operator="==" path="TestStatus" value="Failed"/>
             </expected>
         </service>
     </webMethodsTestCase>
     <webMethodsTestCase name="verifyManualCancelTask">
         <service folder="O2CTests" name="verifyManualCancelO2C">
             <input>
-                <file/>
+                <file filename="resources/data/VerifyManualCancelO2CInput.xml"/>
             </input>
             <expected>
                 <file/>
+                <field path="TestStatus" value="cancelled"/>
             </expected>
         </service>
     </webMethodsTestCase>
