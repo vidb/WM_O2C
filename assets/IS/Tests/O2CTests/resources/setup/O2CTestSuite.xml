@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <webMethodsTestSuite description="O2CTestSuite" name="O2CTestSuite">
-    <webMethodsTestCase name="testSum">
-        <service folder="O2CTests" name="testSum">
-            <input>
-                <file filename="resources/data/input1.xml"/>
-            </input>
-            <expected>
-                <file filename="resources/data/output.xml"/>
-            </expected>
-        </service>
-    </webMethodsTestCase>
     <webMethodsTestCase name="verifyNewAutoOrder">
         <service folder="O2CTests" name="publishAndVerifyAutoComplete">
             <input>
@@ -27,6 +17,37 @@
             </input>
             <expected>
                 <file filename="resources/data/manualCompleteOutput.xml"/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
+    <webMethodsTestCase name="verifyCompletionAutoOrder">
+        <service folder="O2CTests" name="VerifyAutoApproveO2C">
+            <input>
+                <file filename="resources/data/VerifyAutoApproveO2CInput.xml"/>
+            </input>
+            <expected>
+                <file/>
+                <field operator="==" path="TestStatus" value="Passed"/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
+    <webMethodsTestCase name="verifyCompletionManualOrder">
+        <service folder="O2CTests" name="verifyManualApproveO2C">
+            <input>
+                <file/>
+            </input>
+            <expected>
+                <file/>
+            </expected>
+        </service>
+    </webMethodsTestCase>
+    <webMethodsTestCase name="verifyManualCancelTask">
+        <service folder="O2CTests" name="verifyManualCancelO2C">
+            <input>
+                <file/>
+            </input>
+            <expected>
+                <file/>
             </expected>
         </service>
     </webMethodsTestCase>
