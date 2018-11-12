@@ -70,7 +70,7 @@ pipeline {
 	
 	stage('Deploy to Next Stage') {
 		steps {
-				 timeout(time: 10, unit: 'SECONDS'){
+				 timeout(time: 45, unit: 'SECONDS'){
 				 	script {
                      
                     				mail to: 'Vidya.Bhagwat@softwareag.com',
