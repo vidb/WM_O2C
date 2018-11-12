@@ -80,6 +80,7 @@ pipeline {
                      				subject: "Job '${env.JOB_BASE_NAME}' (${env.BUILD_NUMBER}) is waiting for input",
                      				body: "Please go to console output of ${env.BUILD_URL}console to approve or Reject."
 					}
+				}	
 		
             	}
   		
