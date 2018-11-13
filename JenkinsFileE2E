@@ -59,6 +59,7 @@ pipeline {
 	stage('TEST E2E'){
 		
 			steps{
+				script{
 				try{
 					echo ("Executing E2E Scenarios")
 					echo "test will be started after 3 minutes"
@@ -69,6 +70,7 @@ pipeline {
 				}catch(err){
 					step([$class: 'JUnitResultArchiver', testResults: '/var/lib/jenkins/workspace/Wm_O2C_CI_CD/assets/IS/Tests/O2CTests/resources/reports/TESTS-Test*.xml'])
         				throw err
+				}
 				}
 			}
 	}
