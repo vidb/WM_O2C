@@ -47,7 +47,7 @@ pipeline {
 		 node("master"){	
 		 	echo "starting deploying assets using cc"
             		echo "installing IS project"
-	        	sh "/var/lib/jenkins/.sag/tools/CommandCentral/client/bin/sagcc exec provisioning assets TestServer WmO2CProjectACDLS install runtimeComponentId=integrationServer-default artifacts=[InboundOrderISService,OrderToCash,ScOrderToCash] --server=http://dcsiqa01:8090/cce -p manage"	
+	        	sh "/var/lib/jenkins/.sag/tools/CommandCentral/client/bin/sagcc exec provisioning assets TestServer WmO2CProjectACDLS install runtimeComponentId=integrationServer-default artifacts=[InboundOrderISService, ScOrderToCash, OrderToCash] --server=http://dcsiqa01:8090/cce -p manage"	
 				
 				echo "installing MWS project"
 				sh '/var/lib/jenkins/.sag/tools/CommandCentral/client/bin/sagcc exec provisioning assets TestServer WmO2CProjectACDLS install runtimeComponentId=MwsProgramFiles-default --server=http://dcsiqa01:8090/cce -p manage'
