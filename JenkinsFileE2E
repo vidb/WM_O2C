@@ -57,14 +57,19 @@ pipeline {
         }
 		
 	stage('TEST E2E'){
-			
+		
 			steps{
-				echo ("Executing E2E Scenarios")
-				echo "test will be started after 3 minutes"
-				 // A sleep to complete asset deployment!
-        			sleep 90
+				try{
+					echo ("Executing E2E Scenarios")
+					echo "test will be started after 3 minutes"
+				 	// A sleep to complete asset deployment!
+        				sleep 90
 					sh "${env.SAG_HOME}/common/AssetBuildEnvironment/ant/bin/ant -DSAGHome=${env.SAG_HOME} -DSAG_CI_HOME=${env.SAG_CI_HOME} -DprojectName=${env.JOB_NAME} test" 
 					junit 'report/'
+				}catch(err){
+					step([$class: 'JUnitResultArchiver', testResults: '/var/lib/jenkins/workspace/Wm_O2C_CI_CD/assets/IS/Tests/O2CTests/resources/reports/TESTS-Test*.xml'])
+        				throw err
+				}
 			}
 	}
 	
