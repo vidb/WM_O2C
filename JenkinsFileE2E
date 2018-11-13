@@ -68,7 +68,7 @@ pipeline {
 			}
 	}
 	
-	stage('Deploy to Next Stage') {
+	stage('Deploy to Next Stage yes Or No') {
 		steps {
 				 timeout(time: 45, unit: 'SECONDS'){
 				 	script {
