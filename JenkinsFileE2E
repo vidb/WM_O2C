@@ -70,6 +70,7 @@ pipeline {
 				}catch(err){
 					step([$class: 'JUnitResultArchiver', testResults: '/var/lib/jenkins/workspace/Wm_O2C_CI_CD/assets/IS/Tests/O2CTests/resources/reports/TESTS-Test*.xml'])
         				throw err
+					currentBuild.result = "FAILURE"
 				}
 				}
 			}
