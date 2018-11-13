@@ -71,12 +71,9 @@ pipeline {
 					echo ("In Catch blockExecuting E2E Scenarios")
 					step([$class: 'JUnitResultArchiver', testResults: '/var/lib/jenkins/workspace/Wm_O2C_CI_CD/assets/IS/Tests/O2CTests/resources/reports/TESTS-Test*.xml'])
         				err = caughtErr
-					currentBuild.result = "FAILURE"
-				}
-				finally{
-					 if (err) {
-        					throw err
-    						}
+					if (currentBuild.result == 'UNSTABLE')
+    						currentBuild.result = 'FAILURE'
+	  				throw err
 				}
 				}
 			}
