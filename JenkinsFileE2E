@@ -90,7 +90,7 @@ pipeline {
                      userInput = input(id: 'chooseOptions',
                 message: 'Select Environment to be deployed',    
                 parameters: [                           
-                  [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'deploy in Test env', name: 'Test'],    
+                  [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'deploy in SIT env', name: 'SIT'],    
                   [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'deploy in Staging env', name: 'Staging'],
                   [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'deploy in Prod env', name: 'Prod']
                 ]   
